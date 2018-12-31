@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<DefaultConfig>
+    <Architecture>-march=armv8-a -mtune=cortex-a57 -mtp=soft -fPIE</Architecture>
+    <C>-g -Wall -O2 -ffunction-sections</C>
+    <Cpp>-fno-rtti -fno-exceptions</Cpp>
+    <CppStd>gnu++17</CppStd>
+</DefaultConfig>

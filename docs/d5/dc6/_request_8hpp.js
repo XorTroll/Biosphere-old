@@ -1,0 +1,46 @@
+var _request_8hpp =
+[
+    [ "BufferInfo", "dc/d04/structbio_1_1hipc_1_1_buffer_info.html", "dc/d04/structbio_1_1hipc_1_1_buffer_info" ],
+    [ "Buffer", "d2/d83/structbio_1_1hipc_1_1_buffer.html", "d2/d83/structbio_1_1hipc_1_1_buffer" ],
+    [ "BufferCommandData", "da/dfd/structbio_1_1hipc_1_1_buffer_command_data.html", "da/dfd/structbio_1_1hipc_1_1_buffer_command_data" ],
+    [ "BufferReceiveData", "d1/d07/structbio_1_1hipc_1_1_buffer_receive_data.html", "d1/d07/structbio_1_1hipc_1_1_buffer_receive_data" ],
+    [ "BufferSendData", "db/dfa/structbio_1_1hipc_1_1_buffer_send_data.html", "db/dfa/structbio_1_1hipc_1_1_buffer_send_data" ],
+    [ "DomainHeader", "d3/d0b/structbio_1_1hipc_1_1_domain_header.html", "d3/d0b/structbio_1_1hipc_1_1_domain_header" ],
+    [ "DomainResponse", "d8/de8/structbio_1_1hipc_1_1_domain_response.html", "d8/de8/structbio_1_1hipc_1_1_domain_response" ],
+    [ "RequestData", "d2/d5f/structbio_1_1hipc_1_1_request_data.html", "d2/d5f/structbio_1_1hipc_1_1_request_data" ],
+    [ "RequestArgument", "d5/d5b/structbio_1_1hipc_1_1_request_argument.html", "d5/d5b/structbio_1_1hipc_1_1_request_argument" ],
+    [ "Simple", "db/d43/structbio_1_1hipc_1_1_simple.html", "db/d43/structbio_1_1hipc_1_1_simple" ],
+    [ "InRaw", "d9/ddf/structbio_1_1hipc_1_1_in_raw.html", "d9/ddf/structbio_1_1hipc_1_1_in_raw" ],
+    [ "InProcessId", "d0/d42/structbio_1_1hipc_1_1_in_process_id.html", "d0/d42/structbio_1_1hipc_1_1_in_process_id" ],
+    [ "InHandle", "da/db3/structbio_1_1hipc_1_1_in_handle.html", "da/db3/structbio_1_1hipc_1_1_in_handle" ],
+    [ "InObjectId", "dc/da1/structbio_1_1hipc_1_1_in_object_id.html", "dc/da1/structbio_1_1hipc_1_1_in_object_id" ],
+    [ "InNormalBuffer", "de/d44/structbio_1_1hipc_1_1_in_normal_buffer.html", "de/d44/structbio_1_1hipc_1_1_in_normal_buffer" ],
+    [ "InStaticBuffer", "d8/d27/structbio_1_1hipc_1_1_in_static_buffer.html", "d8/d27/structbio_1_1hipc_1_1_in_static_buffer" ],
+    [ "InSmartBuffer", "d6/da5/structbio_1_1hipc_1_1_in_smart_buffer.html", "d6/da5/structbio_1_1hipc_1_1_in_smart_buffer" ],
+    [ "OutRaw", "df/d85/structbio_1_1hipc_1_1_out_raw.html", "df/d85/structbio_1_1hipc_1_1_out_raw" ],
+    [ "OutProcessId", "df/d16/structbio_1_1hipc_1_1_out_process_id.html", "df/d16/structbio_1_1hipc_1_1_out_process_id" ],
+    [ "OutHandle", "d8/de8/structbio_1_1hipc_1_1_out_handle.html", "d8/de8/structbio_1_1hipc_1_1_out_handle" ],
+    [ "OutObjectId", "d9/dd0/structbio_1_1hipc_1_1_out_object_id.html", "d9/dd0/structbio_1_1hipc_1_1_out_object_id" ],
+    [ "OutNormalBuffer", "de/ddc/structbio_1_1hipc_1_1_out_normal_buffer.html", "de/ddc/structbio_1_1hipc_1_1_out_normal_buffer" ],
+    [ "OutStaticBuffer", "dd/d4f/structbio_1_1hipc_1_1_out_static_buffer.html", "dd/d4f/structbio_1_1hipc_1_1_out_static_buffer" ],
+    [ "OutSmartBuffer", "d6/d4a/structbio_1_1hipc_1_1_out_smart_buffer.html", "d6/d4a/structbio_1_1hipc_1_1_out_smart_buffer" ],
+    [ "BufferMode", "d5/dc6/_request_8hpp.html#aa471380df7ebf59ccbbcf55076e4bb04", [
+      [ "Normal", "d5/dc6/_request_8hpp.html#aa471380df7ebf59ccbbcf55076e4bb04a960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Static", "d5/dc6/_request_8hpp.html#aa471380df7ebf59ccbbcf55076e4bb04a84a8921b25f505d0d2077aeb5db4bc16", null ],
+      [ "Smart", "d5/dc6/_request_8hpp.html#aa471380df7ebf59ccbbcf55076e4bb04aacd381e68b92357896c0856efebb3666", null ]
+    ] ],
+    [ "HandleMode", "d5/dc6/_request_8hpp.html#a73116a5f0612231c746f282ff6a10213", [
+      [ "Copy", "d5/dc6/_request_8hpp.html#a73116a5f0612231c746f282ff6a10213a5fb63579fc981698f97d55bfecb213ea", null ],
+      [ "Move", "d5/dc6/_request_8hpp.html#a73116a5f0612231c746f282ff6a10213a6bc362dbf494c61ea117fe3c71ca48a5", null ]
+    ] ],
+    [ "Module", "d5/dc6/_request_8hpp.html#ab8b90000886763043ea49dedab972cb1", null ],
+    [ "ResultMarshallingPastMaximum", "d5/dc6/_request_8hpp.html#a53f04f595504fbdf261e86152c3eeb9a", null ],
+    [ "ResultOutOfSessionMemory", "d5/dc6/_request_8hpp.html#ad71d8ca9f1e237bf7f576c376712982e", null ],
+    [ "ResultQuery1Fail", "d5/dc6/_request_8hpp.html#ae1da02443c9ed61f8c9d23a5a63711b0", null ],
+    [ "ResultRemoteProcessDead", "d5/dc6/_request_8hpp.html#a43f06117bdbaec47fa7889b20e1d8ab8", null ],
+    [ "ResultUnknownRequestType", "d5/dc6/_request_8hpp.html#ac1188cfb5bf9b8f5cb4899c4662961a2", null ],
+    [ "ResultUnsupportedDomains", "d5/dc6/_request_8hpp.html#a9fc70d821fad9096f16cc3012ffd2629", null ],
+    [ "ResultUnsupportedOperation", "d5/dc6/_request_8hpp.html#a9c3ff958c95989d95ecec95d841406f1", null ],
+    [ "SFCI", "d5/dc6/_request_8hpp.html#a1b867d7a71b670112167f001e21abc3c", null ],
+    [ "SFCO", "d5/dc6/_request_8hpp.html#a7f0654a3514f96957d1f16447c9c8fb6", null ]
+];

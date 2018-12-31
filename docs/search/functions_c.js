@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['object',['Object',['../d9/d3c/classbio_1_1hipc_1_1_object.html#af82547f0b23a38426731342e9e5541dd',1,'bio::hipc::Object::Object()'],['../d9/d3c/classbio_1_1hipc_1_1_object.html#afe2dc1e562d6c32d905ae8fb3dd8dd4a',1,'bio::hipc::Object::Object(u32 Handle)'],['../d9/d3c/classbio_1_1hipc_1_1_object.html#ad2af0323dba7a5b74591875719cc965d',1,'bio::hipc::Object::Object(u32 Handle, u32 ObjectId, ObjectType Type)'],['../d9/d3c/classbio_1_1hipc_1_1_object.html#a1c2aad196557bdf380c1fe44cccd3b12',1,'bio::hipc::Object::Object(Object *Parent, u32 ObjectId)']]],
+  ['openapplicationproxy',['OpenApplicationProxy',['../d8/d1d/classbio_1_1applet_1_1oe_1_1_oe_service.html#ac37476fca6a27e341b21cc378d4f6a41',1,'bio::applet::oe::OeService']]],
+  ['opendirectory',['OpenDirectory',['../dd/de1/classbio_1_1fsp_1_1_file_system.html#ac4730e574407c47ad263aa77f54521c5',1,'bio::fsp::FileSystem']]],
+  ['openfile',['OpenFile',['../dd/de1/classbio_1_1fsp_1_1_file_system.html#a154158437487b5024028663645756102',1,'bio::fsp::FileSystem']]],
+  ['openlibraryappletproxyold',['OpenLibraryAppletProxyOld',['../df/dcf/classbio_1_1applet_1_1ae_1_1_ae_service.html#a9593fabf77c4ae649c37325a1f4bda68',1,'bio::applet::ae::AeService']]],
+  ['openoverlayappletproxy',['OpenOverlayAppletProxy',['../df/dcf/classbio_1_1applet_1_1ae_1_1_ae_service.html#a352ac3f25f68d701879aa71329de4e65',1,'bio::applet::ae::AeService']]],
+  ['opensdcardfilesystem',['OpenSdCardFileSystem',['../d2/dd9/classbio_1_1fsp_1_1_fsp_service.html#a57e385519abea0075d7485bc3d333f69',1,'bio::fsp::FspService']]],
+  ['opensession',['OpenSession',['../db/d7c/classbio_1_1gpio_1_1_gpio_service.html#aea3b56d818bb4721a110eadc52571ced',1,'bio::gpio::GpioService']]],
+  ['opensystemappletproxy',['OpenSystemAppletProxy',['../df/dcf/classbio_1_1applet_1_1ae_1_1_ae_service.html#a2edaa9f4d4fe1587e2af7672e630f61d',1,'bio::applet::ae::AeService']]],
+  ['opensystemapplicationproxy',['OpenSystemApplicationProxy',['../df/dcf/classbio_1_1applet_1_1ae_1_1_ae_service.html#a89d0042f97d578eeae71bb3a26426ff6',1,'bio::applet::ae::AeService']]],
+  ['operator_20result',['operator Result',['../d6/d06/classbio_1_1_result_wrap.html#a398208e99fb40292a00f77aab4eb252b',1,'bio::ResultWrap']]],
+  ['operator_20u32',['operator u32',['../d8/d6c/structbio_1_1_result.html#a1c7696387daf062bf779ce6016e7dac9',1,'bio::Result']]],
+  ['operator_21_3d',['operator!=',['../d5/d65/structbio_1_1_application_id.html#a6b6da61b7803450fe6cfe928f04c300a',1,'bio::ApplicationId::operator!=()'],['../d8/d6c/structbio_1_1_result.html#a2c5d58fec65aee68849f4b61780b5103',1,'bio::Result::operator!=()']]],
+  ['operator_3d_3d',['operator==',['../d5/d65/structbio_1_1_application_id.html#a06fc31aebc1ca885d153dd55e5655dbf',1,'bio::ApplicationId::operator==()'],['../d8/d6c/structbio_1_1_result.html#a0933379563dc16d7ff1a2504081eddbf',1,'bio::Result::operator==()']]],
+  ['outhandle',['OutHandle',['../d8/de8/structbio_1_1hipc_1_1_out_handle.html#a824c1f1a412c01406f95a58a412e5c45',1,'bio::hipc::OutHandle']]],
+  ['outnormalbuffer',['OutNormalBuffer',['../de/ddc/structbio_1_1hipc_1_1_out_normal_buffer.html#ae43375d55a973ec11310b99e74fb2d05',1,'bio::hipc::OutNormalBuffer']]],
+  ['outobjectid',['OutObjectId',['../d9/dd0/structbio_1_1hipc_1_1_out_object_id.html#a5e221cbfc409ae39c643cb97599d22f8',1,'bio::hipc::OutObjectId']]],
+  ['outprocessid',['OutProcessId',['../df/d16/structbio_1_1hipc_1_1_out_process_id.html#ae9c12eb6691dc76d17935a44fac3b6e3',1,'bio::hipc::OutProcessId']]],
+  ['outputdebugstring',['OutputDebugString',['../d8/d1b/namespacebio_1_1svc.html#a5d3fe10fc0e8dc8aa4012455cdb352e3',1,'bio::svc']]],
+  ['outraw',['OutRaw',['../df/d85/structbio_1_1hipc_1_1_out_raw.html#a6babaef03c703a0c8c4a87cbde52e97a',1,'bio::hipc::OutRaw']]],
+  ['outsmartbuffer',['OutSmartBuffer',['../d6/d4a/structbio_1_1hipc_1_1_out_smart_buffer.html#a10560e1c6a429a7ddb052c69b7249a68',1,'bio::hipc::OutSmartBuffer']]],
+  ['outstaticbuffer',['OutStaticBuffer',['../dd/d4f/structbio_1_1hipc_1_1_out_static_buffer.html#a58ad109b532a335a33e567673c486b82',1,'bio::hipc::OutStaticBuffer']]]
+];

@@ -1,0 +1,17 @@
+
+/*
+
+    Biosphere library
+
+    @file biosphere
+    @brief Biosphere library's main header. (include this to use this library properly)
+    @author XorTroll
+
+    @copyright Biosphere project - Bringing life to homebrew!
+
+*/
+
+#pragma once
+#include <bio/root.hpp>
+#include <bio/biotope.hpp>
+#include <bio/biocoenosis.hpp>

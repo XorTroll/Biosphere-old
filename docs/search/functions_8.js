@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['increment32',['Increment32',['../db/d6c/namespacebio_1_1arm_1_1_atomic.html#afb237e4c95bf4f187b2e3e25e6490ce9',1,'bio::arm::Atomic']]],
+  ['increment64',['Increment64',['../db/d6c/namespacebio_1_1arm_1_1_atomic.html#a6022cbfe50bef628ef4ee02d67a1cc78',1,'bio::arm::Atomic']]],
+  ['inhandle',['InHandle',['../da/db3/structbio_1_1hipc_1_1_in_handle.html#ac58149fcc4ea157a5459b473956b3479',1,'bio::hipc::InHandle']]],
+  ['initialize',['Initialize',['../d2/dd9/classbio_1_1fsp_1_1_fsp_service.html#a97bf925d75884e5faf9ba252624fe26d',1,'bio::fsp::FspService::Initialize()'],['../d6/d64/classbio_1_1sm_1_1_service_manager.html#a9b06e5340fe546046d3d6cb0e8d6c464',1,'bio::sm::ServiceManager::Initialize()'],['../d1/d76/namespacebio_1_1applet_1_1ae.html#ab4f0c17fa9e736bc58b50fd66c031bca',1,'bio::applet::ae::Initialize()'],['../db/d00/namespacebio_1_1applet_1_1oe.html#a1baa2c309bd5bd7300ebbfacd03fd00c',1,'bio::applet::oe::Initialize()'],['../d2/dbc/namespacebio_1_1diag.html#a85a43632007c0908a691dccfebdb44a2',1,'bio::diag::Initialize()'],['../da/d65/namespacebio_1_1fatal.html#a50c7e95a8e4e07fa6541854199435fac',1,'bio::fatal::Initialize()'],['../de/d72/namespacebio_1_1fsp.html#a2879196ff0dd523555e90ef69a8827c4',1,'bio::fsp::Initialize()'],['../d8/dbd/namespacebio_1_1gpio.html#a84d4897a8015d38f2a1ea28f62acd63b',1,'bio::gpio::Initialize()'],['../de/dfd/namespacebio_1_1hid_1_1dbg.html#a9614b920f6c6fe498ffca81308f7108a',1,'bio::hid::dbg::Initialize()'],['../d4/d73/namespacebio_1_1hid.html#a0ebb8fd68adaa5c7464cf56b51209a00',1,'bio::hid::Initialize()'],['../d2/d44/namespacebio_1_1psm.html#ae06be48fdd51329c0450b0ecafa81f3b',1,'bio::psm::Initialize()'],['../df/d91/namespacebio_1_1sm.html#af3fa49eb27e4c48a0a4c12d2d4036463',1,'bio::sm::Initialize()']]],
+  ['initializearguments',['InitializeArguments',['../d2/d1c/namespacebio_1_1init.html#ad5c89a72cde7be2c7b407e14095ef051',1,'bio::init']]],
+  ['initializehomebrewenvironment',['InitializeHomebrewEnvironment',['../d2/d1c/namespacebio_1_1init.html#a7256dae20d51675f1f555865158fa31e',1,'bio::init']]],
+  ['initializekernel',['InitializeKernel',['../d2/d1c/namespacebio_1_1init.html#a61d5d800be22fa4d9485af061fddd293',1,'bio::init']]],
+  ['initializestandardconstructors',['InitializeStandardConstructors',['../d2/d1c/namespacebio_1_1init.html#a4ca4e21ea7ded6d8fb47d3f905e3217a',1,'bio::init']]],
+  ['initializestandardfilesystem',['InitializeStandardFileSystem',['../d2/d1c/namespacebio_1_1init.html#a693ac922764c8e55a96d39c9ac196bbc',1,'bio::init']]],
+  ['initializestandardsyscalls',['InitializeStandardSysCalls',['../d2/d1c/namespacebio_1_1init.html#af902b0f5691d9ec11678277978fd0e39',1,'bio::init']]],
+  ['innormalbuffer',['InNormalBuffer',['../de/d44/structbio_1_1hipc_1_1_in_normal_buffer.html#a572429f397aa83c4245f9aae78b1655d',1,'bio::hipc::InNormalBuffer']]],
+  ['inobjectid',['InObjectId',['../dc/da1/structbio_1_1hipc_1_1_in_object_id.html#a4db96b2314746a069effd67ababaf71e',1,'bio::hipc::InObjectId']]],
+  ['inputmanager',['InputManager',['../df/da1/classbio_1_1input_1_1_input_manager.html#af84a8cf58dd4b00ee21ef47c0480307f',1,'bio::input::InputManager']]],
+  ['inraw',['InRaw',['../d9/ddf/structbio_1_1hipc_1_1_in_raw.html#afc44226ddaf6cd58e5f92d316d1a6c28',1,'bio::hipc::InRaw']]],
+  ['insmartbuffer',['InSmartBuffer',['../d6/da5/structbio_1_1hipc_1_1_in_smart_buffer.html#a234b3d83669050054fd098d156b67363',1,'bio::hipc::InSmartBuffer']]],
+  ['instaticbuffer',['InStaticBuffer',['../d8/d27/structbio_1_1hipc_1_1_in_static_buffer.html#a7179c79c18f38b7bd256b394698158c0',1,'bio::hipc::InStaticBuffer']]],
+  ['isaarch64',['IsAArch64',['../db/da6/structbio_1_1arm_1_1_thread_context.html#ad5b792cbff27cc59be997221ca48cd1b',1,'bio::arm::ThreadContext::IsAArch64()'],['../d2/d66/structbio_1_1arm_1_1_thread_exception_dump.html#a6f0cb2783881b2454b1ea63845282be3',1,'bio::arm::ThreadExceptionDump::IsAArch64()']]],
+  ['isactive',['IsActive',['../d9/d3c/classbio_1_1hipc_1_1_object.html#a5e34c206ee019aed57f1f50c7ea2a146',1,'bio::hipc::Object']]],
+  ['isconnected',['IsConnected',['../d5/d5a/classbio_1_1input_1_1_player.html#af8dc328568214b951b77a32f7a23dbfb',1,'bio::input::Player']]],
+  ['isdomain',['IsDomain',['../d9/d3c/classbio_1_1hipc_1_1_object.html#afddf5ec698904965df3406b329125c10',1,'bio::hipc::Object']]],
+  ['isfailure',['IsFailure',['../d8/d6c/structbio_1_1_result.html#a7d160db7ae62c83970e1bffd58bce1a9',1,'bio::Result::IsFailure()'],['../d0/db8/classbio_1_1_result_class.html#a6056a24fb358c3912612377fdc1d4eb5',1,'bio::ResultClass::IsFailure()']]],
+  ['isnormal',['IsNormal',['../d9/d3c/classbio_1_1hipc_1_1_object.html#acd080c974ab28efb5de98b4bab3b1c25',1,'bio::hipc::Object']]],
+  ['issubservice',['IsSubService',['../d9/d3c/classbio_1_1hipc_1_1_object.html#ac5870add274c8bcfb4f95933af25f75c',1,'bio::hipc::Object']]],
+  ['issuccess',['IsSuccess',['../d8/d6c/structbio_1_1_result.html#aad6655779ed0d1fb0e7f9caefb918918',1,'bio::Result::IsSuccess()'],['../d0/db8/classbio_1_1_result_class.html#ad48b5a98b41a4860d7244cbb9124e10a',1,'bio::ResultClass::IsSuccess()']]],
+  ['isvalid',['IsValid',['../d9/d3c/classbio_1_1hipc_1_1_object.html#ab3165f37c6fab45c84f2080cdb47433f',1,'bio::hipc::Object']]]
+];

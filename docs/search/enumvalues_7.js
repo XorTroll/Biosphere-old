@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['idealcore',['IdealCore',['../d6/d5c/namespacebio.html#ab3fc7bffa8fd8f69e967603c6f24b5ebabeaddaa389f1b9dd859ea69ca7a04a99',1,'bio']]],
+  ['input',['Input',['../d8/dbd/namespacebio_1_1gpio.html#ab3fd69b894b06fa3011db5dec6f8f029a324118a6721dd6b8a9b9f4e327df2bf5',1,'bio::gpio']]],
+  ['instructionabort',['InstructionAbort',['../d4/d1e/namespacebio_1_1arm.html#a39b2cfc99ef2ba3a006391529c369b1ea861fc6ee6379ef09a36a78926b542543',1,'bio::arm']]],
+  ['io',['Io',['../d6/d5c/namespacebio.html#aceae0ecc27220acb5230fda898ec1b92a42a02b42ec22cfcbd78aaf7a66a5ee09',1,'bio']]],
+  ['ipcbuffer0',['IPCBuffer0',['../d6/d5c/namespacebio.html#aceae0ecc27220acb5230fda898ec1b92a66389d4bbfcf96b171a6e4b094255a99',1,'bio']]],
+  ['ipcbuffer1',['IPCBuffer1',['../d6/d5c/namespacebio.html#aceae0ecc27220acb5230fda898ec1b92a400b23b89a2e56bb875140e247f8aaca',1,'bio']]],
+  ['ipcbuffer3',['IPCBuffer3',['../d6/d5c/namespacebio.html#aceae0ecc27220acb5230fda898ec1b92a1b17a3679c819ae3bc7b2b012e2150d4',1,'bio']]],
+  ['ipcbufferallowed',['IPCBufferAllowed',['../d6/d5c/namespacebio.html#aa398150209e9229893785af286bd9b90aa6271578689790f247894dc5c4679f91',1,'bio']]],
+  ['ipcsendallowedt0',['IPCSendAllowedT0',['../d6/d5c/namespacebio.html#aa398150209e9229893785af286bd9b90ac04fd8dec3092dc66941278f4e7590ff',1,'bio']]],
+  ['ipcsendallowedt1',['IPCSendAllowedT1',['../d6/d5c/namespacebio.html#aa398150209e9229893785af286bd9b90aaafb611155aafa05ae8cd832d610c8b8',1,'bio']]],
+  ['ipcsendallowedt3',['IPCSendAllowedT3',['../d6/d5c/namespacebio.html#aa398150209e9229893785af286bd9b90ac9e98a2587c46b54154e982c0cc1f900',1,'bio']]],
+  ['isborrowed',['IsBorrowed',['../d6/d5c/namespacebio.html#a126bb8a00b6b2d207e1bd120e8d06e3fabecfcd9cb359d95c22274dbe0c7bba4f',1,'bio']]],
+  ['isdevicemapped',['IsDeviceMapped',['../d6/d5c/namespacebio.html#a126bb8a00b6b2d207e1bd120e8d06e3fa001c40ca7127561164058c1947fe7c65',1,'bio']]],
+  ['isipcmapped',['IsIPCMapped',['../d6/d5c/namespacebio.html#a126bb8a00b6b2d207e1bd120e8d06e3fa58e74b15e9a3560140ae2eec2c735f00',1,'bio']]],
+  ['ispoolallocated',['IsPoolAllocated',['../d6/d5c/namespacebio.html#aa398150209e9229893785af286bd9b90ad91ff7cc4b437ab86a563a0b41fc7df7',1,'bio']]],
+  ['isrefcounted',['IsRefCounted',['../d6/d5c/namespacebio.html#aa398150209e9229893785af286bd9b90a682018dfc1030b5b5e457570d6b9fae6',1,'bio']]],
+  ['isuncached',['IsUncached',['../d6/d5c/namespacebio.html#a126bb8a00b6b2d207e1bd120e8d06e3fa93a8b17d9e3e70708bd722ce1fc654bf',1,'bio']]]
+];
