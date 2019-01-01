@@ -8,6 +8,9 @@ namespace bio::fsp
     {
         public:
             using Object::Object;
+            ResultWrap<u64> Read(u64 Offset, void *Buffer, size_t Size);
+            Result Write(u64 Offset, void *Buffer, size_t Size);
+            Result Flush();
             Result SetSize(u64 Size);
             ResultWrap<u64> GetSize();
     };
@@ -16,6 +19,8 @@ namespace bio::fsp
     {
         public:
             using Object::Object;
+            ResultWrap<u64> Read(DirectoryEntry *Buffer, size_t MaxEntries);
+            ResultWrap<u64> GetEntryCount();
     };
 
     class FileSystem : public hipc::Object
