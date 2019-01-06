@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BiosphereProject>
+    <Includes>
+        <Include>Include</Include>
+    </Includes>
+    <Sources>
+        <Source>Source</Source>
+    </Sources>
+    <Output>Output</Output>
+    <Builds>
+        <Build>
+            <Mode>NRO</Mode>
+            <ApplicationId>0100ABCD12341000</ApplicationId>
+        </Build>
+    </Builds>
+</BiosphereProject>
