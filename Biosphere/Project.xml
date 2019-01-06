@@ -14,6 +14,7 @@
         <Include>Include\bio\biocoenosis\fauna</Include>
         <Include>Include\bio\biocoenosis\fauna\hipc</Include>
         <Include>Include\bio\biocoenosis\fauna\os</Include>
+        <Include>Include\bio\biocoenosis\fauna\utf</Include>
         <Include>Include\bio\biocoenosis\flora</Include>
         <Include>Include\bio\biocoenosis\flora\applet</Include>
         <Include>Include\bio\biocoenosis\flora\diag</Include>
@@ -38,6 +39,7 @@
         <Source>Source\bio\biocoenosis\fauna</Source>
         <Source>Source\bio\biocoenosis\fauna\hipc</Source>
         <Source>Source\bio\biocoenosis\fauna\os</Source>
+        <Source>Source\bio\biocoenosis\fauna\utf</Source>
         <Source>Source\bio\biocoenosis\flora</Source>
         <Source>Source\bio\biocoenosis\flora\applet</Source>
         <Source>Source\bio\biocoenosis\flora\diag</Source>

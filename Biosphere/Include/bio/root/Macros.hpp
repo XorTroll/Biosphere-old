@@ -12,6 +12,10 @@
 */
 
 #pragma once
+#include <cstdint>
+
+#define SSIZE_MAX (SIZE_MAX >> 1)
+#define U64_MAX UINT64_MAX
 
 #define BIO_PACKED __attribute__((packed))
 #define BIO_NORETURN __attribute__((noreturn))

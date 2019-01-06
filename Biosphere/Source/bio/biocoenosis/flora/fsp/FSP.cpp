@@ -98,7 +98,7 @@ namespace bio::fsp
     {
         u32 dh = 0;
         Result rc = this->ProcessRequest<9>(hipc::InRaw<u32>(Filter), hipc::InStaticBuffer((char*)Path, 0x301, 0), hipc::OutHandle<0>(dh));
-        return ResultWrap<File*>(rc, new Directory(dh));
+        return ResultWrap<Directory*>(rc, new Directory(dh));
     }
 
     Result FileSystem::Commit()
@@ -120,7 +120,7 @@ namespace bio::fsp
         return ResultWrap<u64>(rc, tss);
     }
 
-    Result CleanDirectoryRecursively(const char *Path)
+    Result FileSystem::CleanDirectoryRecursively(const char *Path)
     {
         if(os::GetFirmwareMajorVersion() < os::FirmwareMajor::Major3) return 0;
         return this->ProcessRequest<13>(hipc::InStaticBuffer((char*)Path, 0x301, 0));

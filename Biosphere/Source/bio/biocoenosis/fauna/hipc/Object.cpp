@@ -81,6 +81,7 @@ namespace bio::hipc
         if((!this->IsDomain()) && (!this->IsSubService()))
         {
             u32 *tls = (u32*)arm::GetThreadLocalStorage();
+            tls[0] = 5;
             tls[1] = 8;
             tls[4] = SFCI;
             tls[5] = 0;
@@ -108,6 +109,7 @@ namespace bio::hipc
                 size_t sh = shcopy + shmove;
                 u32 *ashbuf = tls + sh;
                 if(sh > 8) sh = 8;
+                outhdls.reserve(sh);
                 if(sh > 0) for(u32 i = 0; i < sh; i++) outhdls.push_back((u32)(*(tls + i)));
                 tls = ashbuf;
             }

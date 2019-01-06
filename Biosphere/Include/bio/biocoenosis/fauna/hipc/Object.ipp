@@ -3,6 +3,8 @@ namespace bio::hipc
     template<u32 CommandId, typename ...Arguments>
     Result Object::ProcessRequest(Arguments &&...Args)
     {
+        bool domainmode = (this->IsDomain() || this->IsSubService());
+        u64 orawsz = 0;
         RequestData rq;
         u32 *tls = (u32*)arm::GetThreadLocalStorage();
         rq.InRawSize += (alignof(u64) - 1);
@@ -14,12 +16,16 @@ namespace bio::hipc
         u64 cmdidoff = rq.InRawSize;
         rq.InRawSize += sizeof(u64);
         this->ProcessArgument(rq, 0, Args...);
-        if(this->IsDomain() || this->IsSubService()) rq.InRawSize += sizeof(DomainHeader) + (rq.InObjectIds.size() * sizeof(u32));
+        if(domainmode)
+        {
+            orawsz = rq.InRawSize;
+            rq.InRawSize += sizeof(DomainHeader) + (rq.InObjectIds.size() * sizeof(u32));
+        }
         *tls++ = (4 | (rq.InStaticBuffers.size() << 16) | (rq.InNormalBuffers.size() << 20) | (rq.OutNormalBuffers.size() << 24) | (rq.ExchangeBuffers.size() << 28));
         u32 *fillsz = tls;
         if(rq.OutStaticBuffers.size() > 0) *tls = ((rq.OutStaticBuffers.size() + 2) << 10);
         else *tls = 0;
-        if(rq.InProcessId || !rq.InCopyHandles.empty() || !rq.InMoveHandles.empty())
+        if(rq.InProcessId || (!rq.InCopyHandles.empty()) || (!rq.InMoveHandles.empty()))
         {
             *tls++ |= 0x80000000;
             *tls++ = ((!!rq.InProcessId) | (rq.InCopyHandles.size() << 1) | (rq.InMoveHandles.size() << 5));
@@ -87,16 +93,15 @@ namespace bio::hipc
             brd->Packed = ((uptr >> 32) | (outs.Size << 16));
         }
         void *vraw = (void*)raw;
-        if(this->IsDomain() || this->IsSubService())
+        if(domainmode)
         {
             DomainHeader *dh = (DomainHeader*)vraw;
-            u32 *ooids = (u32*)(((uintptr_t)vraw) + sizeof(DomainHeader) + rq.InRawSize);
+            u32 *ooids = (u32*)(((uintptr_t)vraw) + sizeof(DomainHeader) + orawsz);
             dh->Type = 1;
-            dh->ObjectIdCount = rq.InObjectIds.size();
-            dh->Size = rq.InRawSize;
+            dh->ObjectIdCount = (u8)rq.InObjectIds.size();
+            dh->Size = orawsz;
             dh->ObjectId = this->GetObjectId();
-            dh->Pad[0] = 0;
-            dh->Pad[1] = 0;
+            dh->Pad[0] = dh->Pad[1] = 0;
             if(!rq.InObjectIds.empty()) for(u32 i = 0; i < rq.InObjectIds.size(); i++) ooids[i] = rq.InObjectIds[i];
             vraw = (void*)(((uintptr_t)vraw) + sizeof(DomainHeader));
         }
@@ -131,10 +136,14 @@ namespace bio::hipc
             size_t oh = (ohcopy + ohmove);
             u32 *aftoh = (otls + oh);
             if(oh > 8) oh = 8;
-            if(oh > 0) for(u32 i = 0; i < oh; i++)
+            if(oh > 0)
             {
-                u32 hdl = *(otls + i);
-                rq.OutHandles.push_back(hdl);
+                rq.OutHandles.reserve(oh);
+                for(u32 i = 0; i < oh; i++)
+                {
+                    u32 hdl = *(otls + i);
+                    rq.OutHandles.push_back(hdl);
+                }
             }
             otls = aftoh;
         }
@@ -158,18 +167,23 @@ namespace bio::hipc
         {
             BufferCommandData *bcd = (BufferCommandData*)otls;
             BIO_IGNORE(bcd);
-        }
-        if(this->IsDomain() || this->IsSubService())
+        }       
+        if(domainmode)
         {
             DomainResponse *dr = (DomainResponse*)ovraw;
             ovraw = (void*)(((uintptr_t)ovraw) + sizeof(DomainResponse));
             u32 *ooids = (u32*)(((uintptr_t)ovraw) + rq.OutRawSize);
-            u32 ooidcount = ((dr->ObjectIdCount > 8) ? 8 : dr->ObjectIdCount);
-            if(ooidcount > 0) for(u32 i = 0; i < ooidcount; i++) rq.OutObjectIds.push_back(ooids[i]);
+            u32 ooidcount = dr->ObjectIdCount;
+            if(ooidcount > 8) ooidcount = 8;
+            if(ooidcount > 0)
+            {
+                rq.OutObjectIds = std::vector<u32>(ooidcount);
+                for(u32 i = 0; i < ooidcount; i++) rq.OutObjectIds.push_back(ooids[i]);
+            }
         }
         rq.OutRawData = (u8*)ovraw;
-        rc = (u32)(*((u64*)(((u8*)rq.OutRawData) + resoff)));
         this->ProcessArgument(rq, 5, Args...);
+        rc = (u32)(*((u64*)(((u8*)rq.OutRawData) + resoff)));
         return rc;
     }
 

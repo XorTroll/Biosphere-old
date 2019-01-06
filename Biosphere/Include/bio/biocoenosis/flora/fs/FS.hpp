@@ -5,6 +5,7 @@
 
 namespace bio::fs
 {
+    void Initialize(sm::ServiceManager *SM);
     Result Mount(fsp::FileSystem *FS, const char *DeviceName);
     Result MountSdCard(const char *DeviceName);
     Result MountRom(const char *DeviceName);

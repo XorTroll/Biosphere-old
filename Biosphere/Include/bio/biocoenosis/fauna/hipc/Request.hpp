@@ -2,6 +2,7 @@
 #pragma once
 #include <bio/biotope/arm.hpp>
 #include <bio/biotope/svc.hpp>
+#include <cstdlib>
 #include <vector>
 
 namespace bio::hipc

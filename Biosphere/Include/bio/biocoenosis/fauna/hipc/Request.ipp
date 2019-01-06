@@ -99,8 +99,8 @@ namespace bio::hipc
     {
         switch(Part)
         {
-            case 4:
-                this->ObjectId = Data.OutObjectIds[this->Index];
+            case 5:
+                if(Data.OutObjectIds.size() >= (this->Index + 1)) this->ObjectId = Data.OutObjectIds[this->Index];
                 break;
         }
     }

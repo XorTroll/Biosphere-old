@@ -10,7 +10,7 @@ namespace bio.eco
         public static int Main(string[] Args)
         {
             string proj = "";
-            if(Args == null || Args.Length == 0) proj = "D:\\Homebrew\\Projects\\Biosphere\\Biosphere";
+            if(Args == null || Args.Length == 0) proj = "E:\\Nintendo\\Switch\\Proyectos\\Biosphere\\Biosphere";
             else proj = Args[0];
             try
             {
