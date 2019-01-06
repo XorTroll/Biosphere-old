@@ -84,14 +84,14 @@ namespace bio::hipc
         std::vector<u32> InCopyHandles;
         std::vector<u32> InMoveHandles;
         std::vector<u32> InObjectIds;
-        std::vector<Buffer> InNormalBuffers;
+        std::vector<Buffer> InBuffers;
         std::vector<Buffer> InStaticBuffers;
         u64 OutProcessId;
         std::vector<u32> OutHandles;
         std::vector<u32> OutObjectIds;
         u8 *OutRawData;
         u64 OutRawSize;
-        std::vector<Buffer> OutNormalBuffers;
+        std::vector<Buffer> OutBuffers;
         std::vector<Buffer> OutStaticBuffers;
         std::vector<Buffer> ExchangeBuffers;
 
@@ -141,11 +141,11 @@ namespace bio::hipc
         void Process(RequestData &Data, u8 Part) override;
     };
 
-    struct InNormalBuffer : RequestArgument
+    struct InBuffer : RequestArgument
     {
-        Buffer InNormal;
+        Buffer In;
 
-        InNormalBuffer(const void *Data, size_t Size, u32 Type);
+        InBuffer(const void *Data, size_t Size, u32 Type);
         void Process(RequestData &Data, u8 Part) override;
     };
 
@@ -159,7 +159,7 @@ namespace bio::hipc
 
     struct InSmartBuffer : RequestArgument
     {
-        Buffer InNormal;
+        Buffer In;
         Buffer InStatic;
 
         InSmartBuffer(const void *Data, size_t Size, u32 Index, u64 ExpectedSize);
@@ -205,11 +205,11 @@ namespace bio::hipc
         void Process(RequestData &Data, u8 Part) override;
     };
 
-    struct OutNormalBuffer : RequestArgument
+    struct OutBuffer : RequestArgument
     {
-        Buffer OutNormal;
+        Buffer Out;
 
-        OutNormalBuffer(const void *Data, size_t Size, u32 Type);
+        OutBuffer(const void *Data, size_t Size, u32 Type);
         void Process(RequestData &Data, u8 Part) override;
     };
 
@@ -223,7 +223,7 @@ namespace bio::hipc
 
     struct OutSmartBuffer : RequestArgument
     {
-        Buffer OutNormal;
+        Buffer Out;
         Buffer OutStatic;
 
         OutSmartBuffer(const void *Data, size_t Size, u32 Index, u64 ExpectedSize);

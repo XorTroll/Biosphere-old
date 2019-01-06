@@ -151,6 +151,78 @@ namespace bio::hipc
         return rc;
     }
 
+    ResultWrap<size_t> Object::QueryPointerBufferSize()
+    {
+        Result rc = 0;
+        u32 *tls = (u32*)arm::GetThreadLocalStorage();
+        tls[0] = 5;
+        tls[1] = 8;
+        tls[2] = 0;
+        tls[3] = 0;
+        tls[4] = SFCI;
+        tls[5] = 0;
+        tls[6] = 3;
+        tls[7] = 0;
+        rc = svc::SendSyncRequest(this->handle);
+        if(rc.IsFailure()) return ResultWrap<size_t>(rc, 0);
+        u32 ctrl0 = *tls++;
+        u32 ctrl1 = *tls++;
+        bool gotpid = false;
+        u64 outpid = 0;
+        std::vector<u32> outhdls;
+        if(ctrl1 & 0x80000000)
+        {
+            u32 ctrl2 = *tls++;
+            if(ctrl2 & 1)
+            {
+                gotpid = true;
+                u64 opid = *tls++;
+                opid |= (((u64)(*tls++)) << 32);
+                outpid = opid;
+            }
+            size_t shcopy = ((ctrl2 >> 1) & 15);
+            size_t shmove = ((ctrl2 >> 5) & 15);
+            size_t sh = shcopy + shmove;
+            u32 *ashbuf = tls + sh;
+            if(sh > 8) sh = 8;
+            outhdls.reserve(sh);
+            if(sh > 0) for(u32 i = 0; i < sh; i++) outhdls.push_back((u32)(*(tls + i)));
+            tls = ashbuf;
+        }
+        size_t s_st = ((ctrl0 >> 16) & 15);
+        u32 *abst = (tls + s_st * 2);
+        if(s_st > 8) s_st = 8;
+        for(u32 i = 0; i < s_st; i++, tls += 2)
+        {
+            BufferSendData *bsd = (BufferSendData*)tls;
+            BIO_IGNORE(bsd);
+        }
+        tls = abst;
+        size_t sends = ((ctrl0 >> 20) & 15);
+        size_t recvs = ((ctrl0 >> 24) & 15);
+        size_t exchs = ((ctrl0 >> 28) & 15);
+        size_t bufs = (sends + recvs + exchs);
+        void *outraw = (void*)(((uintptr_t)(tls + bufs * 3) + 15) &~ 15);
+        void *wpadraw = (void*)((uintptr_t)(tls + bufs * 3));
+        BIO_IGNORE(wpadraw);
+        if(bufs > 8) bufs = 8;
+        for(u32 i = 0; i < bufs; i++, tls += 3)
+        {
+            BufferCommandData *bcd = (BufferCommandData*)tls;
+            BIO_IGNORE(bcd);
+        }
+        struct QueryRaw
+        {
+            u64 magic;
+            u64 res;
+            u32 size;
+        } *oraw = (QueryRaw*)outraw;
+        rc = oraw->res;
+        size_t sz = 0;
+        if(rc.IsSuccess()) sz = (oraw->size & 0xffff);
+        return ResultWrap<size_t>(rc, sz);
+    }
+
     void Object::Close()
     {
         if(this->IsActive())
@@ -160,7 +232,7 @@ namespace bio::hipc
                 RequestData rq;
                 rq.InRawSize = sizeof(DomainHeader);
                 u32 *tls = (u32*)arm::GetThreadLocalStorage();
-                *tls++ = (4 | (rq.InStaticBuffers.size() << 16) | (rq.InNormalBuffers.size() << 20) | (rq.OutNormalBuffers.size() << 24) | (rq.ExchangeBuffers.size() << 28));
+                *tls++ = (4 | (rq.InStaticBuffers.size() << 16) | (rq.InBuffers.size() << 20) | (rq.OutBuffers.size() << 24) | (rq.ExchangeBuffers.size() << 28));
                 u32 *fillsz = tls;
                 if(rq.OutStaticBuffers.size() > 0) *tls = ((rq.OutStaticBuffers.size() + 2) << 10);
                 else *tls = 0;
@@ -181,18 +253,18 @@ namespace bio::hipc
                     bsd->Address = uptr;
                     bsd->Packed = (ins.Info.Index | (ins.Size << 16) | (((uptr >> 32) & 15) << 12) | (((uptr >> 36) & 15) << 6));
                 }
-                if(!rq.InNormalBuffers.empty()) for(u32 i = 0; i < rq.InNormalBuffers.size(); i++, tls += 3)
+                if(!rq.InBuffers.empty()) for(u32 i = 0; i < rq.InBuffers.size(); i++, tls += 3)
                 {
-                    Buffer inn = rq.InNormalBuffers[i];
+                    Buffer inn = rq.InBuffers[i];
                     BufferCommandData *bcd = (BufferCommandData*)tls;
                     bcd->Size = inn.Size;
                     uintptr_t uptr = (uintptr_t)inn.Data;
                     bcd->Address = uptr;
                     bcd->Packed = (inn.Info.Type | (((uptr >> 32) & 15) << 28) | ((uptr >> 36) << 2));
                 }
-                if(!rq.OutNormalBuffers.empty()) for(u32 i = 0; i < rq.OutNormalBuffers.size(); i++, tls += 3)
+                if(!rq.OutBuffers.empty()) for(u32 i = 0; i < rq.OutBuffers.size(); i++, tls += 3)
                 {
-                    Buffer outn = rq.OutNormalBuffers[i];
+                    Buffer outn = rq.OutBuffers[i];
                     BufferCommandData *bcd = (BufferCommandData*)tls;
                     bcd->Size = outn.Size;
                     uintptr_t uptr = (uintptr_t)outn.Data;

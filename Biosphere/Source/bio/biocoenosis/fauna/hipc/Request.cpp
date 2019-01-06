@@ -62,16 +62,16 @@ namespace bio::hipc
         }
     }
 
-    InNormalBuffer::InNormalBuffer(const void *Data, size_t Size, u32 Type) : InNormal(BufferInfo::Normal(Type), Data, Size)
+    InBuffer::InBuffer(const void *Data, size_t Size, u32 Type) : In(BufferInfo::Normal(Type), Data, Size)
     {
     }
 
-    void InNormalBuffer::Process(RequestData &Data, u8 Part)
+    void InBuffer::Process(RequestData &Data, u8 Part)
     {
         switch(Part)
         {
             case 0:
-                Data.InNormalBuffers.push_back(this->InNormal);
+                Data.InBuffers.push_back(this->In);
                 break;
         }
     }
@@ -90,11 +90,11 @@ namespace bio::hipc
         }
     }
 
-    InSmartBuffer::InSmartBuffer(const void *Data, size_t Size, u32 Index, u64 ExpectedSize) : InNormal({ BufferMode::Normal, 0, 0, 0 }, Data, Size), InStatic({ BufferMode::Static, 0, Index, 0 }, NULL, 0)
+    InSmartBuffer::InSmartBuffer(const void *Data, size_t Size, u32 Index, u64 ExpectedSize) : In({ BufferMode::Normal, 0, 0, 0 }, Data, Size), InStatic({ BufferMode::Static, 0, Index, 0 }, NULL, 0)
     {
         if((ExpectedSize != 0) && (Size <= ExpectedSize))
         {
-            this->InNormal = Buffer({ BufferMode::Normal, 0, 0, 0 }, NULL, 0);
+            this->In = Buffer({ BufferMode::Normal, 0, 0, 0 }, NULL, 0);
             this->InStatic = Buffer({ BufferMode::Static, 0, Index, 0 }, Data, Size);
         }
     }
@@ -104,7 +104,7 @@ namespace bio::hipc
         switch(Part)
         {
             case 0:
-                Data.InNormalBuffers.push_back(this->InNormal);
+                Data.InBuffers.push_back(this->In);
                 Data.InStaticBuffers.push_back(this->InStatic);
                 break;
         }
@@ -124,16 +124,16 @@ namespace bio::hipc
         }
     }
 
-    OutNormalBuffer::OutNormalBuffer(const void *Data, size_t Size, u32 Type) : OutNormal(BufferInfo::Normal(Type), Data, Size)
+    OutBuffer::OutBuffer(const void *Data, size_t Size, u32 Type) : Out(BufferInfo::Normal(Type), Data, Size)
     {
     }
 
-    void OutNormalBuffer::Process(RequestData &Data, u8 Part)
+    void OutBuffer::Process(RequestData &Data, u8 Part)
     {
         switch(Part)
         {
             case 0:
-                Data.OutNormalBuffers.push_back(this->OutNormal);
+                Data.OutBuffers.push_back(this->Out);
                 break;
         }
     }
@@ -152,11 +152,11 @@ namespace bio::hipc
         }
     }
 
-    OutSmartBuffer::OutSmartBuffer(const void *Data, size_t Size, u32 Index, u64 ExpectedSize) : OutNormal({ BufferMode::Normal, 0, 0, 0 }, Data, Size), OutStatic({ BufferMode::Static, 0, Index, 0 }, NULL, 0)
+    OutSmartBuffer::OutSmartBuffer(const void *Data, size_t Size, u32 Index, u64 ExpectedSize) : Out({ BufferMode::Normal, 0, 0, 0 }, Data, Size), OutStatic({ BufferMode::Static, 0, Index, 0 }, NULL, 0)
     {
         if((ExpectedSize != 0) && (Size <= ExpectedSize))
         {
-            this->OutNormal = Buffer({ BufferMode::Normal, 0, 0, 0 }, NULL, 0);
+            this->Out = Buffer({ BufferMode::Normal, 0, 0, 0 }, NULL, 0);
             this->OutStatic = Buffer({ BufferMode::Static, 0, Index, 0 }, Data, Size);
         }
     }
@@ -166,7 +166,7 @@ namespace bio::hipc
         switch(Part)
         {
             case 0:
-                Data.OutNormalBuffers.push_back(this->OutNormal);
+                Data.OutBuffers.push_back(this->Out);
                 Data.OutStaticBuffers.push_back(this->OutStatic);
                 break;
         }

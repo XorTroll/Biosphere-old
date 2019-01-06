@@ -10,7 +10,7 @@ var searchData=
   ['initializestandardconstructors',['InitializeStandardConstructors',['../d2/d1c/namespacebio_1_1init.html#a4ca4e21ea7ded6d8fb47d3f905e3217a',1,'bio::init']]],
   ['initializestandardfilesystem',['InitializeStandardFileSystem',['../d2/d1c/namespacebio_1_1init.html#a693ac922764c8e55a96d39c9ac196bbc',1,'bio::init']]],
   ['initializestandardsyscalls',['InitializeStandardSysCalls',['../d2/d1c/namespacebio_1_1init.html#af902b0f5691d9ec11678277978fd0e39',1,'bio::init']]],
-  ['innormalbuffer',['InNormalBuffer',['../de/d44/structbio_1_1hipc_1_1_in_normal_buffer.html#a572429f397aa83c4245f9aae78b1655d',1,'bio::hipc::InNormalBuffer']]],
+  ['innormalbuffer',['InBuffer',['../de/d44/structbio_1_1hipc_1_1_in_normal_buffer.html#a572429f397aa83c4245f9aae78b1655d',1,'bio::hipc::InBuffer']]],
   ['inobjectid',['InObjectId',['../dc/da1/structbio_1_1hipc_1_1_in_object_id.html#a4db96b2314746a069effd67ababaf71e',1,'bio::hipc::InObjectId']]],
   ['inputmanager',['InputManager',['../df/da1/classbio_1_1input_1_1_input_manager.html#af84a8cf58dd4b00ee21ef47c0480307f',1,'bio::input::InputManager']]],
   ['inraw',['InRaw',['../d9/ddf/structbio_1_1hipc_1_1_in_raw.html#afc44226ddaf6cd58e5f92d316d1a6c28',1,'bio::hipc::InRaw']]],

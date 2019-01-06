@@ -3,7 +3,7 @@ var searchData=
   ['object',['Object',['../d9/d3c/classbio_1_1hipc_1_1_object.html',1,'bio::hipc']]],
   ['oeservice',['OeService',['../d8/d1d/classbio_1_1applet_1_1oe_1_1_oe_service.html',1,'bio::applet::oe']]],
   ['outhandle',['OutHandle',['../d8/de8/structbio_1_1hipc_1_1_out_handle.html',1,'bio::hipc']]],
-  ['outnormalbuffer',['OutNormalBuffer',['../de/ddc/structbio_1_1hipc_1_1_out_normal_buffer.html',1,'bio::hipc']]],
+  ['outnormalbuffer',['OutBuffer',['../de/ddc/structbio_1_1hipc_1_1_out_normal_buffer.html',1,'bio::hipc']]],
   ['outobjectid',['OutObjectId',['../d9/dd0/structbio_1_1hipc_1_1_out_object_id.html',1,'bio::hipc']]],
   ['outprocessid',['OutProcessId',['../df/d16/structbio_1_1hipc_1_1_out_process_id.html',1,'bio::hipc']]],
   ['outraw',['OutRaw',['../df/d85/structbio_1_1hipc_1_1_out_raw.html',1,'bio::hipc']]],

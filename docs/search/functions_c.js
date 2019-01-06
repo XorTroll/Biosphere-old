@@ -15,7 +15,7 @@ var searchData=
   ['operator_21_3d',['operator!=',['../d5/d65/structbio_1_1_application_id.html#a6b6da61b7803450fe6cfe928f04c300a',1,'bio::ApplicationId::operator!=()'],['../d8/d6c/structbio_1_1_result.html#a2c5d58fec65aee68849f4b61780b5103',1,'bio::Result::operator!=()']]],
   ['operator_3d_3d',['operator==',['../d5/d65/structbio_1_1_application_id.html#a06fc31aebc1ca885d153dd55e5655dbf',1,'bio::ApplicationId::operator==()'],['../d8/d6c/structbio_1_1_result.html#a0933379563dc16d7ff1a2504081eddbf',1,'bio::Result::operator==()']]],
   ['outhandle',['OutHandle',['../d8/de8/structbio_1_1hipc_1_1_out_handle.html#a824c1f1a412c01406f95a58a412e5c45',1,'bio::hipc::OutHandle']]],
-  ['outnormalbuffer',['OutNormalBuffer',['../de/ddc/structbio_1_1hipc_1_1_out_normal_buffer.html#ae43375d55a973ec11310b99e74fb2d05',1,'bio::hipc::OutNormalBuffer']]],
+  ['outnormalbuffer',['OutBuffer',['../de/ddc/structbio_1_1hipc_1_1_out_normal_buffer.html#ae43375d55a973ec11310b99e74fb2d05',1,'bio::hipc::OutBuffer']]],
   ['outobjectid',['OutObjectId',['../d9/dd0/structbio_1_1hipc_1_1_out_object_id.html#a5e221cbfc409ae39c643cb97599d22f8',1,'bio::hipc::OutObjectId']]],
   ['outprocessid',['OutProcessId',['../df/d16/structbio_1_1hipc_1_1_out_process_id.html#ae9c12eb6691dc76d17935a44fac3b6e3',1,'bio::hipc::OutProcessId']]],
   ['outputdebugstring',['OutputDebugString',['../d8/d1b/namespacebio_1_1svc.html#a5d3fe10fc0e8dc8aa4012455cdb352e3',1,'bio::svc']]],

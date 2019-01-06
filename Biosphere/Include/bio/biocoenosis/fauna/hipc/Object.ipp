@@ -21,7 +21,7 @@ namespace bio::hipc
             orawsz = rq.InRawSize;
             rq.InRawSize += sizeof(DomainHeader) + (rq.InObjectIds.size() * sizeof(u32));
         }
-        *tls++ = (4 | (rq.InStaticBuffers.size() << 16) | (rq.InNormalBuffers.size() << 20) | (rq.OutNormalBuffers.size() << 24) | (rq.ExchangeBuffers.size() << 28));
+        *tls++ = (4 | (rq.InStaticBuffers.size() << 16) | (rq.InBuffers.size() << 20) | (rq.OutBuffers.size() << 24) | (rq.ExchangeBuffers.size() << 28));
         u32 *fillsz = tls;
         if(rq.OutStaticBuffers.size() > 0) *tls = ((rq.OutStaticBuffers.size() + 2) << 10);
         else *tls = 0;
@@ -42,23 +42,23 @@ namespace bio::hipc
             bsd->Address = uptr;
             bsd->Packed = (ins.Info.Index | (ins.Size << 16) | (((uptr >> 32) & 15) << 12) | (((uptr >> 36) & 15) << 6));
         }
-        if(!rq.InNormalBuffers.empty()) for(u32 i = 0; i < rq.InNormalBuffers.size(); i++, tls += 3)
+        if(!rq.InBuffers.empty()) for(u32 i = 0; i < rq.InBuffers.size(); i++, tls += 3)
         {
-            Buffer inn = rq.InNormalBuffers[i];
+            Buffer in = rq.InBuffers[i];
             BufferCommandData *bcd = (BufferCommandData*)tls;
-            bcd->Size = inn.Size;
-            uintptr_t uptr = (uintptr_t)inn.Data;
+            bcd->Size = in.Size;
+            uintptr_t uptr = (uintptr_t)in.Data;
             bcd->Address = uptr;
-            bcd->Packed = (inn.Info.Type | (((uptr >> 32) & 15) << 28) | ((uptr >> 36) << 2));
+            bcd->Packed = (in.Info.Type | (((uptr >> 32) & 15) << 28) | ((uptr >> 36) << 2));
         }
-        if(!rq.OutNormalBuffers.empty()) for(u32 i = 0; i < rq.OutNormalBuffers.size(); i++, tls += 3)
+        if(!rq.OutBuffers.empty()) for(u32 i = 0; i < rq.OutBuffers.size(); i++, tls += 3)
         {
-            Buffer outn = rq.OutNormalBuffers[i];
+            Buffer out = rq.OutBuffers[i];
             BufferCommandData *bcd = (BufferCommandData*)tls;
-            bcd->Size = outn.Size;
-            uintptr_t uptr = (uintptr_t)outn.Data;
+            bcd->Size = out.Size;
+            uintptr_t uptr = (uintptr_t)out.Data;
             bcd->Address = uptr;
-            bcd->Packed = (outn.Info.Type | (((uptr >> 32) & 15) << 28) | ((uptr >> 36) << 2));
+            bcd->Packed = (out.Info.Type | (((uptr >> 32) & 15) << 28) | ((uptr >> 36) << 2));
         }
         if(!rq.ExchangeBuffers.empty()) for(u32 i = 0; i < rq.ExchangeBuffers.size(); i++, tls += 3)
         {
@@ -171,15 +171,15 @@ namespace bio::hipc
         if(domainmode)
         {
             DomainResponse *dr = (DomainResponse*)ovraw;
-            ovraw = (void*)(((uintptr_t)ovraw) + sizeof(DomainResponse));
-            u32 *ooids = (u32*)(((uintptr_t)ovraw) + rq.OutRawSize);
+            u32 *ooids = (u32*)(((uintptr_t)ovraw) + sizeof(DomainResponse) + rq.OutRawSize);
             u32 ooidcount = dr->ObjectIdCount;
             if(ooidcount > 8) ooidcount = 8;
             if(ooidcount > 0)
             {
-                rq.OutObjectIds = std::vector<u32>(ooidcount);
+                rq.OutObjectIds.reserve(ooidcount);
                 for(u32 i = 0; i < ooidcount; i++) rq.OutObjectIds.push_back(ooids[i]);
             }
+            ovraw = (void*)(((uintptr_t)ovraw) + sizeof(DomainResponse));
         }
         rq.OutRawData = (u8*)ovraw;
         this->ProcessArgument(rq, 5, Args...);

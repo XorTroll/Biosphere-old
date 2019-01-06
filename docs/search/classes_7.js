@@ -1,7 +1,7 @@
 var searchData=
 [
   ['inhandle',['InHandle',['../da/db3/structbio_1_1hipc_1_1_in_handle.html',1,'bio::hipc']]],
-  ['innormalbuffer',['InNormalBuffer',['../de/d44/structbio_1_1hipc_1_1_in_normal_buffer.html',1,'bio::hipc']]],
+  ['innormalbuffer',['InBuffer',['../de/d44/structbio_1_1hipc_1_1_in_normal_buffer.html',1,'bio::hipc']]],
   ['inobjectid',['InObjectId',['../dc/da1/structbio_1_1hipc_1_1_in_object_id.html',1,'bio::hipc']]],
   ['inprocessid',['InProcessId',['../d0/d42/structbio_1_1hipc_1_1_in_process_id.html',1,'bio::hipc']]],
   ['inputmanager',['InputManager',['../df/da1/classbio_1_1input_1_1_input_manager.html',1,'bio::input']]],

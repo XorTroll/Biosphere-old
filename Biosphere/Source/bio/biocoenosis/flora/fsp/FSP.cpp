@@ -5,13 +5,13 @@ namespace bio::fsp
     ResultWrap<u64> File::Read(u64 Offset, void *Buffer, size_t Size)
     {
         u64 read = 0;
-        Result rc = this->ProcessRequest<0>(hipc::InRaw<u64>(0), hipc::InRaw<u64>(Offset), hipc::InRaw<u64>(Size), hipc::OutNormalBuffer(Buffer, Size, 1), hipc::OutRaw<u64>(read));
+        Result rc = this->ProcessRequest<0>(hipc::InRaw<u64>(0), hipc::InRaw<u64>(Offset), hipc::InRaw<u64>(Size), hipc::OutBuffer(Buffer, Size, 1), hipc::OutRaw<u64>(read));
         return ResultWrap<u64>(rc, read);
     }
 
     Result File::Write(u64 Offset, void *Buffer, size_t Size)
     {
-        return this->ProcessRequest<1>(hipc::InRaw<u64>(0), hipc::InRaw<u64>(Offset), hipc::InRaw<u64>(Size), hipc::InNormalBuffer(Buffer, Size, 1));
+        return this->ProcessRequest<1>(hipc::InRaw<u64>(0), hipc::InRaw<u64>(Offset), hipc::InRaw<u64>(Size), hipc::InBuffer(Buffer, Size, 1));
     }
 
     Result File::Flush()
@@ -34,7 +34,7 @@ namespace bio::fsp
     ResultWrap<u64> Directory::Read(DirectoryEntry *Buffer, size_t MaxEntries)
     {
         u64 total = 0;
-        Result rc = this->ProcessRequest<0>(hipc::OutNormalBuffer(Buffer, (sizeof(DirectoryEntry) * MaxEntries), 0), hipc::InRaw<u64>(0), hipc::OutRaw<u64>(total));
+        Result rc = this->ProcessRequest<0>(hipc::OutBuffer(Buffer, (sizeof(DirectoryEntry) * MaxEntries), 0), hipc::InRaw<u64>(0), hipc::OutRaw<u64>(total));
         return ResultWrap<u64>(rc, total);
     }
 

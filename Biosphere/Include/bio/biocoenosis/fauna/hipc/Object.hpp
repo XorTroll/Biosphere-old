@@ -31,6 +31,7 @@ namespace bio::hipc
             bool IsDomain();
             bool IsSubService();
             Result ConvertToDomain();
+            ResultWrap<size_t> QueryPointerBufferSize();
             template<u32 CommandId, typename ...Arguments>
             Result ProcessRequest(Arguments &&...Args);
             void Close();
