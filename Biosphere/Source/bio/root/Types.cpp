@@ -1,5 +1,5 @@
 #include <bio/root/Types.hpp>
-#include <bio/biocoenosis/flora/diag.hpp>
+#include <bio/biocoenosis/flora/err.hpp>
 
 namespace bio
 {
@@ -53,11 +53,7 @@ namespace bio
 
     void Result::AssertOk()
     {
-        if(this->IsFailure())
-        {
-            if(!diag::HasInitialized()) exit((u32)*this);
-            else diag::AssertResultOk(*this);
-        }
+        if(this->IsFailure()) err::Throw((u32)*this);
     }
 
     bool Result::operator==(const Result &Other)

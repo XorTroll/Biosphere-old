@@ -12,6 +12,7 @@
 */
 
 #pragma once
+#include <bio/biocoenosis/fauna/os/Event.hpp>
 #include <bio/biocoenosis/fauna/os/Kernel.hpp>
 #include <bio/biocoenosis/fauna/os/Memory.hpp>
 #include <bio/biocoenosis/fauna/os/Mutex.hpp>

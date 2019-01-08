@@ -4,7 +4,7 @@ namespace bio::fatal
 {
     Result FatalService::ThrowWithPolicy(Result Error, ThrowMode Mode)
     {
-        return this->ProcessRequest<1>(hipc::InProcessId(), hipc::InRaw<u32>(Error), hipc::InRaw<u32>(static_cast<u32>(Mode)), hipc::InRaw<u64>(0));
+        return this->ProcessRequest<1>(hipc::InProcessId(), hipc::InRaw<u32>((u32)Error), hipc::InRaw<u32>(static_cast<u32>(Mode)), hipc::InRaw<u64>(0));
     }
 
     ResultWrap<FatalService*> Initialize(sm::ServiceManager *SM)

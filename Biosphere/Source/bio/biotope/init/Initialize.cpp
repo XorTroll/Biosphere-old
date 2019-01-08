@@ -1,6 +1,6 @@
 #include <bio/biotope/init/Initialize.hpp>
 #include <bio/biocoenosis/fauna/os/Memory.hpp>
-#include <bio/biocoenosis/flora/diag.hpp>
+#include <bio/biocoenosis/flora/err.hpp>
 #include <bio/root/Types.hpp>
 #include <vector>
 #include <elf.h>
@@ -161,11 +161,7 @@ namespace bio::init
         __syscalls.getreent = []() -> struct _reent*
         {
             bio::os::ThreadVariables *v = bio::os::Thread::GetThreadVariables();
-            if(v->Magic != 0x21545624)
-            {
-                if(!bio::diag::HasInitialized()) bio::diag::Initialize(bio::sm::Initialize().AssertOk());
-                bio::diag::AssertResultOk(bio::ResultWrongReentStruct);
-            }
+            if(v->Magic != 0x21545624) bio::err::Throw(bio::ResultWrongReentStruct);
             return v->Reent;
         };
         __syscalls.clock_gettime = [](clockid_t ClockID, struct timespec *Spec) -> int
@@ -335,11 +331,7 @@ namespace bio::init
                 addrspace.Start = 0x8000000ull;
                 addrspace.End = 0x100000000ull;
             }
-            else
-            {
-                if(!bio::diag::HasInitialized()) bio::diag::Initialize(bio::sm::Initialize().AssertOk());
-                bio::diag::AssertResultOk(bio::ResultWeirdKernelInformation);
-            }
+            else bio::err::Throw(bio::ResultWeirdKernelInformation);
         }
         rc = svc::GetInfo(&base, 2, bio::os::GetCurrentProcessHandle(), 0);
         if(rc == 0)
@@ -351,11 +343,7 @@ namespace bio::init
                 regs[static_cast<u32>(bio::os::Region::Stack)].End = base + size;
             }
         }
-        if(rc != 0)
-        {
-            if(!bio::diag::HasInitialized()) bio::diag::Initialize(bio::sm::Initialize().AssertOk());
-            bio::diag::AssertResultOk(bio::ResultRequestStackInformation);
-        }
+        if(rc != 0) bio::err::Throw(bio::ResultRequestStackInformation);
         rc = svc::GetInfo(&base, 4, bio::os::GetCurrentProcessHandle(), 0);
         if(rc == 0)
         {
@@ -366,11 +354,7 @@ namespace bio::init
                 regs[static_cast<u32>(bio::os::Region::Heap)].End = base + size;
             }
         }
-        if(rc != 0)
-        {
-            if(!bio::diag::HasInitialized()) bio::diag::Initialize(bio::sm::Initialize().AssertOk());
-            bio::diag::AssertResultOk(bio::ResultRequestHeapInformation);
-        }
+        if(rc != 0) bio::err::Throw(bio::ResultRequestHeapInformation);
         rc = svc::GetInfo(&base, 14, bio::os::GetCurrentProcessHandle(), 0);
         if(rc == 0)
         {
@@ -400,11 +384,7 @@ namespace bio::init
             }
             else heapsze = vheapsize;
             rc = svc::SetHeapSize(&addr, heapsze);
-            if(rc != 0)
-            {
-                if(!bio::diag::HasInitialized()) bio::diag::Initialize(bio::sm::Initialize().AssertOk());
-                bio::diag::AssertResultOk(bio::ResultHeapAllocation);
-            }
+            if(rc != 0) bio::err::Throw(bio::ResultHeapAllocation);
         }
         fake_heap_start = (char*)addr;
         fake_heap_end = (char*)addr + heapsze;
@@ -579,11 +559,7 @@ extern "C"
                     break;
             }
         }
-        if(rela == NULL)
-        {
-            if(!bio::diag::HasInitialized()) bio::diag::Initialize(bio::sm::Initialize().AssertOk());
-            bio::diag::AssertResultOk(bio::ResultWrongRelocate);
-        }
+        if(rela == NULL) bio::err::Throw(bio::ResultWrongRelocate);
         for(; relasz--; rela++)
         {
             switch(ELF64_R_TYPE(rela->r_info))
@@ -597,9 +573,4 @@ extern "C"
             }
         }
     }
-}
-
-int main()
-{
-    return bio::Main();
 }

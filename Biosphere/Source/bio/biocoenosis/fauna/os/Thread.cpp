@@ -1,5 +1,5 @@
 #include <bio/biocoenosis/fauna/os/Thread.hpp>
-#include <bio/biocoenosis/flora/diag.hpp>
+#include <bio/biocoenosis/flora/err.hpp>
 
 extern const u8 __tdata_lma[];
 extern const u8 __tdata_lma_end[];
@@ -32,16 +32,12 @@ namespace bio::os
 {
     Thread::Thread(ThreadFunction Entry, void *Arguments, size_t StackSize, int Priority, int CPUId)
     {
-        StackSize = (StackSize + 0xfff) &~ 0xfff;
+        StackSize = ((StackSize + 0xfff) &~ 0xfff);
         u32 rc = 0;
         size_t reents = ((sizeof(struct _reent) + 0xf) &~ 0xf);
         size_t tlss = ((__tls_end - __tls_start + 0xf) &~ 0xf);
         void *stack = memalign(0x1000, StackSize + reents + tlss);
-        if(stack == NULL)
-        {
-            if(!bio::diag::HasInitialized()) bio::diag::Initialize(bio::sm::Initialize().AssertOk());
-            bio::diag::AssertResultOk(0x1); // OutOfMemory
-        }
+        if(stack == NULL) bio::err::Throw(bio::ResultOutOfMemory);
         else
         {
             void *stackm = VirtualMemory::ReserveMap(StackSize);

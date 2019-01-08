@@ -13,7 +13,7 @@
 
 #pragma once
 #include <bio/biocoenosis/flora/applet.hpp>
-#include <bio/biocoenosis/flora/diag.hpp>
+#include <bio/biocoenosis/flora/err.hpp>
 #include <bio/biocoenosis/flora/fatal.hpp>
 #include <bio/biocoenosis/flora/fsp.hpp>
 #include <bio/biocoenosis/flora/gpio.hpp>

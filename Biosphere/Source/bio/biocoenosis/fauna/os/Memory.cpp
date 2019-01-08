@@ -1,5 +1,5 @@
 #include <bio/biocoenosis/fauna/os/Memory.hpp>
-#include <bio/biocoenosis/flora/diag.hpp>
+#include <bio/biocoenosis/flora/err.hpp>
 
 extern bio::os::VirtualRegion addrspace;
 extern bio::os::VirtualRegion regs[4];
@@ -23,11 +23,7 @@ namespace bio::os
             addr += 0x1000;
             if(!((addr >= addrspace.Start) && (addr < addrspace.End))) addr = addrspace.Start;
             rc = svc::QueryMemory(&meminfo, &pageinfo, addr);
-            if(rc != 0)
-            {
-                if(!bio::diag::HasInitialized()) bio::diag::Initialize(bio::sm::Initialize().AssertOk());
-                bio::diag::AssertResultOk(bio::ResultMemoryQuery);
-            }
+            if(rc != 0) bio::err::Throw(bio::ResultMemoryQuery);
             if(meminfo.Type != 0)
             {
                 addr = meminfo.Address + meminfo.Size;
@@ -76,11 +72,7 @@ namespace bio::os
             addr += 0x1000;
             if(!((addr >= regs[regidx].Start) && (addr < regs[regidx].End))) addr = regs[regidx].Start;
             rc = svc::QueryMemory(&meminfo, &pageinfo, addr);
-            if(rc != 0)
-            {
-                if(!bio::diag::HasInitialized()) bio::diag::Initialize(bio::sm::Initialize().AssertOk());
-                bio::diag::AssertResultOk(bio::ResultMemoryQuery);
-            }
+            if(rc != 0) bio::err::Throw(bio::ResultMemoryQuery);
             if(meminfo.Type != 0)
             {
                 addr = (meminfo.Address + meminfo.Size);

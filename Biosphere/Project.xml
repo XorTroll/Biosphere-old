@@ -17,7 +17,7 @@
         <Include>Include\bio\biocoenosis\fauna\utf</Include>
         <Include>Include\bio\biocoenosis\flora</Include>
         <Include>Include\bio\biocoenosis\flora\applet</Include>
-        <Include>Include\bio\biocoenosis\flora\diag</Include>
+        <Include>Include\bio\biocoenosis\flora\err</Include>
         <Include>Include\bio\biocoenosis\flora\fatal</Include>
         <Include>Include\bio\biocoenosis\flora\fsp</Include>
         <Include>Include\bio\biocoenosis\flora\gpio</Include>
@@ -42,7 +42,7 @@
         <Source>Source\bio\biocoenosis\fauna\utf</Source>
         <Source>Source\bio\biocoenosis\flora</Source>
         <Source>Source\bio\biocoenosis\flora\applet</Source>
-        <Source>Source\bio\biocoenosis\flora\diag</Source>
+        <Source>Source\bio\biocoenosis\flora\err</Source>
         <Source>Source\bio\biocoenosis\flora\fatal</Source>
         <Source>Source\bio\biocoenosis\flora\fsp</Source>
         <Source>Source\bio\biocoenosis\flora\gpio</Source>

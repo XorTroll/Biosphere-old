@@ -3,7 +3,7 @@
 
     Biosphere library
 
-    @file biosphere
+    @file Biosphere
     @brief Biosphere library's main header. (include this to use this library properly)
     @author XorTroll
 
