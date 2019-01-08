@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['read',['Read',['../d5/d7f/classbio_1_1fsp_1_1_file.html#a6bfe6a931c68e6272f63cc953b0f97b7',1,'bio::fsp::File::Read()'],['../d9/d74/classbio_1_1fsp_1_1_directory.html#ab368470acf3408da5eef7a104ccff1bd',1,'bio::fsp::Directory::Read()']]],
   ['readdebugprocessmemory',['ReadDebugProcessMemory',['../d8/d1b/namespacebio_1_1svc.html#a999236401cc46a9424c6a0113cb9e64f',1,'bio::svc']]],
   ['readerwriterlock',['ReaderWriterLock',['../d2/d72/classbio_1_1os_1_1_reader_writer_lock.html#ae36636464e838ff2145bb02c9d421930',1,'bio::os::ReaderWriterLock']]],
   ['readwriteregister',['ReadWriteRegister',['../d8/d1b/namespacebio_1_1svc.html#a8a9b294bacb6c49066d9f80e36603143',1,'bio::svc']]],

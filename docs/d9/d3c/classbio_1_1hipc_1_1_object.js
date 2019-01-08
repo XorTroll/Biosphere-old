@@ -16,6 +16,7 @@ var classbio_1_1hipc_1_1_object =
     [ "IsSubService", "d9/d3c/classbio_1_1hipc_1_1_object.html#ac5870add274c8bcfb4f95933af25f75c", null ],
     [ "IsValid", "d9/d3c/classbio_1_1hipc_1_1_object.html#ab3165f37c6fab45c84f2080cdb47433f", null ],
     [ "ProcessRequest", "d9/d3c/classbio_1_1hipc_1_1_object.html#a3d37c30fbcd5e096230bc8bbfcfcda14", null ],
+    [ "QueryPointerBufferSize", "d9/d3c/classbio_1_1hipc_1_1_object.html#a8b1cd8def813de05b39aa11d9d5d01ca", null ],
     [ "handle", "d9/d3c/classbio_1_1hipc_1_1_object.html#a4cb63d32457738e2c97fe3c90e7f9fda", null ],
     [ "objid", "d9/d3c/classbio_1_1hipc_1_1_object.html#ac87c9efdad87677d88dc2cc81fcc37ea", null ],
     [ "type", "d9/d3c/classbio_1_1hipc_1_1_object.html#a5da51fcb2648361248dc434dd3d439cb", null ]

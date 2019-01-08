@@ -2,7 +2,7 @@ var searchData=
 [
   ['module_20implementing_20_22appletae_22_20and_20_22appletoe_22_20ipc_20services_27_20commands_2e',['Module implementing &quot;appletAE&quot; and &quot;appletOE&quot; IPC services&apos; commands.',['../d3/d99/group__applet.html',1,'']]],
   ['module_20managing_20_28mostly_20low_2dlevel_29_20arm_20functions_2c_20handling_20exception_20dumps_2e',['Module managing (mostly low-level) ARM functions, handling exception dumps.',['../d4/d56/group__arm.html',1,'']]],
-  ['module_20containing_20a_20simplified_20fatal_20error_20support_20for_20error_20asserting_2e',['Module containing a simplified fatal error support for error asserting.',['../df/d93/group__diag.html',1,'']]],
+  ['module_20containing_20a_20simplified_20error_20support_20for_20error_20throwing_20via_20fatal_2fexit_2fapplet_2e',['Module containing a simplified error support for error throwing via fatal/exit/applet.',['../dd/d0e/group__err.html',1,'']]],
   ['module_20implementing_20_22fatal_3au_22_20ipc_20service_27s_20commands_2e',['Module implementing &quot;fatal:u&quot; IPC service&apos;s commands.',['../de/d6b/group__fatal.html',1,'']]],
   ['module_20implementing_20_22fsp_2dsrv_22_20ipc_20service_27s_20commands_2e',['Module implementing &quot;fsp-srv&quot; IPC service&apos;s commands.',['../d0/d44/group__fsp.html',1,'']]],
   ['module_20implementing_20the_20homonymous_20ipc_20service_27s_20commands_2e',['Module implementing the homonymous IPC service&apos;s commands.',['../d1/d2b/group__gpio.html',1,'']]],

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['memoryinfo',['MemoryInfo',['../d2/dbe/structbio_1_1_memory_info.html',1,'bio']]],
-  ['mutex',['Mutex',['../d5/da1/classbio_1_1os_1_1_mutex.html',1,'bio::os']]]
+  ['libraryappletcreator',['LibraryAppletCreator',['../da/dfe/classbio_1_1applet_1_1_library_applet_creator.html',1,'bio::applet']]],
+  ['libraryappletproxy',['LibraryAppletProxy',['../d4/ddb/classbio_1_1applet_1_1ae_1_1_library_applet_proxy.html',1,'bio::applet::ae']]]
 ];

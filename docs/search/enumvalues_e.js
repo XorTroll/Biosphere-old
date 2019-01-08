@@ -11,6 +11,7 @@ var searchData=
   ['player8',['Player8',['../d5/d7f/namespacebio_1_1input.html#aa8c078d71b6f0adeb333462831a67a18a02aa35a16b7e51973a8b03b1b45fb135',1,'bio::input']]],
   ['plus',['Plus',['../d5/d7f/namespacebio_1_1input.html#abca816f90c815d3db06364b7005b8820a1055a6ec179c4fd2ac3cc485395b8d01',1,'bio::input']]],
   ['power',['Power',['../d8/dbd/namespacebio_1_1gpio.html#a650510203d272b3a94d60dd87877796aadd4fe0cc913f704600b97d1f5dd285de',1,'bio::gpio']]],
+  ['processexit',['ProcessExit',['../dd/d31/namespacebio_1_1err.html#ac37cdb6124f8d2e6b02a01453f4cc2c0aa3f077cb262fbabb3168de84317d1ec5',1,'bio::err']]],
   ['processmem',['ProcessMem',['../d6/d5c/namespacebio.html#aceae0ecc27220acb5230fda898ec1b92ad811a7a16e48a2c136c2d324ba315788',1,'bio']]],
   ['processpermchangeallowed',['ProcessPermChangeAllowed',['../d6/d5c/namespacebio.html#aa398150209e9229893785af286bd9b90ad9d89f68637602ebd5b6d64fefa8f134',1,'bio']]],
   ['processstate',['ProcessState',['../d6/d5c/namespacebio.html#ace62562279100e0e63f647b395492983abfeab29d0f0a324412f3ff22fa424953',1,'bio']]],

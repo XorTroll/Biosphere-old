@@ -6,9 +6,10 @@ var searchData=
   ['atomic',['Atomic',['../db/d6c/namespacebio_1_1arm_1_1_atomic.html',1,'bio::arm']]],
   ['bio',['bio',['../d6/d5c/namespacebio.html',1,'']]],
   ['dbg',['dbg',['../de/dfd/namespacebio_1_1hid_1_1dbg.html',1,'bio::hid']]],
-  ['diag',['diag',['../d2/dbc/namespacebio_1_1diag.html',1,'bio']]],
   ['env',['env',['../db/dbb/namespacebio_1_1env.html',1,'bio']]],
+  ['err',['err',['../dd/d31/namespacebio_1_1err.html',1,'bio']]],
   ['fatal',['fatal',['../da/d65/namespacebio_1_1fatal.html',1,'bio']]],
+  ['fs',['fs',['../d7/d70/namespacebio_1_1fs.html',1,'bio']]],
   ['fsp',['fsp',['../de/d72/namespacebio_1_1fsp.html',1,'bio']]],
   ['gpio',['gpio',['../d8/dbd/namespacebio_1_1gpio.html',1,'bio']]],
   ['hid',['hid',['../d4/d73/namespacebio_1_1hid.html',1,'bio']]],
@@ -20,5 +21,6 @@ var searchData=
   ['psm',['psm',['../d2/d44/namespacebio_1_1psm.html',1,'bio']]],
   ['sm',['sm',['../df/d91/namespacebio_1_1sm.html',1,'bio']]],
   ['svc',['svc',['../d8/d1b/namespacebio_1_1svc.html',1,'bio']]],
+  ['utf',['utf',['../d4/d9a/namespacebio_1_1utf.html',1,'bio']]],
   ['virtualmemory',['VirtualMemory',['../d5/d00/namespacebio_1_1os_1_1_virtual_memory.html',1,'bio::os']]]
 ];

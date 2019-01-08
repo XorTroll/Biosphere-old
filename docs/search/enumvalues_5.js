@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['fatal',['Fatal',['../dd/d31/namespacebio_1_1err.html#ac37cdb6124f8d2e6b02a01453f4cc2c0a882384ec38ce8d9582b57e70861730e4',1,'bio::err']]],
   ['file',['File',['../de/d72/namespacebio_1_1fsp.html#a500f919af95785c7c8399a43fb0b0a12a0b27918290ff5323bea1e3b78a9cf04e',1,'bio::fsp']]],
   ['forcerwbydebugsyscalls',['ForceRwByDebugSyscalls',['../d6/d5c/namespacebio.html#aa398150209e9229893785af286bd9b90a36be1f8c229e0476f34b2ee2faa9526f',1,'bio']]],
   ['fpuall',['FPUAll',['../d4/d1e/namespacebio_1_1arm.html#a82707733c966b691ffe649b5e9575933a95bbd1f7df05b8fd1ba9cd4a954fe137',1,'bio::arm']]],

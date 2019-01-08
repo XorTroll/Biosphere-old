@@ -3,7 +3,7 @@ var modules =
     [ "Module containing a high-level HIPC support (aka HOS / Horizon OS Inter-Process Communications)", "d9/dca/group__hipc.html", null ],
     [ "Module containing high-level OS support: memory, events, threading...", "de/d5c/group__os.html", null ],
     [ "Module implementing \"appletAE\" and \"appletOE\" IPC services' commands.", "d3/d99/group__applet.html", null ],
-    [ "Module containing a simplified fatal error support for error asserting.", "df/d93/group__diag.html", null ],
+    [ "Module containing a simplified error support for error throwing via fatal/exit/applet.", "dd/d0e/group__err.html", null ],
     [ "Module implementing \"fatal:u\" IPC service's commands.", "de/d6b/group__fatal.html", null ],
     [ "Module implementing \"fsp-srv\" IPC service's commands.", "d0/d44/group__fsp.html", null ],
     [ "Module implementing the homonymous IPC service's commands.", "d1/d2b/group__gpio.html", null ],

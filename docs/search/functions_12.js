@@ -9,5 +9,13 @@ var searchData=
   ['unmapprocesscodememory',['UnmapProcessCodeMemory',['../d8/d1b/namespacebio_1_1svc.html#aa1ca30fafff89c6ad123f079c51ffdf5',1,'bio::svc']]],
   ['unmapprocessmemory',['UnmapProcessMemory',['../d8/d1b/namespacebio_1_1svc.html#a02e382b0fe3f968f27f041bd61e536a7',1,'bio::svc']]],
   ['unmapsharedmemory',['UnmapSharedMemory',['../d8/d1b/namespacebio_1_1svc.html#a44607b64a35b4bf92f65d66f8f3a93aa',1,'bio::svc']]],
-  ['unmaptransfermemory',['UnmapTransferMemory',['../d8/d1b/namespacebio_1_1svc.html#a3661f1aad1cff00c9e23081684079f76',1,'bio::svc']]]
+  ['unmaptransfermemory',['UnmapTransferMemory',['../d8/d1b/namespacebio_1_1svc.html#a3661f1aad1cff00c9e23081684079f76',1,'bio::svc']]],
+  ['unmount',['Unmount',['../d7/d70/namespacebio_1_1fs.html#aa443a9134be93fff697865f7a28d1715',1,'bio::fs']]],
+  ['unmountalldevices',['UnmountAllDevices',['../d7/d70/namespacebio_1_1fs.html#a8775c4eb14a069e43e164569f1f87694',1,'bio::fs']]],
+  ['utf16to32',['Utf16To32',['../d4/d9a/namespacebio_1_1utf.html#af89fce1c64fefa95601f454b413c7624',1,'bio::utf']]],
+  ['utf16to8',['Utf16To8',['../d4/d9a/namespacebio_1_1utf.html#a96ecde9da55755b91f1a87e669a3c4ce',1,'bio::utf']]],
+  ['utf32to16',['Utf32To16',['../d4/d9a/namespacebio_1_1utf.html#a2a9b9a9ee822d89c586f266d83955145',1,'bio::utf']]],
+  ['utf32to8',['Utf32To8',['../d4/d9a/namespacebio_1_1utf.html#ab2450fa400648699275b06e695966ff0',1,'bio::utf']]],
+  ['utf8to16',['Utf8To16',['../d4/d9a/namespacebio_1_1utf.html#a8a5739ad33a5b5e82419c0f0b861c426',1,'bio::utf']]],
+  ['utf8to32',['Utf8To32',['../d4/d9a/namespacebio_1_1utf.html#a03a1e232e334d04450ee583fc3bb21fa',1,'bio::utf']]]
 ];

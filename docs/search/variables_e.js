@@ -10,7 +10,7 @@ var searchData=
   ['resultmarshallingpastmaximum',['ResultMarshallingPastMaximum',['../dc/d52/namespacebio_1_1hipc.html#a53f04f595504fbdf261e86152c3eeb9a',1,'bio::hipc']]],
   ['resultmemoryquery',['ResultMemoryQuery',['../d6/d5c/namespacebio.html#afd642411b8395d4be9247def4725dae5',1,'bio']]],
   ['resultnotimplemented',['ResultNotImplemented',['../d6/dc6/namespacebio_1_1os.html#a5e4473e15d5c82fd814420c8048eab8f',1,'bio::os']]],
-  ['resultnotinitialized',['ResultNotInitialized',['../d2/dbc/namespacebio_1_1diag.html#a2fd75dc98555c297df63e4d95bd133c9',1,'bio::diag']]],
+  ['resultnotinitialized',['ResultNotInitialized',['../dd/d31/namespacebio_1_1err.html#a86b26731edc8fac49541777432309fcd',1,'bio::err']]],
   ['resultnovolplusheld',['ResultNoVolPlusHeld',['../da/d65/namespacebio_1_1fatal.html#a9de1f82187cf61d87650359bd63d1db3',1,'bio::fatal']]],
   ['resultoutofmemory',['ResultOutOfMemory',['../d6/d5c/namespacebio.html#a4c30ca8e0cdced7e6da47e003efb589b',1,'bio']]],
   ['resultoutofsessionmemory',['ResultOutOfSessionMemory',['../dc/d52/namespacebio_1_1hipc.html#ad71d8ca9f1e237bf7f576c376712982e',1,'bio::hipc']]],

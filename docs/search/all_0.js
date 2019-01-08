@@ -13,6 +13,7 @@ var searchData=
   ['allforeground',['AllForeground',['../d7/d9c/namespacebio_1_1applet.html#a3929ba42c8725751b10deae5982d66fba918e66a39bc953b2d208b0f9b0d7d4a1',1,'bio::applet']]],
   ['angle',['Angle',['../d4/ddc/structbio_1_1input_1_1_touch_data.html#a3b12e7d1012bff706a6bee9240620bc0',1,'bio::input::TouchData::Angle()'],['../de/df0/structbio_1_1input_1_1_touch.html#ae9d58cad4601bacd073f5bdee3bdb433',1,'bio::input::Touch::Angle()']]],
   ['applet_2ehpp',['applet.hpp',['../d4/d20/applet_8hpp.html',1,'']]],
+  ['appletdialog',['AppletDialog',['../dd/d31/namespacebio_1_1err.html#ac37cdb6124f8d2e6b02a01453f4cc2c0a0db27b7ea38c65a15e9e91cb26454f2f',1,'bio::err']]],
   ['appletid',['AppletId',['../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878',1,'bio::applet']]],
   ['appletmode',['AppletMode',['../d7/d9c/namespacebio_1_1applet.html#a3929ba42c8725751b10deae5982d66fb',1,'bio::applet']]],
   ['appletresource',['AppletResource',['../de/d93/classbio_1_1hid_1_1_applet_resource.html',1,'bio::hid']]],
@@ -26,13 +27,12 @@ var searchData=
   ['arejoyconsjoined',['AreJoyConsJoined',['../d5/d5a/classbio_1_1input_1_1_player.html#a4d87a98f47ba1eb7db9588cb2ffd5d4c',1,'bio::input::Player']]],
   ['args',['Args',['../d3/d7f/structbio_1_1_secure_monitor_args.html#ab83c14cd7c1eaac153cf8b81c6eff5d4',1,'bio::SecureMonitorArgs']]],
   ['arm_2ehpp',['arm.hpp',['../dc/d40/arm_8hpp.html',1,'']]],
-  ['assert_2ehpp',['Assert.hpp',['../d2/d5d/_assert_8hpp.html',1,'']]],
-  ['assertok',['AssertOk',['../d8/d6c/structbio_1_1_result.html#a74127c80878093eb4af79fb13e40813c',1,'bio::Result::AssertOk()'],['../d6/d06/classbio_1_1_result_wrap.html#acd617cad8a365a4bee2f7c6b8ac310e7',1,'bio::ResultWrap::AssertOk()'],['../d2/dbc/namespacebio_1_1diag.html#a6322e86b7c646860a9b84a8bfe2e60cb',1,'bio::diag::AssertOk()']]],
-  ['assertresultok',['AssertResultOk',['../d2/dbc/namespacebio_1_1diag.html#a0d9a8029aaf55068d724daba761a8894',1,'bio::diag']]],
+  ['assertok',['AssertOk',['../d8/d6c/structbio_1_1_result.html#a74127c80878093eb4af79fb13e40813c',1,'bio::Result::AssertOk()'],['../d6/d06/classbio_1_1_result_wrap.html#acd617cad8a365a4bee2f7c6b8ac310e7',1,'bio::ResultWrap::AssertOk()']]],
   ['atomic_2ehpp',['Atomic.hpp',['../d3/d6b/_atomic_8hpp.html',1,'']]],
   ['attachdeviceaddressspace',['AttachDeviceAddressSpace',['../d8/d1b/namespacebio_1_1svc.html#a4f6115461d322bffcb467130789e03c8',1,'bio::svc']]],
   ['attrchangeallowed',['AttrChangeAllowed',['../d6/d5c/namespacebio.html#aa398150209e9229893785af286bd9b90a21495cebe641712651e0fb4c167571f4',1,'bio']]],
   ['attributes',['Attributes',['../d2/dbe/structbio_1_1_memory_info.html#a6ccd4873dd45d85248aba842e836a6d7',1,'bio::MemoryInfo']]],
   ['audiocodec',['AudioCodec',['../d8/dbd/namespacebio_1_1gpio.html#a650510203d272b3a94d60dd87877796aa1456d4477b62db9b87eb829ec4618930',1,'bio::gpio']]],
-  ['audiocontroller',['AudioController',['../d0/db4/classbio_1_1applet_1_1_audio_controller.html',1,'bio::applet']]]
+  ['audiocontroller',['AudioController',['../d0/db4/classbio_1_1applet_1_1_audio_controller.html',1,'bio::applet']]],
+  ['autoclears',['AutoClears',['../d7/d84/classbio_1_1os_1_1_event.html#ad309bb0f040de9e5bc40d03191a26b5f',1,'bio::os::Event']]]
 ];

@@ -1,6 +1,7 @@
 var namespacebio_1_1os =
 [
     [ "ConditionVariable", "d9/d37/classbio_1_1os_1_1_condition_variable.html", "d9/d37/classbio_1_1os_1_1_condition_variable" ],
+    [ "Event", "d7/d84/classbio_1_1os_1_1_event.html", "d7/d84/classbio_1_1os_1_1_event" ],
     [ "HandleObject", "d9/d12/classbio_1_1os_1_1_handle_object.html", "d9/d12/classbio_1_1os_1_1_handle_object" ],
     [ "Mutex", "d5/da1/classbio_1_1os_1_1_mutex.html", "d5/da1/classbio_1_1os_1_1_mutex" ],
     [ "ReaderWriterLock", "d2/d72/classbio_1_1os_1_1_reader_writer_lock.html", "d2/d72/classbio_1_1os_1_1_reader_writer_lock" ],

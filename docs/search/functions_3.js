@@ -1,6 +1,8 @@
 var searchData=
 [
   ['debugactiveprocess',['DebugActiveProcess',['../d8/d1b/namespacebio_1_1svc.html#a1c5984b23a9fd9855eb2aae883db4cd0',1,'bio::svc']]],
+  ['decodeutf16',['DecodeUtf16',['../d4/d9a/namespacebio_1_1utf.html#a86b025bb42dd5cd5abc3462079286bbf',1,'bio::utf']]],
+  ['decodeutf8',['DecodeUtf8',['../d4/d9a/namespacebio_1_1utf.html#ab2e657e722763a93777ec9a9a4184d7c',1,'bio::utf']]],
   ['decrement32',['Decrement32',['../db/d6c/namespacebio_1_1arm_1_1_atomic.html#af82f7af7c8fd9ca1413c3e95bcadc20d',1,'bio::arm::Atomic']]],
   ['decrement64',['Decrement64',['../db/d6c/namespacebio_1_1arm_1_1_atomic.html#a09af76c73f5ca427d680cfc8dd27e6e7',1,'bio::arm::Atomic']]],
   ['deletedirectory',['DeleteDirectory',['../dd/de1/classbio_1_1fsp_1_1_file_system.html#aa6e88e3721902da098522343f35eaa65',1,'bio::fsp::FileSystem']]],

@@ -12,5 +12,7 @@ var _macros_8hpp =
     [ "BIO_OVERRIDE", "d6/d86/_macros_8hpp.html#a4c53f387f834450e2638a96c1c2362b7", null ],
     [ "BIO_PACKED", "d6/d86/_macros_8hpp.html#a8cb34d6990e4da837088eaf8bc7f53c4", null ],
     [ "BIO_UNUSED", "d6/d86/_macros_8hpp.html#a400b48b04dbe9051b9ca84b1685fc342", null ],
-    [ "BIO_WEAK", "d6/d86/_macros_8hpp.html#ad4ac1c821f95cafd22168886bffc7ed9", null ]
+    [ "BIO_WEAK", "d6/d86/_macros_8hpp.html#ad4ac1c821f95cafd22168886bffc7ed9", null ],
+    [ "SSIZE_MAX", "d6/d86/_macros_8hpp.html#a2d6569aa794c2f23e90691e60d2f3ad2", null ],
+    [ "U64_MAX", "d6/d86/_macros_8hpp.html#aaf73a88ad00da5c878558d6dc80b2f5c", null ]
 ];

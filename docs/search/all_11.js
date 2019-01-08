@@ -1,7 +1,7 @@
 var searchData=
 [
   ['r',['r',['../df/d9e/unionbio_1_1arm_1_1_c_p_u_register.html#aa710846dd08ffbe946e07cc1d878db61',1,'bio::arm::CPURegister::r()'],['../d5/d7f/namespacebio_1_1input.html#abca816f90c815d3db06364b7005b8820a47af01097dcf88809620777e690b4076',1,'bio::input::R()']]],
-  ['read',['Read',['../d6/dc6/namespacebio_1_1os.html#a1cb60931b0b35d8e3822b508e7a7aae0a7a1a5f3e79fdc91edf2f5ead9d66abb4',1,'bio::os::Read()'],['../d6/d5c/namespacebio.html#a08b2511a67ac87cde07d58880c10ddc5a7a1a5f3e79fdc91edf2f5ead9d66abb4',1,'bio::Read()']]],
+  ['read',['Read',['../d5/d7f/classbio_1_1fsp_1_1_file.html#a6bfe6a931c68e6272f63cc953b0f97b7',1,'bio::fsp::File::Read()'],['../d9/d74/classbio_1_1fsp_1_1_directory.html#ab368470acf3408da5eef7a104ccff1bd',1,'bio::fsp::Directory::Read()'],['../d6/dc6/namespacebio_1_1os.html#a1cb60931b0b35d8e3822b508e7a7aae0a7a1a5f3e79fdc91edf2f5ead9d66abb4',1,'bio::os::Read()'],['../d6/d5c/namespacebio.html#a08b2511a67ac87cde07d58880c10ddc5a7a1a5f3e79fdc91edf2f5ead9d66abb4',1,'bio::Read()']]],
   ['readdebugprocessmemory',['ReadDebugProcessMemory',['../d8/d1b/namespacebio_1_1svc.html#a999236401cc46a9424c6a0113cb9e64f',1,'bio::svc']]],
   ['readerwriterlock',['ReaderWriterLock',['../d2/d72/classbio_1_1os_1_1_reader_writer_lock.html',1,'bio::os::ReaderWriterLock'],['../d2/d72/classbio_1_1os_1_1_reader_writer_lock.html#ae36636464e838ff2145bb02c9d421930',1,'bio::os::ReaderWriterLock::ReaderWriterLock()']]],
   ['readerwriterlock_2ehpp',['ReaderWriterLock.hpp',['../d8/ddf/_reader_writer_lock_8hpp.html',1,'']]],
@@ -34,7 +34,7 @@ var searchData=
   ['resultmarshallingpastmaximum',['ResultMarshallingPastMaximum',['../dc/d52/namespacebio_1_1hipc.html#a53f04f595504fbdf261e86152c3eeb9a',1,'bio::hipc']]],
   ['resultmemoryquery',['ResultMemoryQuery',['../d6/d5c/namespacebio.html#afd642411b8395d4be9247def4725dae5',1,'bio']]],
   ['resultnotimplemented',['ResultNotImplemented',['../d6/dc6/namespacebio_1_1os.html#a5e4473e15d5c82fd814420c8048eab8f',1,'bio::os']]],
-  ['resultnotinitialized',['ResultNotInitialized',['../d2/dbc/namespacebio_1_1diag.html#a2fd75dc98555c297df63e4d95bd133c9',1,'bio::diag']]],
+  ['resultnotinitialized',['ResultNotInitialized',['../dd/d31/namespacebio_1_1err.html#a86b26731edc8fac49541777432309fcd',1,'bio::err']]],
   ['resultnovolplusheld',['ResultNoVolPlusHeld',['../da/d65/namespacebio_1_1fatal.html#a9de1f82187cf61d87650359bd63d1db3',1,'bio::fatal']]],
   ['resultoutofmemory',['ResultOutOfMemory',['../d6/d5c/namespacebio.html#a4c30ca8e0cdced7e6da47e003efb589b',1,'bio']]],
   ['resultoutofsessionmemory',['ResultOutOfSessionMemory',['../dc/d52/namespacebio_1_1hipc.html#ad71d8ca9f1e237bf7f576c376712982e',1,'bio::hipc']]],

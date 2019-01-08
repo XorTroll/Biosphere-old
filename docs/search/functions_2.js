@@ -2,9 +2,11 @@ var searchData=
 [
   ['callsecuremonitor',['CallSecureMonitor',['../d8/d1b/namespacebio_1_1svc.html#ac91a5fc697f798901f4ce93759867065',1,'bio::svc']]],
   ['cancelsynchronization',['CancelSynchronization',['../d8/d1b/namespacebio_1_1svc.html#a2b3f4c2a9ea1501338756fbd4953bdf4',1,'bio::svc']]],
+  ['checkmountname',['CheckMountName',['../d7/d70/namespacebio_1_1fs.html#a85b341074f0565053ae1cbc6fc2b48ca',1,'bio::fs']]],
   ['cleandirectoryrecursively',['CleanDirectoryRecursively',['../dd/de1/classbio_1_1fsp_1_1_file_system.html#a6d1b27dc63ea76ebc29ff8f5202ced77',1,'bio::fsp::FileSystem']]],
+  ['clear',['Clear',['../d7/d84/classbio_1_1os_1_1_event.html#a1337a0284b904e8e3d60035022729474',1,'bio::os::Event']]],
   ['clearevent',['ClearEvent',['../d8/d1b/namespacebio_1_1svc.html#a143338bd7aac811256432a2ee99b223f',1,'bio::svc']]],
-  ['close',['Close',['../d9/d3c/classbio_1_1hipc_1_1_object.html#aef259b256d76b15979328a37850ee4c8',1,'bio::hipc::Object::Close()'],['../db/dcf/structbio_1_1os_1_1_thread.html#ad1c5efb80186109b232fb4cde0b471ea',1,'bio::os::Thread::Close()']]],
+  ['close',['Close',['../d9/d3c/classbio_1_1hipc_1_1_object.html#aef259b256d76b15979328a37850ee4c8',1,'bio::hipc::Object::Close()'],['../d7/d84/classbio_1_1os_1_1_event.html#a68baf07ea56774d0f9b0882a82e549ca',1,'bio::os::Event::Close()'],['../db/dcf/structbio_1_1os_1_1_thread.html#ad1c5efb80186109b232fb4cde0b471ea',1,'bio::os::Thread::Close()']]],
   ['closehandle',['CloseHandle',['../d8/d1b/namespacebio_1_1svc.html#ab1f9365ac0ead6ae8e39cd7d9cbaaff5',1,'bio::svc']]],
   ['commit',['Commit',['../dd/de1/classbio_1_1fsp_1_1_file_system.html#aa020b5becde81f57f90ee99ddbcda5c3',1,'bio::fsp::FileSystem']]],
   ['conditionvariable',['ConditionVariable',['../d9/d37/classbio_1_1os_1_1_condition_variable.html#a88b5000b89e7ca9235155f6eef8b1295',1,'bio::os::ConditionVariable']]],
