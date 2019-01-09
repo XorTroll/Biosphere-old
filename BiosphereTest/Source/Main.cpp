@@ -6,17 +6,22 @@ int main()
     sm::ServiceManager *ssm = sm::Initialize().AssertOk();
     ssm->Initialize().AssertOk();
 
-    hipc::Object *appletoe = ssm->GetService("appletOE").AssertOk();
-    appletoe->ConvertToDomain().AssertOk();
+    hipc::Object *sapplet = ssm->GetService("appletAE").AssertOk();
+    sapplet->ConvertToDomain().AssertOk();
 
     /*
-    void *haddr;
-    Result(svc::SetHeapSize(&haddr, 0x14000000)).AssertOk();
+    fatal::FatalService *sfatal = fatal::Initialize(ssm).AssertOk();
+    err::InitializeFatalThrowMode(sfatal);
+    err::SetDefaultThrowMode(err::ThrowMode::Fatal).AssertOk();
+    err::Throw(0xa08);
     */
 
+    void *haddr;
+    Result(svc::SetHeapSize(&haddr, 0x14000000)).AssertOk();
+
     u32 oiap = 0;
-    appletoe->ProcessRequest<0>(hipc::InProcessId(), hipc::InRaw<u64>(0), hipc::InHandle<hipc::HandleMode::Copy>(0xffff8001), hipc::OutObjectId<0>(oiap)).AssertOk();
-    hipc::Object *iap = new hipc::Object(appletoe, oiap);
+    sapplet->ProcessRequest<200>(hipc::InProcessId(), hipc::InRaw<u64>(0), hipc::InHandle<hipc::HandleMode::Copy>(0xffff8001), hipc::OutObjectId<0>(oiap)).AssertOk();
+    hipc::Object *iap = new hipc::Object(sapplet, oiap);
 
     u32 oisc = 0;
     iap->ProcessRequest<1>(hipc::OutObjectId<0>(oisc)).AssertOk();
@@ -33,6 +38,8 @@ int main()
     u32 oilaa = 0;
     ilac->ProcessRequest<0>(hipc::InRaw<u32>(0xe), hipc::InRaw<u32>(0), hipc::OutObjectId<0>(oilaa)).AssertOk();
     hipc::Object *ilaa = new hipc::Object(ilac, oilaa);
+
+    // CommonArgs
 
     u32 ocargs = 0;
     ilac->ProcessRequest<10>(hipc::InRaw<u64>(0x20), hipc::OutObjectId<0>(ocargs)).AssertOk();
@@ -68,25 +75,29 @@ int main()
 
     ilaa->ProcessRequest<100>(hipc::InObjectId(ocargs)).AssertOk();
 
-    u32 ocargs2 = 0;
-    ilac->ProcessRequest<10>(hipc::InRaw<u64>(0x10), hipc::OutObjectId<0>(ocargs2)).AssertOk();
-    hipc::Object *cargs2 = new hipc::Object(ilac, ocargs2);
+    // Arg2
 
-    u32 oacargs2 = 0;
-    cargs->ProcessRequest<0>(hipc::OutObjectId<0>(oacargs2)).AssertOk();
-    hipc::Object *acargs2 = new hipc::Object(cargs2, oacargs2);
+    u32 oargs2 = 0;
+    ilac->ProcessRequest<10>(hipc::InRaw<u64>(0x10), hipc::OutObjectId<0>(oargs2)).AssertOk();
+    hipc::Object *args2 = new hipc::Object(ilac, oargs2);
+
+    u32 oaargs2 = 0;
+    args2->ProcessRequest<0>(hipc::OutObjectId<0>(oaargs2)).AssertOk();
+    hipc::Object *aargs2 = new hipc::Object(args2, oaargs2);
 
     u8 data[0x10] = { 0 };
 
-    size_t qbsize2 = acargs->QueryPointerBufferSize().AssertOk();
+    size_t qbsize2 = aargs2->QueryPointerBufferSize().AssertOk();
     
-    acargs2->ProcessRequest<10>(hipc::InRaw<u64>(0), hipc::InSmartBuffer(data, 0x10, 0, qbsize2)).AssertOk();
+    aargs2->ProcessRequest<10>(hipc::InRaw<u64>(0), hipc::InSmartBuffer(data, 0x10, 0, qbsize2)).AssertOk();
 
-    delete acargs2;
+    delete aargs2;
 
-    ilaa->ProcessRequest<100>(hipc::InObjectId(ocargs2)).AssertOk();
+    ilaa->ProcessRequest<100>(hipc::InObjectId(oargs2)).AssertOk();
 
-    elaunch->Wait(UINT64_MAX).AssertOk();
+    // Send
+
+    elaunch->Wait(UINT64_MAX);
 
     ilaa->ProcessRequest<10>(hipc::Simple()).AssertOk();
 
@@ -102,7 +113,7 @@ int main()
 
     delete iap;
 
-    delete appletoe;
+    delete sapplet;
 
     delete ssm;
 
