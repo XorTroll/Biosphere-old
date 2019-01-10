@@ -36,7 +36,7 @@ BIO_ASM_Code_Begin bioInitExceptionEntry
     mov x1, #8
     mov w2, wzr
     mov x3, #0
-    bl SVC_GetInfo
+    bl bioSysCallGetInfo
     mov w6, w0
     ldr x7, [sp], #16
 
@@ -152,7 +152,7 @@ bioExceptionEntryStart:
 bioExceptionEntryAbort:
     mov w0, #0xf801
 bioExceptionEntryFinalize:
-    bl SVC_ReturnFromException
+    bl bioSysCallReturnFromException
     b .
 BIO_ASM_Code_End
 
@@ -162,6 +162,6 @@ BIO_ASM_Code_Begin bioExceptionReturnEntry
     mov w0, wzr
     mov x1, #0
     mov x2, #0
-    bl SVC_Break
+    bl bioSysCallBreak
     b .
 BIO_ASM_Code_End

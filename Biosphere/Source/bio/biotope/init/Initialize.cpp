@@ -539,6 +539,7 @@ extern "C"
 
     void BIO_WEAK BIO_NORETURN bioQuickExit(int Code)
     {
+        if(bio::os::IsHeapOverrided()) bio::os::RestoreOverridedHeap();
         __libc_fini_array();
         bioQuickPostExit(Code, retaddr);
     }

@@ -2,10 +2,16 @@
 
 extern int __argc;
 extern char **__argv;
+extern void *heapaddr;
 extern bool lnso;
+extern char *fake_heap_end;
+extern u64 heapsize;
 
 namespace bio::os
 {
+    static bool hpov = false;
+    static u8 *cheapaddr = NULL;
+
     HandleObject::HandleObject(u32 Handle)
     {
         this->handle = Handle;
@@ -61,5 +67,28 @@ namespace bio::os
     Executable GetExecutableType()
     {
         return (lnso ? Executable::NSO : Executable::NRO);
+    }
+
+    Result OverrideHeap(u64 CustomSize)
+    {
+        Result rc;
+        if(!hpov) // Custom error code if heap already overrided?
+        {
+            rc = svc::SetHeapSize((void**)&cheapaddr, CustomSize);
+            if(rc.IsFailure()) return rc;
+            fake_heap_end = (char*)cheapaddr + CustomSize;
+            hpov = true;
+        }
+        return rc;
+    }
+
+    bool IsHeapOverrided()
+    {
+        return hpov;
+    }
+
+    void RestoreOverridedHeap()
+    {
+        if(hpov) svc::SetHeapSize((void**)&cheapaddr, ((u8*)heapaddr + heapsize) - cheapaddr);
     }
 }

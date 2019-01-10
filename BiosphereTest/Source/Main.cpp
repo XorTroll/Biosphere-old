@@ -9,15 +9,8 @@ int main()
     hipc::Object *sapplet = ssm->GetService("appletAE").AssertOk();
     sapplet->ConvertToDomain().AssertOk();
 
-    /*
-    fatal::FatalService *sfatal = fatal::Initialize(ssm).AssertOk();
-    err::InitializeFatalThrowMode(sfatal);
-    err::SetDefaultThrowMode(err::ThrowMode::Fatal).AssertOk();
-    err::Throw(0xa08);
-    */
-
-    void *haddr;
-    Result(svc::SetHeapSize(&haddr, 0x14000000)).AssertOk();
+    void *bhaddr;
+    svc::SetHeapSize(&bhaddr, 0x14000000);
 
     u32 oiap = 0;
     sapplet->ProcessRequest<200>(hipc::InProcessId(), hipc::InRaw<u64>(0), hipc::InHandle<hipc::HandleMode::Copy>(0xffff8001), hipc::OutObjectId<0>(oiap)).AssertOk();
@@ -78,18 +71,24 @@ int main()
     // Arg2
 
     u32 oargs2 = 0;
-    ilac->ProcessRequest<10>(hipc::InRaw<u64>(0x10), hipc::OutObjectId<0>(oargs2)).AssertOk();
+    ilac->ProcessRequest<10>(hipc::InRaw<u64>(4120), hipc::OutObjectId<0>(oargs2)).AssertOk();
     hipc::Object *args2 = new hipc::Object(ilac, oargs2);
 
     u32 oaargs2 = 0;
     args2->ProcessRequest<0>(hipc::OutObjectId<0>(oaargs2)).AssertOk();
     hipc::Object *aargs2 = new hipc::Object(args2, oaargs2);
 
-    u8 data[0x10] = { 0 };
+    u8 data[4120] = { 0 };
+    data[0] = 1;
+    *(u64*)&data[8] = 12345678;
+    const char *str = "Nintendo detected you're a sick pirate and a hacker. You've been sued by NOA in the last 10 minutes. Check your inbox for more details.";
+    const char *str2 = "Weird chars:\n(line)\t(tab)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nbunch of lines";
+    strcpy((char*)&data[24], str);
+    strcpy((char*)&data[2072], str2);
 
     size_t qbsize2 = aargs2->QueryPointerBufferSize().AssertOk();
     
-    aargs2->ProcessRequest<10>(hipc::InRaw<u64>(0), hipc::InSmartBuffer(data, 0x10, 0, qbsize2)).AssertOk();
+    aargs2->ProcessRequest<10>(hipc::InRaw<u64>(0), hipc::InSmartBuffer(data, 4120, 0, qbsize2)).AssertOk();
 
     delete aargs2;
 
@@ -97,7 +96,7 @@ int main()
 
     // Send
 
-    elaunch->Wait(UINT64_MAX);
+    elaunch->Wait(UINT64_MAX).AssertOk();
 
     ilaa->ProcessRequest<10>(hipc::Simple()).AssertOk();
 

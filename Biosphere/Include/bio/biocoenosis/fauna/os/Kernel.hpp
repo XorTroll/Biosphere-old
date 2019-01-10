@@ -36,6 +36,9 @@ namespace bio::os
     u32 GetCurrentProcessHandle();
     u64 EncodeString(const char *Text);
     Executable GetExecutableType();
+    Result OverrideHeap(u64 CustomSize);
+    bool IsHeapOverrided();
+    void RestoreOverridedHeap();
 
     static const u32 Module = 1;
     static const Result ResultNotImplemented(Module, 33);

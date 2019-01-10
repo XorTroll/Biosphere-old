@@ -11,7 +11,9 @@
 
 */
 
+
 #pragma once
+#include <bio/biocoenosis/flora/app.hpp>
 #include <bio/biocoenosis/flora/applet.hpp>
 #include <bio/biocoenosis/flora/err.hpp>
 #include <bio/biocoenosis/flora/fatal.hpp>
