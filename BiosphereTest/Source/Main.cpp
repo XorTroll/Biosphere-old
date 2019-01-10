@@ -1,4 +1,5 @@
 #include <bio/Biosphere>
+#include <string>
 using namespace bio;
 
 int main()
@@ -80,11 +81,13 @@ int main()
 
     u8 data[4120] = { 0 };
     data[0] = 1;
-    *(u64*)&data[8] = 12345678;
-    const char *str = "Nintendo detected you're a sick pirate and a hacker. You've been sued by NOA in the last 10 minutes. Check your inbox for more details.";
-    const char *str2 = "Weird chars:\n(line)\t(tab)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nbunch of lines";
-    strcpy((char*)&data[24], str);
-    strcpy((char*)&data[2072], str2);
+    u32 err = bio::Result(168, 002);
+    u64 ecode = (((err & 0x1ffu) + 2000) | (((err >> 9) & 0x1fff & 0x1fffll) << 32));
+    *(u64*)&data[8] = ecode;
+    std::string str = "Nintendo detected you're a sick pirate and a hacker. You've been sued by NOA in the last 10 minutes. Check your inbox for more details.";
+    std::string str2 = "Error: module is " + std::to_string((u32)(ecode >> 32) - 2000) + " and desc is " + std::to_string((u32)ecode);
+    strcpy((char*)&data[24], str.c_str());
+    strcpy((char*)&data[2072], str2.c_str());
 
     size_t qbsize2 = aargs2->QueryPointerBufferSize().AssertOk();
     
@@ -116,7 +119,7 @@ int main()
 
     delete ssm;
 
-    return 0;
+    return ecode;
 }
 
 int vimain()

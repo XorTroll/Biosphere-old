@@ -71,6 +71,37 @@ namespace bio
         return ((this->Module & 0x1ff) | (this->Description & 0x1fff) << 9);
     }
 
+    ErrorCode::ErrorCode()
+    {
+        this->Value = 0;
+    }
+
+    ErrorCode::ErrorCode(Result ResultCode)
+    {
+        this->Value = (((ResultCode & 0x1ffu) + 2000) | (((ResultCode >> 9) & 0x1fff & 0x1fffll) << 32));
+    }
+
+    ErrorCode::ErrorCode(u32 Module, u32 Description)
+    {
+        u32 err = Result(Module, Description);
+        this->Value = (((err & 0x1ffu) + 2000) | (((err >> 9) & 0x1fff & 0x1fffll) << 32));
+    }
+
+    bool ErrorCode::IsFailure()
+    {
+        return (this->Value != 0);
+    }
+
+    bool ErrorCode::IsSuccess()
+    {
+        return (this->Value == 0);
+    }
+
+    ErrorCode::operator u64()
+    {
+        return this->Value;
+    }
+
     Result ResultClass::GetResult()
     {
         return this->res;

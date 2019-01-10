@@ -152,6 +152,17 @@ namespace bio
         operator u32();
     };
 
+    struct ErrorCode
+    {
+        u64 Value;
+        ErrorCode();
+        ErrorCode(Result ResultCode);
+        ErrorCode(u32 Module, u32 Description);
+        bool IsFailure();
+        bool IsSuccess();
+        operator u64();
+    };
+
     template<class Wrapped>
     class ResultWrap
     {
