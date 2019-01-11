@@ -11,5 +11,4 @@ namespace bio::app
     bool IsApplication();
     bool IsAppletOrApplication();
     bool IsSubprocess();
-
 }

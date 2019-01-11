@@ -4,46 +4,30 @@ using namespace bio;
 
 int main()
 {
+    // Initialize SM
     sm::ServiceManager *ssm = sm::Initialize().AssertOk();
     ssm->Initialize().AssertOk();
 
-    hipc::Object *sapplet = ssm->GetService("appletAE").AssertOk();
-    sapplet->ConvertToDomain().AssertOk();
+    os::OverrideHeap(0x14000000);
 
-    void *bhaddr;
-    svc::SetHeapSize(&bhaddr, 0x14000000);
+    // Initialize appletAE
+    applet::ae::AeService *sae = applet::ae::Initialize(ssm).AssertOk();
 
-    u32 oiap = 0;
-    sapplet->ProcessRequest<200>(hipc::InProcessId(), hipc::InRaw<u64>(0), hipc::InHandle<hipc::HandleMode::Copy>(0xffff8001), hipc::OutObjectId<0>(oiap)).AssertOk();
-    hipc::Object *iap = new hipc::Object(sapplet, oiap);
+    applet::ae::LibraryAppletProxy *lap = sae->OpenLibraryAppletProxyOld(0).AssertOk();
 
-    u32 oisc = 0;
-    iap->ProcessRequest<1>(hipc::OutObjectId<0>(oisc)).AssertOk();
-    hipc::Object *isc = new hipc::Object(iap, oisc);
+    applet::SelfController *sc = lap->GetSelfController().AssertOk();
 
-    u32 oelaunch = 0;
-    isc->ProcessRequest<9>(hipc::OutHandle<0>(oelaunch)).AssertOk();
-    os::Event *elaunch = new os::Event(oelaunch, false);
+    os::Event *elaunch = sc->GetLibraryAppletLaunchableEvent().AssertOk();
 
-    u32 oilac = 0;
-    iap->ProcessRequest<11>(hipc::OutObjectId<0>(oilac)).AssertOk();
-    hipc::Object *ilac = new hipc::Object(iap, oilac);
+    applet::LibraryAppletCreator *lac = lap->GetLibraryAppletCreator().AssertOk();
 
-    u32 oilaa = 0;
-    ilac->ProcessRequest<0>(hipc::InRaw<u32>(0xe), hipc::InRaw<u32>(0), hipc::OutObjectId<0>(oilaa)).AssertOk();
-    hipc::Object *ilaa = new hipc::Object(ilac, oilaa);
+    applet::LibraryAppletAccessor *laa = lac->CreateLibraryApplet(applet::AppletId::Error, applet::AppletMode::AllForeground).AssertOk();
 
-    // CommonArgs
+    applet::Storage *scommon = lac->CreateStorage(0x20).AssertOk();
 
-    u32 ocargs = 0;
-    ilac->ProcessRequest<10>(hipc::InRaw<u64>(0x20), hipc::OutObjectId<0>(ocargs)).AssertOk();
-    hipc::Object *cargs = new hipc::Object(ilac, ocargs);
+    applet::StorageAccessor *ascommon = scommon->Open().AssertOk();
 
-    u32 oacargs = 0;
-    cargs->ProcessRequest<0>(hipc::OutObjectId<0>(oacargs)).AssertOk();
-    hipc::Object *acargs = new hipc::Object(cargs, oacargs);
-
-    struct LArgs
+    struct CommonArgs
     {
         u32 v;
         u32 sz;
@@ -54,30 +38,24 @@ int main()
         u64 tick;
     } BIO_PACKED;
 
-    LArgs args;
-    memset(&args, 0, sizeof(LArgs));
+    CommonArgs args;
+    memset(&args, 0, sizeof(CommonArgs));
     args.v = 1;
     args.sz = 0x20;
     args.lav = 0;
     args.tick = svc::GetSystemTick();
 
-    size_t qbsize = acargs->QueryPointerBufferSize().AssertOk();
-    
-    acargs->ProcessRequest<10>(hipc::InRaw<u64>(0), hipc::InSmartBuffer(&args, sizeof(LArgs), 0, qbsize)).AssertOk();
+    ascommon->Write(0, &args, sizeof(CommonArgs));
 
-    delete acargs;
+    delete ascommon;
 
-    ilaa->ProcessRequest<100>(hipc::InObjectId(ocargs)).AssertOk();
+    laa->PushInData(scommon).AssertOk();
 
-    // Arg2
+    // Second
 
-    u32 oargs2 = 0;
-    ilac->ProcessRequest<10>(hipc::InRaw<u64>(4120), hipc::OutObjectId<0>(oargs2)).AssertOk();
-    hipc::Object *args2 = new hipc::Object(ilac, oargs2);
+    applet::Storage *scustom = lac->CreateStorage(4120).AssertOk();
 
-    u32 oaargs2 = 0;
-    args2->ProcessRequest<0>(hipc::OutObjectId<0>(oaargs2)).AssertOk();
-    hipc::Object *aargs2 = new hipc::Object(args2, oaargs2);
+    applet::StorageAccessor *ascustom = scustom->Open().AssertOk();
 
     u8 data[4120] = { 0 };
     data[0] = 1;
@@ -85,41 +63,32 @@ int main()
     u64 ecode = (((err & 0x1ffu) + 2000) | (((err >> 9) & 0x1fff & 0x1fffll) << 32));
     *(u64*)&data[8] = ecode;
     std::string str = "Nintendo detected you're a sick pirate and a hacker. You've been sued by NOA in the last 10 minutes. Check your inbox for more details.";
-    std::string str2 = "Error: module is " + std::to_string((u32)(ecode >> 32) - 2000) + " and desc is " + std::to_string((u32)ecode);
+    std::string str2 = "Hehe, this is another test!";
     strcpy((char*)&data[24], str.c_str());
     strcpy((char*)&data[2072], str2.c_str());
 
-    size_t qbsize2 = aargs2->QueryPointerBufferSize().AssertOk();
-    
-    aargs2->ProcessRequest<10>(hipc::InRaw<u64>(0), hipc::InSmartBuffer(data, 4120, 0, qbsize2)).AssertOk();
+    ascustom->Write(0, data, 4120);
 
-    delete aargs2;
+    delete ascustom;
 
-    ilaa->ProcessRequest<100>(hipc::InObjectId(oargs2)).AssertOk();
-
-    // Send
+    laa->PushInData(scustom).AssertOk();
 
     elaunch->Wait(UINT64_MAX).AssertOk();
 
-    ilaa->ProcessRequest<10>(hipc::Simple()).AssertOk();
+    laa->Start().AssertOk();
 
     while(true);
 
     delete elaunch;
-
-    delete ilaa;
-
-    delete ilac;
-
-    delete isc;
-
-    delete iap;
-
-    delete sapplet;
-
+    delete scustom;
+    delete scommon;
+    delete laa;
+    delete lac;
+    delete lap;
+    delete sae;
     delete ssm;
 
-    return ecode;
+    return 0;
 }
 
 int vimain()

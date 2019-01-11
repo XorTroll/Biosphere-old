@@ -10,7 +10,7 @@ extern u64 heapsize;
 namespace bio::os
 {
     static bool hpov = false;
-    static u8 *cheapaddr = NULL;
+    static void *cheapaddr;
 
     HandleObject::HandleObject(u32 Handle)
     {
@@ -71,14 +71,11 @@ namespace bio::os
 
     Result OverrideHeap(u64 CustomSize)
     {
-        Result rc;
-        if(!hpov) // Custom error code if heap already overrided?
-        {
-            rc = svc::SetHeapSize((void**)&cheapaddr, CustomSize);
-            if(rc.IsFailure()) return rc;
-            fake_heap_end = (char*)cheapaddr + CustomSize;
-            hpov = true;
-        }
+        if(IsHeapOverrided()) RestoreOverridedHeap();
+        Result rc = svc::SetHeapSize(&cheapaddr, CustomSize);
+        if(rc.IsFailure()) return rc;
+        fake_heap_end = (char*)cheapaddr + CustomSize;
+        hpov = true;
         return rc;
     }
 
@@ -89,6 +86,10 @@ namespace bio::os
 
     void RestoreOverridedHeap()
     {
-        if(hpov) svc::SetHeapSize((void**)&cheapaddr, ((u8*)heapaddr + heapsize) - cheapaddr);
+        if(hpov)
+        {
+            svc::SetHeapSize(&cheapaddr, ((u8*)heapaddr + heapsize) - (u8*)cheapaddr);
+            hpov = false;
+        }
     }
 }

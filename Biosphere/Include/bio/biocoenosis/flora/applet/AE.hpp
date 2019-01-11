@@ -16,6 +16,8 @@ namespace bio::applet::ae
     {
         public:
             using Object::Object;
+            ResultWrap<SelfController*> GetSelfController();
+            ResultWrap<LibraryAppletCreator*> GetLibraryAppletCreator();
     };
 
     class OverlayAppletProxy : public hipc::Object
