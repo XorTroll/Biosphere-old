@@ -1,5 +1,6 @@
 var namespacebio =
 [
+    [ "app", "d2/d6a/namespacebio_1_1app.html", "d2/d6a/namespacebio_1_1app" ],
     [ "applet", "d7/d9c/namespacebio_1_1applet.html", "d7/d9c/namespacebio_1_1applet" ],
     [ "arm", "d4/d1e/namespacebio_1_1arm.html", "d4/d1e/namespacebio_1_1arm" ],
     [ "fatal", "da/d65/namespacebio_1_1fatal.html", "da/d65/namespacebio_1_1fatal" ],
@@ -11,8 +12,8 @@ var namespacebio =
     [ "input", "d5/d7f/namespacebio_1_1input.html", "d5/d7f/namespacebio_1_1input" ],
     [ "os", "d6/dc6/namespacebio_1_1os.html", "d6/dc6/namespacebio_1_1os" ],
     [ "psm", "d2/d44/namespacebio_1_1psm.html", "d2/d44/namespacebio_1_1psm" ],
-    [ "sm", "df/d91/namespacebio_1_1sm.html", "df/d91/namespacebio_1_1sm" ],
     [ "ApplicationId", "d5/d65/structbio_1_1_application_id.html", "d5/d65/structbio_1_1_application_id" ],
+    [ "ErrorCode", "d2/d57/structbio_1_1_error_code.html", "d2/d57/structbio_1_1_error_code" ],
     [ "MemoryInfo", "d2/dbe/structbio_1_1_memory_info.html", "d2/dbe/structbio_1_1_memory_info" ],
     [ "Result", "d8/d6c/structbio_1_1_result.html", "d8/d6c/structbio_1_1_result" ],
     [ "ResultClass", "d0/db8/classbio_1_1_result_class.html", "d0/db8/classbio_1_1_result_class" ],

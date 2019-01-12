@@ -1,5 +1,7 @@
 var sm_2_s_m_8hpp =
 [
-    [ "ServiceManager", "d6/d64/classbio_1_1sm_1_1_service_manager.html", "d6/d64/classbio_1_1sm_1_1_service_manager" ],
-    [ "Initialize", "db/d2f/sm_2_s_m_8hpp.html#af3fa49eb27e4c48a0a4c12d2d4036463", null ]
+    [ "Finalize", "db/d2f/sm_2_s_m_8hpp.html#ab9ce775bd53f007c40cae98e87f45512", null ],
+    [ "GetService", "db/d2f/sm_2_s_m_8hpp.html#a7d0da0f6a6eab95ffe6ee2ca33bec488", null ],
+    [ "HasInitialized", "db/d2f/sm_2_s_m_8hpp.html#a92d94889374973824e1e9fd7f44846bb", null ],
+    [ "Initialize", "db/d2f/sm_2_s_m_8hpp.html#a94f0b9630fb15d4913577e6f45147816", null ]
 ];

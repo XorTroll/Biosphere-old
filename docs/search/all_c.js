@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['module_20containing_20a_20simplified_20support_20for_20app_2fapplet_20services_20and_20contents_2e',['Module containing a simplified support for app/applet services and contents.',['../db/d60/group__app.html',1,'']]],
   ['module_20implementing_20_22appletae_22_20and_20_22appletoe_22_20ipc_20services_27_20commands_2e',['Module implementing &quot;appletAE&quot; and &quot;appletOE&quot; IPC services&apos; commands.',['../d3/d99/group__applet.html',1,'']]],
   ['module_20managing_20_28mostly_20low_2dlevel_29_20arm_20functions_2c_20handling_20exception_20dumps_2e',['Module managing (mostly low-level) ARM functions, handling exception dumps.',['../d4/d56/group__arm.html',1,'']]],
   ['module_20containing_20a_20simplified_20error_20support_20for_20error_20throwing_20via_20fatal_2fexit_2fapplet_2e',['Module containing a simplified error support for error throwing via fatal/exit/applet.',['../dd/d0e/group__err.html',1,'']]],
@@ -23,7 +24,6 @@ var searchData=
   ['major5',['Major5',['../d6/dc6/namespacebio_1_1os.html#af4f0500737b7289fe7093f884b4877a9ac0f87d1ceeda1bb22ed891364235e885',1,'bio::os']]],
   ['major6',['Major6',['../d6/dc6/namespacebio_1_1os.html#af4f0500737b7289fe7093f884b4877a9a94498d2108cf051fb3694cb3fcf518bc',1,'bio::os']]],
   ['managenamedport',['ManageNamedPort',['../d8/d1b/namespacebio_1_1svc.html#aebf3b363b3802ad3f227e201844926a4',1,'bio::svc']]],
-  ['manager_2ehpp',['Manager.hpp',['../de/d81/_manager_8hpp.html',1,'']]],
   ['map',['Map',['../d8/db7/classbio_1_1os_1_1_shared_memory.html#a295e62d78e90844b41d720c9433ba5e5',1,'bio::os::SharedMemory::Map()'],['../d7/d81/classbio_1_1os_1_1_transfer_memory.html#ac3cb320817c52514978bfc73ec0c96bd',1,'bio::os::TransferMemory::Map()']]],
   ['mapallowed',['MapAllowed',['../d6/d5c/namespacebio.html#aa398150209e9229893785af286bd9b90aaf3ce3eda3307ea9b2b67d6f290c1760',1,'bio']]],
   ['mapdeviceaddressspacealigned',['MapDeviceAddressSpaceAligned',['../d8/d1b/namespacebio_1_1svc.html#a8d26d13c803886c4ec28d1aeee3d5990',1,'bio::svc']]],

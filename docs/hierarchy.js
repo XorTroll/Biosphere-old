@@ -1,5 +1,8 @@
 var hierarchy =
 [
+    [ "bio::app::Applet", "dd/df3/classbio_1_1app_1_1_applet.html", [
+      [ "bio::app::ErrorApplet", "dc/d68/classbio_1_1app_1_1_error_applet.html", null ]
+    ] ],
     [ "bio::ApplicationId", "d5/d65/structbio_1_1_application_id.html", null ],
     [ "bio::hipc::Buffer", "d2/d83/structbio_1_1hipc_1_1_buffer.html", null ],
     [ "bio::hipc::BufferCommandData", "da/dfd/structbio_1_1hipc_1_1_buffer_command_data.html", null ],
@@ -16,6 +19,7 @@ var hierarchy =
     [ "bio::fsp::DirectoryEntry", "dc/d5d/structbio_1_1fsp_1_1_directory_entry.html", null ],
     [ "bio::hipc::DomainHeader", "d3/d0b/structbio_1_1hipc_1_1_domain_header.html", null ],
     [ "bio::hipc::DomainResponse", "d8/de8/structbio_1_1hipc_1_1_domain_response.html", null ],
+    [ "bio::ErrorCode", "d2/d57/structbio_1_1_error_code.html", null ],
     [ "bio::os::Event", "d7/d84/classbio_1_1os_1_1_event.html", null ],
     [ "bio::arm::FPURegister", "df/da9/unionbio_1_1arm_1_1_f_p_u_register.html", null ],
     [ "bio::os::HandleObject", "d9/d12/classbio_1_1os_1_1_handle_object.html", null ],
@@ -39,11 +43,14 @@ var hierarchy =
       [ "bio::applet::DisplayController", "d8/d31/classbio_1_1applet_1_1_display_controller.html", null ],
       [ "bio::applet::GlobalStateController", "de/d0f/classbio_1_1applet_1_1_global_state_controller.html", null ],
       [ "bio::applet::HomeMenuFunctions", "de/d4a/classbio_1_1applet_1_1_home_menu_functions.html", null ],
+      [ "bio::applet::LibraryAppletAccessor", "df/d50/classbio_1_1applet_1_1_library_applet_accessor.html", null ],
       [ "bio::applet::LibraryAppletCreator", "da/dfe/classbio_1_1applet_1_1_library_applet_creator.html", null ],
       [ "bio::applet::oe::OeService", "d8/d1d/classbio_1_1applet_1_1oe_1_1_oe_service.html", null ],
       [ "bio::applet::OverlayFunctions", "d9/d72/classbio_1_1applet_1_1_overlay_functions.html", null ],
       [ "bio::applet::ProcessWindingController", "db/dbb/classbio_1_1applet_1_1_process_winding_controller.html", null ],
       [ "bio::applet::SelfController", "d4/d94/classbio_1_1applet_1_1_self_controller.html", null ],
+      [ "bio::applet::Storage", "d8/d27/classbio_1_1applet_1_1_storage.html", null ],
+      [ "bio::applet::StorageAccessor", "dc/d65/classbio_1_1applet_1_1_storage_accessor.html", null ],
       [ "bio::applet::WindowController", "d0/d82/classbio_1_1applet_1_1_window_controller.html", null ],
       [ "bio::fatal::FatalService", "d4/d5d/classbio_1_1fatal_1_1_fatal_service.html", null ],
       [ "bio::fsp::Directory", "d9/d74/classbio_1_1fsp_1_1_directory.html", null ],
@@ -55,8 +62,7 @@ var hierarchy =
       [ "bio::hid::AppletResource", "de/d93/classbio_1_1hid_1_1_applet_resource.html", null ],
       [ "bio::hid::dbg::HidDbgService", "d1/d06/classbio_1_1hid_1_1dbg_1_1_hid_dbg_service.html", null ],
       [ "bio::hid::HidService", "d5/d3e/classbio_1_1hid_1_1_hid_service.html", null ],
-      [ "bio::psm::PsmService", "dc/df3/classbio_1_1psm_1_1_psm_service.html", null ],
-      [ "bio::sm::ServiceManager", "d6/d64/classbio_1_1sm_1_1_service_manager.html", null ]
+      [ "bio::psm::PsmService", "dc/df3/classbio_1_1psm_1_1_psm_service.html", null ]
     ] ],
     [ "bio::input::Player", "d5/d5a/classbio_1_1input_1_1_player.html", null ],
     [ "bio::os::ReaderWriterLock", "d2/d72/classbio_1_1os_1_1_reader_writer_lock.html", null ],

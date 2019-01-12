@@ -12,9 +12,11 @@ var searchData=
   ['stack',['Stack',['../d6/dc6/namespacebio_1_1os.html#aab87e2898f68fb44d276bcb732b2730aa2187e1021a911b3807cc1bea2eb1a9ca',1,'bio::os']]],
   ['state',['State',['../d6/d5c/namespacebio.html#ab3fc7bffa8fd8f69e967603c6f24b5eba46a2a41cc6e552044816a2d04634545d',1,'bio']]],
   ['static',['Static',['../dc/d52/namespacebio_1_1hipc.html#aa471380df7ebf59ccbbcf55076e4bb04a84a8921b25f505d0d2077aeb5db4bc16',1,'bio::hipc']]],
+  ['subprocess',['Subprocess',['../d2/d6a/namespacebio_1_1app.html#a9b930c7a67c29d39c5c6481544abcde7aacfc9fac11fea7710fbe22b6ba4b3a9e',1,'bio::app']]],
   ['subservice',['SubService',['../dc/d52/namespacebio_1_1hipc.html#a555f1d099f604ed07c75cafceb075df2ab90966fdb2c59296799f1ea7cb9bd085',1,'bio::hipc']]],
   ['swkbd',['Swkbd',['../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878a145b61e5a5baf6cf90132332a75e8f4e',1,'bio::applet']]],
-  ['systemapplet',['SystemApplet',['../d6/d5c/namespacebio.html#a81b0c4444602cd8edbf80c4c62720cbfa0ba5895a346f7575d82b6bdd844f9e19',1,'bio']]],
-  ['systemapplication',['SystemApplication',['../d6/d5c/namespacebio.html#a81b0c4444602cd8edbf80c4c62720cbfa2a8de7485ba4c1b27e9a6f157457ea6a',1,'bio']]],
+  ['systemapplet',['SystemApplet',['../d2/d6a/namespacebio_1_1app.html#a9b930c7a67c29d39c5c6481544abcde7a0ba5895a346f7575d82b6bdd844f9e19',1,'bio::app::SystemApplet()'],['../d6/d5c/namespacebio.html#a81b0c4444602cd8edbf80c4c62720cbfa0ba5895a346f7575d82b6bdd844f9e19',1,'bio::SystemApplet()']]],
+  ['systemapplication',['SystemApplication',['../d2/d6a/namespacebio_1_1app.html#a9b930c7a67c29d39c5c6481544abcde7a2a8de7485ba4c1b27e9a6f157457ea6a',1,'bio::app::SystemApplication()'],['../d6/d5c/namespacebio.html#a81b0c4444602cd8edbf80c4c62720cbfa2a8de7485ba4c1b27e9a6f157457ea6a',1,'bio::SystemApplication()']]],
+  ['systemerror',['SystemError',['../d2/d6a/namespacebio_1_1app.html#a7ff93734a7e712a14c8dd34ac6ca5e53ab932b91f686c2aa588adfd9a407155ca',1,'bio::app']]],
   ['systemproperencryption',['SystemProperEncryption',['../de/d72/namespacebio_1_1fsp.html#a2bdbd7f5303a20ff2a0713491ab6c081a9dcf4cf5bb7e9652dd7b7c787ad67898',1,'bio::fsp']]]
 ];

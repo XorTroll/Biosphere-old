@@ -8,6 +8,7 @@ var searchData=
   ['file',['File',['../d5/d7f/classbio_1_1fsp_1_1_file.html',1,'bio::fsp::File'],['../de/d72/namespacebio_1_1fsp.html#a500f919af95785c7c8399a43fb0b0a12a0b27918290ff5323bea1e3b78a9cf04e',1,'bio::fsp::File()']]],
   ['filesize',['FileSize',['../dc/d5d/structbio_1_1fsp_1_1_directory_entry.html#af966c880929886749b46337bf43e0ac5',1,'bio::fsp::DirectoryEntry']]],
   ['filesystem',['FileSystem',['../dd/de1/classbio_1_1fsp_1_1_file_system.html',1,'bio::fsp']]],
+  ['finalize',['Finalize',['../dd/df3/classbio_1_1app_1_1_applet.html#aa690adae7f8d137e3559ee0c3014741f',1,'bio::app::Applet::Finalize()'],['../df/d91/namespacebio_1_1sm.html#ab9ce775bd53f007c40cae98e87f45512',1,'bio::sm::Finalize()'],['../d2/d6a/namespacebio_1_1app.html#ae7bdb4fd06d41371013a6a724f23586a',1,'bio::app::Finalize()']]],
   ['fire',['Fire',['../d7/d84/classbio_1_1os_1_1_event.html#aa6ca3c33d617a5ba4a7e7286dd4efdf9',1,'bio::os::Event']]],
   ['firmwaremajor',['FirmwareMajor',['../d6/dc6/namespacebio_1_1os.html#af4f0500737b7289fe7093f884b4877a9',1,'bio::os']]],
   ['flags',['Flags',['../d5/d0a/structbio_1_1init_1_1_homebrew_context.html#aa8118fccf8c02ef71e9209c3d976b702',1,'bio::init::HomebrewContext']]],

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['error',['Error',['../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878a902b0d55fddef6f8d651fe1035b7d4bd',1,'bio::applet']]],
   ['errorreport',['ErrorReport',['../da/d65/namespacebio_1_1fatal.html#aa331fba9506b3091f14b7e3c73021a45ac77eb3adff0e98169f118ca14fb93202',1,'bio::fatal']]],
   ['errorreportanderrorscreen',['ErrorReportAndErrorScreen',['../da/d65/namespacebio_1_1fatal.html#aa331fba9506b3091f14b7e3c73021a45a44ae20e44a5a63102a1453f9b469d370',1,'bio::fatal']]],
   ['errorscreen',['ErrorScreen',['../da/d65/namespacebio_1_1fatal.html#aa331fba9506b3091f14b7e3c73021a45a101fe024d35bcf97f6d1e5d2674f9e40',1,'bio::fatal']]],

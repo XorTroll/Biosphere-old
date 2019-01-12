@@ -1,6 +1,7 @@
 var searchData=
 [
   ['aeservice',['AeService',['../df/dcf/classbio_1_1applet_1_1ae_1_1_ae_service.html',1,'bio::applet::ae']]],
+  ['applet',['Applet',['../dd/df3/classbio_1_1app_1_1_applet.html',1,'bio::app']]],
   ['appletresource',['AppletResource',['../de/d93/classbio_1_1hid_1_1_applet_resource.html',1,'bio::hid']]],
   ['applicationcreator',['ApplicationCreator',['../d0/d39/classbio_1_1applet_1_1_application_creator.html',1,'bio::applet']]],
   ['applicationfunctions',['ApplicationFunctions',['../d3/d74/classbio_1_1applet_1_1_application_functions.html',1,'bio::applet']]],

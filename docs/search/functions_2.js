@@ -22,11 +22,13 @@ var searchData=
   ['createevent',['CreateEvent',['../d8/d1b/namespacebio_1_1svc.html#aca42dd7f03944db676d1002ca9f72123',1,'bio::svc']]],
   ['createfile',['CreateFile',['../dd/de1/classbio_1_1fsp_1_1_file_system.html#a8ed7c5b651814488054fee109dba532b',1,'bio::fsp::FileSystem']]],
   ['createinterruptevent',['CreateInterruptEvent',['../d8/d1b/namespacebio_1_1svc.html#aa8d0774e11bdab6975e2ab708700352c',1,'bio::svc']]],
+  ['createlibraryapplet',['CreateLibraryApplet',['../da/dfe/classbio_1_1applet_1_1_library_applet_creator.html#a262e7d365514779155712dbb29773aa8',1,'bio::applet::LibraryAppletCreator']]],
   ['createport',['CreatePort',['../d8/d1b/namespacebio_1_1svc.html#a35280589c29ddcd3075eb9e10bbee4e9',1,'bio::svc']]],
   ['createprocess',['CreateProcess',['../d8/d1b/namespacebio_1_1svc.html#a876635f21bccfc78bb6628c0ca5ed88c',1,'bio::svc']]],
   ['createresourcelimit',['CreateResourceLimit',['../d8/d1b/namespacebio_1_1svc.html#abebeca472127438b027d25c5b4e7c39c',1,'bio::svc']]],
   ['createsession',['CreateSession',['../d8/d1b/namespacebio_1_1svc.html#acbe7550a90bfbcf94b067e79feb72af3',1,'bio::svc']]],
   ['createsharedmemory',['CreateSharedMemory',['../d8/d1b/namespacebio_1_1svc.html#a915337fa8514963777c016cdadbd02ba',1,'bio::svc']]],
+  ['createstorage',['CreateStorage',['../da/dfe/classbio_1_1applet_1_1_library_applet_creator.html#a672dfe60439df6c32096d6dc772cda4b',1,'bio::applet::LibraryAppletCreator']]],
   ['createthread',['CreateThread',['../d8/d1b/namespacebio_1_1svc.html#a85ef1b9a5951104d6849589e30711f5b',1,'bio::svc']]],
   ['createtransfermemory',['CreateTransferMemory',['../d8/d1b/namespacebio_1_1svc.html#ac03a1894db031afb3fa6e3ee776883b1',1,'bio::svc']]]
 ];

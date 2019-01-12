@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['cabinet',['Cabinet',['../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878ad29559fc15623022d99520cb1c2b449a',1,'bio::applet']]],
   ['calibrationbinary',['CalibrationBinary',['../de/d72/namespacebio_1_1fsp.html#a2bdbd7f5303a20ff2a0713491ab6c081adf4c48a43dab361da7a51d52b69505e6',1,'bio::fsp']]],
   ['calibrationfile',['CalibrationFile',['../de/d72/namespacebio_1_1fsp.html#a2bdbd7f5303a20ff2a0713491ab6c081a206eb128401b3f1157f55735764ff7e3',1,'bio::fsp']]],
   ['callsecuremonitor',['CallSecureMonitor',['../d8/d1b/namespacebio_1_1svc.html#ac91a5fc697f798901f4ce93759867065',1,'bio::svc']]],
@@ -25,7 +26,7 @@ var searchData=
   ['connecttoport',['ConnectToPort',['../d8/d1b/namespacebio_1_1svc.html#a2f93a441258ace53ed67c544eeb17905',1,'bio::svc']]],
   ['continuedebugevent',['ContinueDebugEvent',['../d8/d1b/namespacebio_1_1svc.html#aec06a804708048f3cbf37a0c8566ff26',1,'bio::svc']]],
   ['controlcodememory',['ControlCodeMemory',['../d8/d1b/namespacebio_1_1svc.html#a5f274636588c951c7623d9212283bcf8',1,'bio::svc']]],
-  ['controller',['Controller',['../d5/d7f/namespacebio_1_1input.html#aa8c078d71b6f0adeb333462831a67a18',1,'bio::input']]],
+  ['controller',['Controller',['../d5/d7f/namespacebio_1_1input.html#aa8c078d71b6f0adeb333462831a67a18',1,'bio::input::Controller()'],['../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878a9bbf373797bf7cf7ba62c80023682e25',1,'bio::applet::Controller()']]],
   ['controllercolor',['ControllerColor',['../df/d0b/structbio_1_1input_1_1_controller_color.html',1,'bio::input']]],
   ['controllerdata',['ControllerData',['../da/dcf/structbio_1_1input_1_1_controller_data.html',1,'bio::input']]],
   ['controllermacaddress',['ControllerMACAddress',['../d2/d20/structbio_1_1input_1_1_controller_m_a_c_address.html',1,'bio::input']]],
@@ -52,11 +53,13 @@ var searchData=
   ['createevent',['CreateEvent',['../d8/d1b/namespacebio_1_1svc.html#aca42dd7f03944db676d1002ca9f72123',1,'bio::svc']]],
   ['createfile',['CreateFile',['../dd/de1/classbio_1_1fsp_1_1_file_system.html#a8ed7c5b651814488054fee109dba532b',1,'bio::fsp::FileSystem']]],
   ['createinterruptevent',['CreateInterruptEvent',['../d8/d1b/namespacebio_1_1svc.html#aa8d0774e11bdab6975e2ab708700352c',1,'bio::svc']]],
+  ['createlibraryapplet',['CreateLibraryApplet',['../da/dfe/classbio_1_1applet_1_1_library_applet_creator.html#a262e7d365514779155712dbb29773aa8',1,'bio::applet::LibraryAppletCreator']]],
   ['createport',['CreatePort',['../d8/d1b/namespacebio_1_1svc.html#a35280589c29ddcd3075eb9e10bbee4e9',1,'bio::svc']]],
   ['createprocess',['CreateProcess',['../d8/d1b/namespacebio_1_1svc.html#a876635f21bccfc78bb6628c0ca5ed88c',1,'bio::svc']]],
   ['createresourcelimit',['CreateResourceLimit',['../d8/d1b/namespacebio_1_1svc.html#abebeca472127438b027d25c5b4e7c39c',1,'bio::svc']]],
   ['createsession',['CreateSession',['../d8/d1b/namespacebio_1_1svc.html#acbe7550a90bfbcf94b067e79feb72af3',1,'bio::svc']]],
   ['createsharedmemory',['CreateSharedMemory',['../d8/d1b/namespacebio_1_1svc.html#a915337fa8514963777c016cdadbd02ba',1,'bio::svc']]],
+  ['createstorage',['CreateStorage',['../da/dfe/classbio_1_1applet_1_1_library_applet_creator.html#a672dfe60439df6c32096d6dc772cda4b',1,'bio::applet::LibraryAppletCreator']]],
   ['createthread',['CreateThread',['../d8/d1b/namespacebio_1_1svc.html#a85ef1b9a5951104d6849589e30711f5b',1,'bio::svc']]],
   ['createtransfermemory',['CreateTransferMemory',['../d8/d1b/namespacebio_1_1svc.html#ac03a1894db031afb3fa6e3ee776883b1',1,'bio::svc']]],
   ['currentcore',['CurrentCore',['../d6/d5c/namespacebio.html#ab3fc7bffa8fd8f69e967603c6f24b5eba99340deb2dec89fc939a2002955463c4',1,'bio']]]

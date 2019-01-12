@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('dd/da7/biocoenosis_2flora_2applet_2_ty
 <div class="title">Types.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../d4/d10/_s_m_8hpp_source.html">bio/biocoenosis/flora/sm.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d4/d10/_s_m_8hpp_source.html">bio/biocoenosis/fauna/sm.hpp</a>&gt;</code><br />
 </div>
 <p><a href="../../dd/da7/biocoenosis_2flora_2applet_2_types_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -112,6 +112,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/classbio_1_1applet_1_1_display_controller.html">bio::applet::DisplayController</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classbio_1_1applet_1_1_process_winding_controller.html">bio::applet::ProcessWindingController</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/classbio_1_1applet_1_1_storage_accessor.html">bio::applet::StorageAccessor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d27/classbio_1_1applet_1_1_storage.html">bio::applet::Storage</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d50/classbio_1_1applet_1_1_library_applet_accessor.html">bio::applet::LibraryAppletAccessor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbio_1_1applet_1_1_library_applet_creator.html">bio::applet::LibraryAppletCreator</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,10 +145,19 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aacbaaeef86e08ac5e798413afbf35878"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878">bio::applet::AppletId</a> { <a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878a145b61e5a5baf6cf90132332a75e8f4e">bio::applet::AppletId::Swkbd</a> = 0x11
+<tr class="memitem:aacbaaeef86e08ac5e798413afbf35878"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878">bio::applet::AppletId</a> { <br />
+&#160;&#160;<a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878a2179983dfa709135f0082f968488cc7c">bio::applet::AppletId::PlayerSelect</a> = 0x10, 
+<a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878ad29559fc15623022d99520cb1c2b449a">bio::applet::AppletId::Cabinet</a> = 0xb, 
+<a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878a9bbf373797bf7cf7ba62c80023682e25">bio::applet::AppletId::Controller</a> = 0xc, 
+<a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878a902b0d55fddef6f8d651fe1035b7d4bd">bio::applet::AppletId::Error</a> = 0xe, 
+<br />
+&#160;&#160;<a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878ac6e190b284633c48e39e55049da3cce8">bio::applet::AppletId::Web</a> = 0x13, 
+<a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#aacbaaeef86e08ac5e798413afbf35878a145b61e5a5baf6cf90132332a75e8f4e">bio::applet::AppletId::Swkbd</a> = 0x11
+<br />
  }</td></tr>
 <tr class="separator:aacbaaeef86e08ac5e798413afbf35878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3929ba42c8725751b10deae5982d66fb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#a3929ba42c8725751b10deae5982d66fb">bio::applet::AppletMode</a> { <a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#a3929ba42c8725751b10deae5982d66fba918e66a39bc953b2d208b0f9b0d7d4a1">bio::applet::AppletMode::AllForeground</a>
+<tr class="memitem:a3929ba42c8725751b10deae5982d66fb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#a3929ba42c8725751b10deae5982d66fb">bio::applet::AppletMode</a> { <a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#a3929ba42c8725751b10deae5982d66fba918e66a39bc953b2d208b0f9b0d7d4a1">bio::applet::AppletMode::AllForeground</a>, 
+<a class="el" href="../../d7/d9c/namespacebio_1_1applet.html#a3929ba42c8725751b10deae5982d66fbaa9ded1e5ce5d75814730bb4caaf49419">bio::applet::AppletMode::Background</a>
  }</td></tr>
 <tr class="separator:a3929ba42c8725751b10deae5982d66fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

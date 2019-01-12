@@ -2,6 +2,7 @@ var root_2_types_8hpp =
 [
     [ "ApplicationId", "d5/d65/structbio_1_1_application_id.html", "d5/d65/structbio_1_1_application_id" ],
     [ "Result", "d8/d6c/structbio_1_1_result.html", "d8/d6c/structbio_1_1_result" ],
+    [ "ErrorCode", "d2/d57/structbio_1_1_error_code.html", "d2/d57/structbio_1_1_error_code" ],
     [ "ResultWrap", "d6/d06/classbio_1_1_result_wrap.html", "d6/d06/classbio_1_1_result_wrap" ],
     [ "ResultClass", "d0/db8/classbio_1_1_result_class.html", "d0/db8/classbio_1_1_result_class" ],
     [ "MemoryInfo", "d2/dbe/structbio_1_1_memory_info.html", "d2/dbe/structbio_1_1_memory_info" ],

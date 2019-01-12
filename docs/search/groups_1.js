@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['module_20containing_20a_20simplified_20support_20for_20app_2fapplet_20services_20and_20contents_2e',['Module containing a simplified support for app/applet services and contents.',['../db/d60/group__app.html',1,'']]],
   ['module_20implementing_20_22appletae_22_20and_20_22appletoe_22_20ipc_20services_27_20commands_2e',['Module implementing &quot;appletAE&quot; and &quot;appletOE&quot; IPC services&apos; commands.',['../d3/d99/group__applet.html',1,'']]],
   ['module_20managing_20_28mostly_20low_2dlevel_29_20arm_20functions_2c_20handling_20exception_20dumps_2e',['Module managing (mostly low-level) ARM functions, handling exception dumps.',['../d4/d56/group__arm.html',1,'']]],
   ['module_20containing_20a_20simplified_20error_20support_20for_20error_20throwing_20via_20fatal_2fexit_2fapplet_2e',['Module containing a simplified error support for error throwing via fatal/exit/applet.',['../dd/d0e/group__err.html',1,'']]],

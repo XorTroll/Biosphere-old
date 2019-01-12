@@ -1,6 +1,7 @@
 var searchData=
 [
   ['ae',['ae',['../d1/d76/namespacebio_1_1applet_1_1ae.html',1,'bio::applet']]],
+  ['app',['app',['../d2/d6a/namespacebio_1_1app.html',1,'bio']]],
   ['applet',['applet',['../d7/d9c/namespacebio_1_1applet.html',1,'bio']]],
   ['arm',['arm',['../d4/d1e/namespacebio_1_1arm.html',1,'bio']]],
   ['atomic',['Atomic',['../db/d6c/namespacebio_1_1arm_1_1_atomic.html',1,'bio::arm']]],

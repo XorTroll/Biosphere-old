@@ -1,10 +1,12 @@
 var searchData=
 [
   ['ae',['ae',['../d1/d76/namespacebio_1_1applet_1_1ae.html',1,'bio::applet']]],
+  ['app',['app',['../d2/d6a/namespacebio_1_1app.html',1,'bio']]],
   ['applet',['applet',['../d7/d9c/namespacebio_1_1applet.html',1,'bio']]],
   ['arm',['arm',['../d4/d1e/namespacebio_1_1arm.html',1,'bio']]],
   ['atomic',['Atomic',['../db/d6c/namespacebio_1_1arm_1_1_atomic.html',1,'bio::arm']]],
   ['b',['B',['../d5/d7f/namespacebio_1_1input.html#abca816f90c815d3db06364b7005b8820a9c338fe2e9d3ad379caa537d9d9e8520',1,'bio::input']]],
+  ['background',['Background',['../d7/d9c/namespacebio_1_1applet.html#a3929ba42c8725751b10deae5982d66fbaa9ded1e5ce5d75814730bb4caaf49419',1,'bio::applet']]],
   ['badsvc',['BadSVC',['../d4/d1e/namespacebio_1_1arm.html#a39b2cfc99ef2ba3a006391529c369b1ea4af8a40361521f3fc865c61414acdb67',1,'bio::arm']]],
   ['bio',['bio',['../d6/d5c/namespacebio.html',1,'']]],
   ['bio_5fbitsizeof',['BIO_BITSIZEOF',['../d6/d86/_macros_8hpp.html#ae40b9e51cd71dfc0a7c27cc1d884310e',1,'Macros.hpp']]],
