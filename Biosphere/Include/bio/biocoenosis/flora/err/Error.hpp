@@ -1,7 +1,7 @@
 
 #pragma once
 #include <bio/biocoenosis/flora/fatal.hpp>
-#include <bio/biocoenosis/flora/applet.hpp>
+#include <bio/biocoenosis/flora/app.hpp>
 
 namespace bio::err
 {
@@ -12,9 +12,7 @@ namespace bio::err
         AppletDialog,
     };
 
-    void InitializeFatalThrowMode(fatal::FatalService *Fatal);
-    void InitializeAppletThrowMode(applet::LibraryAppletCreator *AppletCreator);
-    Result SetDefaultThrowMode(ThrowMode Mode);
+    void SetDefaultThrowMode(ThrowMode Mode);
     void Throw(Result Res);
     void ThrowWithMode(Result Res, ThrowMode Mode);
 

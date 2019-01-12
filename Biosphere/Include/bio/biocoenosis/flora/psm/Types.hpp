@@ -1,6 +1,6 @@
 
 #pragma once
-#include <bio/biocoenosis/flora/sm.hpp>
+#include <bio/biocoenosis/fauna/sm.hpp>
 
 namespace bio::psm
 {

@@ -12,7 +12,7 @@ namespace bio::psm
             ResultWrap<ChargerType> GetChargerType();
     };
 
-    ResultWrap<PsmService*> Initialize(sm::ServiceManager *SM);
+    ResultWrap<PsmService*> Initialize();
 
     static const u32 Module = 136;
 }

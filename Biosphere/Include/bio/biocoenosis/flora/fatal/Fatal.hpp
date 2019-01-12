@@ -11,7 +11,7 @@ namespace bio::fatal
             Result ThrowWithPolicy(Result Error, ThrowMode Mode);
     };
 
-    ResultWrap<FatalService*> Initialize(sm::ServiceManager *SM);
+    ResultWrap<FatalService*> Initialize();
 
     static const u32 Module = 163;
     static const Result ResultNoVolPlusHeld(Module, 5);

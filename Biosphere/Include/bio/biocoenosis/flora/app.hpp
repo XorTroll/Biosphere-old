@@ -14,6 +14,7 @@
 
 #pragma once
 #include <bio/biocoenosis/flora/app/App.hpp>
+#include <bio/biocoenosis/flora/app/Applets.hpp>
 #include <bio/biocoenosis/flora/app/Types.hpp>
 
 /**

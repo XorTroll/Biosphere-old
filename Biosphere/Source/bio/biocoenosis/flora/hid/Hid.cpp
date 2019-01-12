@@ -41,9 +41,9 @@ namespace bio::hid
         return this->ProcessRequest<124>(hipc::InProcessId(), hipc::InRaw<u32>(Controller), hipc::InRaw<u64>(AppletResourceUserId));
     }
 
-    ResultWrap<HidService*> Initialize(sm::ServiceManager *SM)
+    ResultWrap<HidService*> Initialize()
     {
-        auto srv = SM->GetService("hid");
+        auto srv = sm::GetService("hid");
         Result rc = srv;
         hipc::Object *osrv = srv.AssertOk();
         return ResultWrap<HidService*>(rc, static_cast<HidService*>(osrv));

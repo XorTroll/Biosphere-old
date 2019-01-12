@@ -12,7 +12,7 @@
 */
 
 #pragma once
-#include <bio/biocoenosis/flora/sm/SM.hpp>
+#include <bio/biocoenosis/fauna/sm/SM.hpp>
 
 /**
     @defgroup sm Module implementing "sm:" port's (base to access other services) and "sm:m" IPC service's commands.

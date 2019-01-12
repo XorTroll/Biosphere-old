@@ -4,11 +4,13 @@
 
 namespace bio::app
 {
-    Result Initialize(sm::ServiceManager *SM, RunMode Mode);
+    Result Initialize(RunMode Mode);
     void Finalize();
     bool HasInitialized();
     bool IsApplet();
     bool IsApplication();
     bool IsAppletOrApplication();
     bool IsSubprocess();
+    applet::SelfController *GetSelfController();
+    applet::LibraryAppletCreator *GetLibraryAppletCreator();
 }

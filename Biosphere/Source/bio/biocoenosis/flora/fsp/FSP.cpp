@@ -138,9 +138,9 @@ namespace bio::fsp
         return ResultWrap<FileSystem*>(rc, new FileSystem(fsh));
     }
 
-    ResultWrap<FspService*> Initialize(sm::ServiceManager *SM)
+    ResultWrap<FspService*> Initialize()
     {
-        auto srv = SM->GetService("fsp-srv");
+        auto srv = sm::GetService("fsp-srv");
         Result rc = srv;
         hipc::Object *osrv = srv.AssertOk();
         return ResultWrap<FspService*>(rc, static_cast<FspService*>(osrv));

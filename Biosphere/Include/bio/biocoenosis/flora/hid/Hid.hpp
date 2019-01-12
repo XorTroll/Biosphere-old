@@ -23,5 +23,5 @@ namespace bio::hid
             Result SetNpadJoyAssignmentModeDual(u32 Controller, u64 AppletResourceUserId);
     };
 
-    ResultWrap<HidService*> Initialize(sm::ServiceManager *SM);
+    ResultWrap<HidService*> Initialize();
 }

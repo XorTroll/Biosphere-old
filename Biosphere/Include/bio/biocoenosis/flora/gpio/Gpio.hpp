@@ -21,7 +21,7 @@ namespace bio::gpio
             ResultWrap<PadSession*> OpenSession(PadName Name);
     };
 
-    ResultWrap<GpioService*> Initialize(sm::ServiceManager *SM);
+    ResultWrap<GpioService*> Initialize();
 
     static const u32 Module = 102;
 }

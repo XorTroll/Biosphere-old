@@ -36,5 +36,5 @@ namespace bio::applet::ae
             ResultWrap<ApplicationProxy*> OpenSystemApplicationProxy(u64 Reserved);
     };
 
-    ResultWrap<AeService*> Initialize(sm::ServiceManager *SM);
+    ResultWrap<AeService*> Initialize();
 }

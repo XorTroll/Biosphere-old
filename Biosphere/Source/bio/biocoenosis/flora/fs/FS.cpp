@@ -203,7 +203,7 @@ namespace bio::fs
         return strnlen((char*)out, len);
     }
 
-    void Initialize(sm::ServiceManager *SM)
+    void Initialize()
     {
         u32 total = (sizeof(devices) / sizeof(inDevice));
         if(!fsinit)

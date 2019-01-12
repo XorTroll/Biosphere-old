@@ -11,5 +11,5 @@ namespace bio::applet::oe
             ResultWrap<ApplicationProxy*> OpenApplicationProxy(u64 Reserved);
     };
 
-    ResultWrap<OeService*> Initialize(sm::ServiceManager *SM);
+    ResultWrap<OeService*> Initialize();
 }

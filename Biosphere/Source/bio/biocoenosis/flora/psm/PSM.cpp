@@ -16,9 +16,9 @@ namespace bio::psm
         return ResultWrap<ChargerType>(rc, static_cast<ChargerType>(cht));
     }
 
-    ResultWrap<PsmService*> Initialize(sm::ServiceManager *SM)
+    ResultWrap<PsmService*> Initialize()
     {
-        auto srv = SM->GetService("psm");
+        auto srv = sm::GetService("psm");
         Result rc = srv;
         hipc::Object *osrv = srv.AssertOk();
         return ResultWrap<PsmService*>(rc, static_cast<PsmService*>(osrv));

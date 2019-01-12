@@ -33,9 +33,9 @@ namespace bio::gpio
         return ResultWrap<PadSession*>(rc, new PadSession(pdh));
     }
 
-    ResultWrap<GpioService*> Initialize(sm::ServiceManager *SM)
+    ResultWrap<GpioService*> Initialize()
     {
-        auto srv = SM->GetService("gpio");
+        auto srv = sm::GetService("gpio");
         Result rc = srv;
         hipc::Object *osrv = srv.AssertOk();
         return ResultWrap<GpioService*>(rc, static_cast<GpioService*>(osrv));

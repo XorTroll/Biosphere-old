@@ -20,7 +20,7 @@ namespace bio::input
     class InputManager
     {
         public:
-            InputManager(sm::ServiceManager *SM, u64 AppletResourceUserId);
+            InputManager(u64 AppletResourceUserId);
             InputMemory *GetInputMemory();
             Player *GetPlayer(Controller PlayerNo);
         private:

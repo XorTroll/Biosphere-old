@@ -14,6 +14,7 @@
         <Include>Include\bio\biocoenosis\fauna</Include>
         <Include>Include\bio\biocoenosis\fauna\hipc</Include>
         <Include>Include\bio\biocoenosis\fauna\os</Include>
+        <Include>Include\bio\biocoenosis\fauna\sm</Include>
         <Include>Include\bio\biocoenosis\fauna\utf</Include>
         <Include>Include\bio\biocoenosis\flora</Include>
         <Include>Include\bio\biocoenosis\flora\app</Include>
@@ -25,7 +26,6 @@
         <Include>Include\bio\biocoenosis\flora\hid</Include>
         <Include>Include\bio\biocoenosis\flora\input</Include>
         <Include>Include\bio\biocoenosis\flora\psm</Include>
-        <Include>Include\bio\biocoenosis\flora\sm</Include>
     </Includes>
     <Sources>
         <Source>Source</Source>
@@ -40,6 +40,7 @@
         <Source>Source\bio\biocoenosis\fauna</Source>
         <Source>Source\bio\biocoenosis\fauna\hipc</Source>
         <Source>Source\bio\biocoenosis\fauna\os</Source>
+        <Source>Source\bio\biocoenosis\fauna\sm</Source>
         <Source>Source\bio\biocoenosis\fauna\utf</Source>
         <Source>Source\bio\biocoenosis\flora</Source>
         <Source>Source\bio\biocoenosis\flora\app</Source>
@@ -51,7 +52,6 @@
         <Source>Source\bio\biocoenosis\flora\hid</Source>
         <Source>Source\bio\biocoenosis\flora\input</Source>
         <Source>Source\bio\biocoenosis\flora\psm</Source>
-        <Source>Source\bio\biocoenosis\flora\sm</Source>
     </Sources>
     <IncludeBio>false</IncludeBio>
     <Output>Output</Output>

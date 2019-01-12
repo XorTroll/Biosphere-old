@@ -58,9 +58,9 @@ namespace bio::applet::ae
         return ResultWrap<ApplicationProxy*>(rc, new ApplicationProxy(this, osap));
     }
 
-    ResultWrap<AeService*> Initialize(sm::ServiceManager *SM)
+    ResultWrap<AeService*> Initialize()
     {
-        auto srv = SM->GetService("appletAE");
+        auto srv = sm::GetService("appletAE");
         Result rc = srv;
         hipc::Object *osrv = srv.AssertOk();
         if(rc.IsSuccess()) rc = osrv->ConvertToDomain();

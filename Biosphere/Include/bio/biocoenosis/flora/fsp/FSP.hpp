@@ -51,5 +51,5 @@ namespace bio::fsp
             ResultWrap<FileSystem*> OpenSdCardFileSystem();
     };
 
-    ResultWrap<FspService*> Initialize(sm::ServiceManager *SM);
+    ResultWrap<FspService*> Initialize();
 }

@@ -22,4 +22,3 @@
 #include <bio/biocoenosis/flora/hid.hpp>
 #include <bio/biocoenosis/flora/input.hpp>
 #include <bio/biocoenosis/flora/psm.hpp>
-#include <bio/biocoenosis/flora/sm.hpp>

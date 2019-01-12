@@ -1,6 +1,6 @@
 
 #pragma once
-#include <bio/biocoenosis/flora/sm.hpp>
+#include <bio/biocoenosis/fauna/sm.hpp>
 
 namespace bio::hid::dbg
 {
@@ -10,5 +10,5 @@ namespace bio::hid::dbg
             using Object::Object;
     };
 
-    ResultWrap<HidDbgService*> Initialize(sm::ServiceManager *SM);
+    ResultWrap<HidDbgService*> Initialize();
 }

@@ -87,4 +87,18 @@ namespace bio::applet
         Result rc = this->ProcessRequest<10>(hipc::InRaw<u64>(Size), hipc::OutObjectId<0>(ost));
         return ResultWrap<Storage*>(rc, new Storage(this, ost));
     }
+
+    ResultWrap<SelfController*> ApplicationProxy::GetSelfController()
+    {
+        u32 osch = 0;
+        Result rc = this->ProcessRequest<1>(hipc::OutObjectId<0>(osch));
+        return ResultWrap<SelfController*>(rc, new SelfController(this, osch));
+    }
+
+    ResultWrap<LibraryAppletCreator*> ApplicationProxy::GetLibraryAppletCreator()
+    {
+        u32 olac = 0;
+        Result rc = this->ProcessRequest<11>(hipc::OutObjectId<0>(olac));
+        return ResultWrap<LibraryAppletCreator*>(rc, new LibraryAppletCreator(this, olac));
+    }
 }

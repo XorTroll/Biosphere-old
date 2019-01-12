@@ -25,9 +25,9 @@ namespace bio::input
         return cd.Main.Entries[cd.Main.LatestIndex].ButtonState;
     }
 
-    InputManager::InputManager(sm::ServiceManager *SM, u64 AppletResourceUserId)
+    InputManager::InputManager(u64 AppletResourceUserId)
     {
-        hid::HidService *hid = hid::Initialize(SM).AssertOk();
+        hid::HidService *hid = hid::Initialize().AssertOk();
         hid::AppletResource *har = hid->CreateAppletResource(AppletResourceUserId).AssertOk();
         u32 memh = har->GetSharedMemoryHandle().AssertOk();
         os::SharedMemory *shm = new os::SharedMemory(memh, 0x40000, Permission::Read);

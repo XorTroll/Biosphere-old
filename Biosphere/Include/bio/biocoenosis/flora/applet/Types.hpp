@@ -1,11 +1,14 @@
 
 #pragma once
-#include <bio/biocoenosis/flora/sm.hpp>
+#include <bio/biocoenosis/fauna/sm.hpp>
 
 namespace bio::applet
 {
     enum class AppletId
     {
+        PlayerSelect = 0x10,
+        Cabinet = 0xb,
+        Controller = 0xc,
         Error = 0xe,
         Web = 0x13,
         Swkbd = 0x11,
@@ -130,5 +133,7 @@ namespace bio::applet
     {
         public:
             using Object::Object;
+            ResultWrap<SelfController*> GetSelfController();
+            ResultWrap<LibraryAppletCreator*> GetLibraryAppletCreator();
     };
 }
