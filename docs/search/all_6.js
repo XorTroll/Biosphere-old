@@ -34,6 +34,7 @@ var searchData=
   ['getnativerecursivelock',['GetNativeRecursiveLock',['../db/d6d/classbio_1_1os_1_1_recursive_mutex.html#abc307cc839ee6fe5371fb1d299d37685',1,'bio::os::RecursiveMutex']]],
   ['getobjectid',['GetObjectId',['../d9/d3c/classbio_1_1hipc_1_1_object.html#a64a4112b1adfe01710f3221226f7a865',1,'bio::hipc::Object']]],
   ['getplayer',['GetPlayer',['../df/da1/classbio_1_1input_1_1_input_manager.html#abe2de1fcc71d93b602763e630fbaa251',1,'bio::input::InputManager']]],
+  ['getpopoutdataevent',['GetPopOutDataEvent',['../df/d50/classbio_1_1applet_1_1_library_applet_accessor.html#a2ac72061082495ec460f362e9a431653',1,'bio::applet::LibraryAppletAccessor']]],
   ['getprocessid',['GetProcessId',['../d8/d1b/namespacebio_1_1svc.html#a6a51eb4370d809bad5d3b693d6b58421',1,'bio::svc']]],
   ['getprocessinfo',['GetProcessInfo',['../d8/d1b/namespacebio_1_1svc.html#a50a3dd5c3cb75932a3abf1ecf5da100b',1,'bio::svc']]],
   ['getprocesslist',['GetProcessList',['../d8/d1b/namespacebio_1_1svc.html#ada554e0aaabbe37c7ba007f34c557e0c',1,'bio::svc']]],

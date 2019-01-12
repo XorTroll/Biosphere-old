@@ -12,6 +12,7 @@ namespace bio::app
         applet::SelfController *sc = GetSelfController();
         this->elaunchable = sc->GetLibraryAppletLaunchableEvent().AssertOk();
         this->estate = this->laa->GetAppletStateChangedEvent().AssertOk();
+        this->epod = this->laa->GetPopOutDataEvent().AssertOk();
         *(u32*)&this->commonargs[0] = 1;
         *(u32*)&this->commonargs[0x4] = 0x20;
         *(u64*)&this->commonargs[0x18] = svc::GetSystemTick();
@@ -63,6 +64,7 @@ namespace bio::app
 
     ResultWrap<void*> Applet::ReceiveDataFromStorage(size_t Size)
     {
+        this->epod->Wait(U64_MAX).AssertOk();
         applet::Storage *st = this->laa->PopOutData().AssertOk();
         applet::StorageAccessor *ast = st->Open().AssertOk();
         void *data = ast->Read(0, Size).AssertOk();
@@ -93,6 +95,7 @@ namespace bio::app
     void Applet::Finalize()
     {
         delete this->estate;
+        delete this->epod;
         delete this->elaunchable;
         delete this->laa;
     }

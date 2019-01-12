@@ -1,51 +1,60 @@
 #include <bio/Biosphere>
 #include <string>
-using namespace bio;
+
+// Latest test:
+// - Press A to ask for a user, and then error with error code 2101-101 and the user's name.
+// - Press Plus to exit.
 
 int main()
 {
-    os::OverrideHeap(0x10000000).AssertOk();
-    app::Initialize(app::RunMode::LibraryApplet);
+    bio::os::OverrideHeap(0x10000000).AssertOk();
+    bio::app::Initialize(bio::app::RunMode::LibraryApplet);
 
-    app::Applet *psel = new app::Applet(applet::AppletId::PlayerSelect);
-    u8 data[0xa0] = { 0 };
-    psel->SendDataViaStorage(data, 0xa0);
-    psel->Launch().AssertOk();
-    Result rc = psel->WaitFinish();
-    delete psel;
+    bio::input::InputManager *inm = new bio::input::InputManager(0);
+    bio::input::Player *handheld = inm->GetPlayer(bio::input::Controller::HandHeld);
 
-    app::Finalize();
-    return rc;
-}
-
-int vimain()
-{
-    hipc::Object *vi = sm::GetService("vi:m").AssertOk();
-
-    u32 hiads = 0;
-    vi->ProcessRequest<2>(hipc::InRaw<u32>(0), hipc::OutHandle<0>(hiads)).AssertOk();
-    hipc::Object *iads = new hipc::Object(hiads);
-
-    struct ViName
+    while(true)
     {
-        char name[0x40];
-    } BIO_PACKED;
+        u64 ipt = handheld->GetInput();
+        if(ipt & bio::input::Key::A)
+        {
+            bio::app::Applet *psel = new bio::app::Applet(bio::applet::AppletId::PlayerSelect);
+            u8 data[0xa0] = { 0 };
+            psel->SendDataViaStorage(data, 0xa0).AssertOk();
+            psel->Launch().AssertOk();
+            psel->WaitFinish().AssertOk();
+            u8 *outdata = (u8*)psel->ReceiveDataFromStorage(24).AssertOk();
+            u128 uid = *(u128*)&outdata[8];
+            delete psel;
 
-    ViName nam;
-    memset(&nam, 0, sizeof(ViName));
-    strcpy(nam.name, "Default");
+            bio::hipc::Object *acc = bio::sm::GetService("acc:u0").AssertOk();
+            u32 hprof = 0;
+            acc->ProcessRequest<5>(bio::hipc::InRaw<u128>(uid), bio::hipc::OutHandle<0>(hprof)).AssertOk();
+            bio::hipc::Object *prof = new bio::hipc::Object(hprof);
 
-    u64 dispid = 0;
-    iads->ProcessRequest<1010>(hipc::InRaw<ViName>(nam), hipc::OutRaw<u64>(dispid)).AssertOk();
+            struct PBase
+            {
+                u128 uid;
+                u64 ts;
+                char uname[0x20];
+            } BIO_PACKED;
 
-    alignas(8) u8 nwindow[0x100] = { 0 };
-    u64 nwsize = 0;
-    u64 lyid = 0;
-    iads->ProcessRequest<2030>(hipc::InRaw<u32>(0), hipc::InRaw<u32>(0), hipc::InRaw<u64>(dispid), hipc::OutBuffer(nwindow, 0x100, 0), hipc::OutRaw<u64>(lyid), hipc::OutRaw<u64>(nwsize)).AssertOk();
+            PBase pb;
+            memset(&pb, 0, sizeof(PBase));
 
-    delete iads;
+            prof->ProcessRequest<1>(bio::hipc::OutRaw<PBase>(pb)).AssertOk();
 
-    delete vi;
+            delete prof;
+            delete acc;
 
+            bio::app::ErrorApplet *eapp = new bio::app::ErrorApplet(bio::app::ErrorAppletMode::SystemError, bio::Result(101, 101));
+            eapp->SetErrorText(std::string(pb.uname));
+            eapp->Show().AssertOk();
+            delete eapp;
+        }
+        else if(ipt & bio::input::Key::Plus) break;
+    }
+
+    bio::app::Finalize();
     return 0;
 }

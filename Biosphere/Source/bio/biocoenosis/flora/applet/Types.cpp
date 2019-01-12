@@ -31,9 +31,9 @@ namespace bio::applet
 
     ResultWrap<void*> StorageAccessor::Read(u64 Offset, size_t Size)
     {
-        void *data;
+        void *data = malloc(Size);
         size_t qbufsize = this->QueryPointerBufferSize().AssertOk();
-        Result rc = this->ProcessRequest<11>(hipc::InRaw<u64>(Offset), hipc::InSmartBuffer(data, Size, 0, qbufsize));
+        Result rc = this->ProcessRequest<11>(hipc::InRaw<u64>(Offset), hipc::OutSmartBuffer(data, Size, 0, qbufsize));
         return ResultWrap<void*>(rc, data);
     }
 
@@ -72,6 +72,13 @@ namespace bio::applet
         u32 ost = 0;
         Result rc = this->ProcessRequest<101>(hipc::OutObjectId<0>(ost));
         return ResultWrap<Storage*>(rc, new Storage(this, ost));
+    }
+
+    ResultWrap<os::Event*> LibraryAppletAccessor::GetPopOutDataEvent()
+    {
+        u32 podev = 0;
+        Result rc = this->ProcessRequest<105>(hipc::OutHandle<0>(podev));
+        return ResultWrap<os::Event*>(rc, new os::Event(podev, false));
     }
 
     ResultWrap<LibraryAppletAccessor*> LibraryAppletCreator::CreateLibraryApplet(AppletId Id, AppletMode Mode)

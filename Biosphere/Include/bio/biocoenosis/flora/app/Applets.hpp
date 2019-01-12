@@ -24,6 +24,7 @@ namespace bio::app
             applet::LibraryAppletAccessor *laa;
             os::Event *elaunchable;
             os::Event *estate;
+            os::Event *epod;
             bool scargs;
             u8 *commonargs;
     };

@@ -83,6 +83,7 @@ namespace bio::applet
             Result GetResult();
             Result PushInData(Storage *Data);
             ResultWrap<Storage*> PopOutData();
+            ResultWrap<os::Event*> GetPopOutDataEvent();
     };
 
     class LibraryAppletCreator : public hipc::Object
