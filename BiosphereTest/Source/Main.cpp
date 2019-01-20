@@ -18,39 +18,9 @@ int main()
         u64 ipt = handheld->GetInput();
         if(ipt & bio::input::Key::A)
         {
-            bio::app::Applet *psel = new bio::app::Applet(bio::applet::AppletId::PlayerSelect);
-            u8 data[0xa0] = { 0 };
-            psel->SendDataViaStorage(data, 0xa0).AssertOk();
-            psel->Launch().AssertOk();
-            psel->WaitFinish().AssertOk();
-            u8 *outdata = (u8*)psel->ReceiveDataFromStorage(24).AssertOk();
-            u128 uid = *(u128*)&outdata[8];
-            delete psel;
-
-            bio::hipc::Object *acc = bio::sm::GetService("acc:u0").AssertOk();
-            u32 hprof = 0;
-            acc->ProcessRequest<5>(bio::hipc::InRaw<u128>(uid), bio::hipc::OutHandle<0>(hprof)).AssertOk();
-            bio::hipc::Object *prof = new bio::hipc::Object(hprof);
-
-            struct PBase
-            {
-                u128 uid;
-                u64 ts;
-                char uname[0x20];
-            } BIO_PACKED;
-
-            PBase pb;
-            memset(&pb, 0, sizeof(PBase));
-
-            prof->ProcessRequest<1>(bio::hipc::OutRaw<PBase>(pb)).AssertOk();
-
-            delete prof;
-            delete acc;
-
-            bio::app::ErrorApplet *eapp = new bio::app::ErrorApplet(bio::app::ErrorAppletMode::SystemError, bio::Result(101, 101));
-            eapp->SetErrorText(std::string(pb.uname));
-            eapp->Show().AssertOk();
-            delete eapp;
+            bio::app::WebApplet *web = new bio::app::WebApplet("https://github.com/XorTroll");
+            web->Show().AssertOk();
+            delete web;
         }
         else if(ipt & bio::input::Key::Plus) break;
     }

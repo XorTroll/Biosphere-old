@@ -1,5 +1,6 @@
 #include <bio/biocoenosis/flora/app/Applets.hpp>
 #include <bio/biocoenosis/flora/app/App.hpp>
+#include <cstring>
 
 namespace bio::app
 {
@@ -136,5 +137,65 @@ namespace bio::app
         if(rc.IsFailure()) return rc;
         rc = this->WaitFinish();
         return rc;
+    }
+
+    ErrorApplet::~ErrorApplet()
+    {
+        free(this->errorargs);
+    }
+
+    PlayerSelectApplet::PlayerSelectApplet() : Applet(applet::AppletId::PlayerSelect)
+    {
+        this->pselargs = (u8*)calloc(0xa0, 1);
+    }
+
+    ResultWrap<account::Uid> PlayerSelectApplet::Show()
+    {
+        Result rc = this->SendDataViaStorage(this->pselargs, 0xa0);
+        if(rc.IsFailure()) return ResultWrap<account::Uid>(rc, 0);
+        rc = this->Launch();
+        if(rc.IsFailure()) return ResultWrap<account::Uid>(rc, 0);
+        rc = this->WaitFinish();
+        if(rc.IsFailure()) return ResultWrap<account::Uid>(rc, 0);
+        u8 *out = (u8*)this->ReceiveDataFromStorage(0x18).AssertOk();
+        u64 res = *(u64*)out;
+        account::Uid ouid = 0;
+        if(res == 0) ouid = *(account::Uid*)&out[8];
+        return ResultWrap<account::Uid>(rc, ouid);
+    }
+
+    PlayerSelectApplet::~PlayerSelectApplet()
+    {
+        free(this->pselargs);
+    }
+
+    WebApplet::WebApplet(std::string RequestUrl) : Applet(applet::AppletId::Web)
+    {
+        this->webargs = (u8*)calloc(8192, 1);
+        *(u16*)this->webargs = 2;
+        *(u64*)&this->webargs[4] = 281530811285509;
+        *(u8*)&this->webargs[16] = 1;
+        *(u64*)&this->webargs[17] = 201326593;
+        this->SetRequestUrl(RequestUrl);
+    }
+
+    void WebApplet::SetRequestUrl(std::string RequestUrl)
+    {
+        strcpy((char*)&this->webargs[25], RequestUrl.c_str());
+    }
+
+    Result WebApplet::Show()
+    {
+        Result rc = this->SendDataViaStorage(this->webargs, 8192);
+        if(rc.IsFailure()) return rc;
+        rc = this->Launch();
+        if(rc.IsFailure()) return rc;
+        rc = this->WaitFinish();
+        return rc;
+    }
+
+    WebApplet::~WebApplet()
+    {
+        free(this->webargs);
     }
 }

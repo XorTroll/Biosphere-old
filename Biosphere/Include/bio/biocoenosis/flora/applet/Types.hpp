@@ -11,6 +11,7 @@ namespace bio::applet
         Controller = 0xc,
         Error = 0xe,
         Web = 0x13,
+        MiiEdit = 0x12,
         Swkbd = 0x11,
     };
 

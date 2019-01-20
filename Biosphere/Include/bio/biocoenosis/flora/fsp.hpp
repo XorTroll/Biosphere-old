@@ -17,5 +17,4 @@
 
 /**
     @defgroup fsp Module implementing "fsp-srv" IPC service's commands.
-    FSPTEST
 */

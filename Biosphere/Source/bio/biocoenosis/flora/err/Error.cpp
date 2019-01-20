@@ -30,6 +30,7 @@ namespace bio::err
                 delete fsrv;
                 break;
             case ThrowMode::AppletDialog:
+                if(!app::HasInitialized()) return;
                 app::ErrorApplet *err = new app::ErrorApplet(app::ErrorAppletMode::Default, Res);
                 err->Show().AssertOk();
                 delete err;

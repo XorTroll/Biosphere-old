@@ -1,6 +1,7 @@
 
 #pragma once
 #include <bio/biocoenosis/flora/app/Types.hpp>
+#include <bio/biocoenosis/flora/account.hpp>
 #include <string>
 
 namespace bio::app
@@ -40,11 +41,33 @@ namespace bio::app
     {
         public:
             ErrorApplet(ErrorAppletMode Mode, Result Res);
+            ~ErrorApplet();
             void SetErrorText(std::string Text);
             void SetLongErrorText(std::string Text);
             Result Show();
         private:
             u8 *errorargs;
             u64 eargssize;
+    };
+
+    class PlayerSelectApplet : public Applet
+    {
+        public:
+            PlayerSelectApplet();
+            ~PlayerSelectApplet();
+            ResultWrap<account::Uid> Show();
+        private:
+            u8 *pselargs;
+    };
+
+    class WebApplet : public Applet
+    {
+        public:
+            WebApplet(std::string RequestUrl);
+            ~WebApplet();
+            void SetRequestUrl(std::string RequestUrl);
+            Result Show();
+        private:
+            u8 *webargs;
     };
 }
