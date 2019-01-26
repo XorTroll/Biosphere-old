@@ -12,5 +12,9 @@
             <Mode>NRO</Mode>
             <ApplicationId>0100ABCD12341000</ApplicationId>
         </Build>
+        <Build>
+            <Mode>NSO</Mode>
+            <JSON>npdm.json</JSON>
+        </Build>
     </Builds>
 </BiosphereProject>
