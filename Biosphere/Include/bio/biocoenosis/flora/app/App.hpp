@@ -11,6 +11,7 @@ namespace bio::app
     bool IsApplication();
     bool IsAppletOrApplication();
     bool IsSubprocess();
+    hipc::Object *GetProxyObject();
     applet::SelfController *GetSelfController();
     applet::LibraryAppletCreator *GetLibraryAppletCreator();
 }

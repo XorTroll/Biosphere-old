@@ -29,6 +29,12 @@ namespace bio::app
                     sc = ((applet::ae::LibraryAppletProxy*)approxy)->GetSelfController().AssertOk();
                     lac = ((applet::ae::LibraryAppletProxy*)approxy)->GetLibraryAppletCreator().AssertOk();
                     break;
+                case RunMode::SystemApplet:
+                    apsrv = (hipc::Object*)applet::ae::Initialize().AssertOk();
+                    approxy = (hipc::Object*)((applet::ae::AeService*)apsrv)->OpenSystemAppletProxy(0).AssertOk();
+                    sc = ((applet::ae::LibraryAppletProxy*)approxy)->GetSelfController().AssertOk();
+                    lac = ((applet::ae::LibraryAppletProxy*)approxy)->GetLibraryAppletCreator().AssertOk();
+                    break;
                 default:
                     break;
             }
@@ -77,6 +83,11 @@ namespace bio::app
     bool IsSubprocess()
     {
         return !IsAppletOrApplication();
+    }
+
+    hipc::Object *GetProxyObject()
+    {
+        return approxy;
     }
 
     applet::SelfController *GetSelfController()

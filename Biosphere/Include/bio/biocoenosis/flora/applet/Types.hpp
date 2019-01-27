@@ -21,6 +21,12 @@ namespace bio::applet
         Background,
     };
 
+    enum class ParameterKind
+    {
+        ApplicationCommon = 1,
+        SelectedUser,
+    };
+
     class CommonStateGetter : public hipc::Object
     {
         public:
@@ -39,6 +45,7 @@ namespace bio::applet
         public:
             using Object::Object;
             ResultWrap<u64> GetAppletResourceUserId();
+            Result AcquireForegroundRights();
     };
 
     class AudioController : public hipc::Object
@@ -99,6 +106,8 @@ namespace bio::applet
     {
         public:
             using Object::Object;
+            Result LockForeground();
+            Result UnlockForeground();
     };
 
     class GlobalStateController : public hipc::Object
@@ -107,10 +116,21 @@ namespace bio::applet
             using Object::Object;
     };
 
+    class ApplicationAccessor : public hipc::Object
+    {
+        public:
+            using Object::Object;
+            ResultWrap<os::Event*> GetAppletStateChangedEvent();
+            Result Start();
+            Result RequestForApplicationToGetForeground();
+            Result PushLaunchParameter(ParameterKind Kind, Storage *Data);
+    };
+
     class ApplicationCreator : public hipc::Object
     {
         public:
             using Object::Object;
+            ResultWrap<ApplicationAccessor*> CreateApplication(ApplicationId Id);
     };
 
     class DebugFunctions : public hipc::Object

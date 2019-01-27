@@ -10,12 +10,17 @@ namespace bio::applet::ae
             using Object::Object;
             ResultWrap<CommonStateGetter*> GetCommonStateGetter();
             ResultWrap<SelfController*> GetSelfController();
+            ResultWrap<LibraryAppletCreator*> GetLibraryAppletCreator();
+            ResultWrap<ApplicationCreator*> GetApplicationCreator();
+            ResultWrap<WindowController*> GetWindowController();
+            ResultWrap<HomeMenuFunctions*> GetHomeMenuFunctions();
     };
 
     class LibraryAppletProxy : public hipc::Object
     {
         public:
             using Object::Object;
+            ResultWrap<CommonStateGetter*> GetCommonStateGetter();
             ResultWrap<SelfController*> GetSelfController();
             ResultWrap<LibraryAppletCreator*> GetLibraryAppletCreator();
     };

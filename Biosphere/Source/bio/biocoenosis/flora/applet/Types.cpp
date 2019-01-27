@@ -95,6 +95,45 @@ namespace bio::applet
         return ResultWrap<Storage*>(rc, new Storage(this, ost));
     }
 
+    Result HomeMenuFunctions::LockForeground()
+    {
+        return this->ProcessRequest<11>(hipc::Simple());
+    }
+
+    Result HomeMenuFunctions::UnlockForeground()
+    {
+        return this->ProcessRequest<12>(hipc::Simple());
+    }
+
+    ResultWrap<os::Event*> ApplicationAccessor::GetAppletStateChangedEvent()
+    {
+        u32 ascev = 0;
+        Result rc = this->ProcessRequest<0>(hipc::OutHandle<0>(ascev));
+        return ResultWrap<os::Event*>(rc, new os::Event(ascev, false));
+    }
+
+    Result ApplicationAccessor::Start()
+    {
+        return this->ProcessRequest<10>(hipc::Simple());
+    }
+
+    Result ApplicationAccessor::RequestForApplicationToGetForeground()
+    {
+        return this->ProcessRequest<101>(hipc::Simple());
+    }
+
+    Result ApplicationAccessor::PushLaunchParameter(ParameterKind Kind, Storage *Data)
+    {
+        return this->ProcessRequest<121>(hipc::InRaw<u32>(static_cast<u32>(Kind)), hipc::InObjectId(Data->GetObjectId()));
+    }
+
+    ResultWrap<ApplicationAccessor*> ApplicationCreator::CreateApplication(ApplicationId Id)
+    {
+        u32 oaa = 0;
+        Result rc = this->ProcessRequest<0>(hipc::InRaw<u64>(Id.Id), hipc::OutObjectId<0>(oaa));
+        return ResultWrap<ApplicationAccessor*>(rc, new ApplicationAccessor(this, oaa));
+    }
+
     ResultWrap<SelfController*> ApplicationProxy::GetSelfController()
     {
         u32 osch = 0;
