@@ -1,119 +1,119 @@
 #include <bio/Biosphere>
 #include <string>
 
-// Latest test: as a system applet, attempts to launch Goldleaf as an installed title. MUST BE RUN AS A QLAUNCH REPLACEMENT ON ATMOSPHERE!!
-
-int main()
+int vimain()
 {
-    bio::os::OverrideHeap(0x10000000).AssertOk();
-    bio::app::Initialize(bio::app::RunMode::SystemApplet).AssertOk();
-    bio::svc::SleepThread(1000000000);
+    bio::app::Initialize(bio::app::RunMode::LibraryApplet).AssertOk();
+    bio::hipc::Object *vi = bio::sm::GetService("vi:m").AssertOk();
+    u32 hiads = 0;
+    vi->ProcessRequest<2>(bio::hipc::InRaw<u32>(0), bio::hipc::OutHandle<0>(hiads)).AssertOk();
+    bio::hipc::Object *iads = new bio::hipc::Object(hiads);
 
-    bio::applet::ae::SystemAppletProxy *isap = (bio::applet::ae::SystemAppletProxy*)bio::app::GetProxyObject();
-    bio::applet::WindowController *wc = isap->GetWindowController().AssertOk();
-    bio::applet::HomeMenuFunctions *hmf = isap->GetHomeMenuFunctions().AssertOk();
-    bio::applet::ApplicationCreator *ac = isap->GetApplicationCreator().AssertOk();
-    bio::applet::LibraryAppletCreator *lac = bio::app::GetLibraryAppletCreator();
-
-    bio::app::PlayerSelectApplet *psel = new bio::app::PlayerSelectApplet();
-    bio::account::Uid userid = psel->Show().AssertOk();
-
-    bio::applet::ApplicationAccessor *aa = ac->CreateApplication(bio::ApplicationId(0x01006A800016E000)).AssertOk();
-    bio::os::Event *chev = aa->GetAppletStateChangedEvent().AssertOk();
-    hmf->UnlockForeground().AssertOk();
-
-    struct UserData
+    struct DisplayName
     {
-        u32  m;
-        u8   unk1;
-        u8   pad[3];
-        u128 userID;
-        u8   unk2[0x70];
+        char Name[0x40];
     } BIO_PACKED;
-    UserData udata = { 0 };
-    udata.m = 0xc79497ca;
-    udata.unk1 = 1;
-    udata.userID = userid;
 
-    bio::applet::Storage *ust = lac->CreateStorage(sizeof(UserData)).AssertOk();
-    bio::applet::StorageAccessor *usta = ust->Open().AssertOk();
-    usta->Write(0, &udata, sizeof(UserData)).AssertOk();
-    delete usta;
-    aa->PushLaunchParameter(bio::applet::ParameterKind::SelectedUser, ust).AssertOk();
+    DisplayName dnam = { 0 };
+    strcpy(dnam.Name, "Default");
 
-    aa->RequestForApplicationToGetForeground().AssertOk();
-    aa->Start().AssertOk();
+    u64 dspid = 0;
+    iads->ProcessRequest<1010>(bio::hipc::InRaw<DisplayName>(dnam), bio::hipc::OutRaw<u64>(dspid)).AssertOk();
 
-    chev->Wait(UINT64_MAX).AssertOk();
-    delete chev;
-
-    while(true);
+    delete iads;
+    delete vi;
 
     bio::app::Finalize();
     return 0;
 }
 
-int oldmain()
+int jsmain()
 {
-    bio::os::OverrideHeap(0x18000000).AssertOk();
-    bio::sm::Initialize();
-    // appletAE
-    bio::applet::ae::AeService *ae = bio::applet::ae::Initialize().AssertOk();
-    bio::err::SetDefaultThrowMode(bio::err::ThrowMode::Fatal);
-    bio::svc::SleepThread(3000000000);
-    // appletAE::OpenSystemAppletProxy(u64 Reserved = 0) -> ISystemAppletProxy
-    bio::applet::ae::SystemAppletProxy *isap = ae->OpenSystemAppletProxy(0).AssertOk();
-    u32 oihmf = 0;
-    // ISystemAppletProxy::GetHomeMenuFunctions() -> IHomeMenuFunctions
-    isap->ProcessRequest<20>(bio::hipc::OutObjectId<0>(oihmf)).AssertOk();
-    bio::hipc::Object *ihmf = new bio::hipc::Object(isap, oihmf);
-    u32 oiwc = 0;
-    isap->ProcessRequest<2>(bio::hipc::OutObjectId<0>(oiwc)).AssertOk();
-    bio::hipc::Object *iwc = new bio::hipc::Object(isap, oiwc);
-    iwc->ProcessRequest<10>(bio::hipc::Simple()).AssertOk();
-    u32 oilac = 0;
-    // ISystemAppletProxy::GetLibraryAppletCreator() -> ILibraryAppletCreator
-    isap->ProcessRequest<11>(bio::hipc::OutObjectId<0>(oilac)).AssertOk();
-    bio::applet::LibraryAppletCreator *ilac = new bio::applet::LibraryAppletCreator(isap, oilac);
-    u32 oiac = 0;
-    // ISystemAppletProxy::GetApplicationCreator() -> IAppicationCreator
-    isap->ProcessRequest<22>(bio::hipc::OutObjectId<0>(oiac)).AssertOk();
-    bio::hipc::Object *iac = new bio::hipc::Object(isap, oiac);
-    u32 oiaa = 0;
-    // IApplicationCreator::CreateApplication(u64 ApplicationId) -> IApplicationAccessor
-    iac->ProcessRequest<0>(bio::hipc::InRaw<u64>(0x01000320000CC000), bio::hipc::OutObjectId<0>(oiaa)).AssertOk();
-    bio::hipc::Object *iaa = new bio::hipc::Object(iac, oiaa);
-    // IHomeMenuFunctions::UnlockForeground()
-    ihmf->ProcessRequest<12>(bio::hipc::Simple()).AssertOk();
-    /*
-    struct UserData
+    bio::os::OverrideHeap(0x10000000L);
+    bio::app::Initialize(bio::app::RunMode::LibraryApplet);
+    bio::err::SetDefaultThrowMode(bio::err::ThrowMode::AppletDialog);
+
+    bio::hipc::Object *jsu = bio::sm::GetService("test:u").AssertOk();
+
+    char jscode[] = "var os = require('os');os.arch()";
+    char outres[256];
+
+    // Initialize
+    jsu->ProcessRequest<0>(bio::hipc::InRaw<bool>(true)).AssertOk();
+
+    // Evaluation test
+    jsu->ProcessRequest<3>(bio::hipc::InBuffer(jscode, sizeof(jscode), 0), bio::hipc::OutBuffer(outres, sizeof(outres), 0)).AssertOk();
+    
+    bio::app::ErrorApplet *eapp = new bio::app::ErrorApplet(bio::app::ErrorAppletMode::SystemError, bio::Result(202, 203));
+    eapp->SetErrorText(std::string(outres));
+    eapp->Show();
+
+    // Context edition test
+    u32 hcedit = 0;
+    jsu->ProcessRequest<4>(bio::hipc::OutHandle<0>(hcedit)).AssertOk();
+    bio::hipc::Object *cedit = new bio::hipc::Object(hcedit);
+
+    char vname[] = "testName";
+    char vval[] = "die vertigo die";
+
+    u32 hmdl = 0;
+    cedit->ProcessRequest<3>(bio::hipc::OutHandle<0>(hmdl)).AssertOk();
+    bio::hipc::Object *mdl = new bio::hipc::Object(hmdl);
+
+    char nmdl[] = "mipc";
+    mdl->ProcessRequest<0>(bio::hipc::InBuffer(nmdl, sizeof(nmdl), 0)).AssertOk();
+
+    mdl->ProcessRequest<2>(bio::hipc::InBuffer(vname, sizeof(vname), 0), bio::hipc::InBuffer(vval, sizeof(vval), 0)).AssertOk();
+
+    mdl->ProcessRequest<5>(bio::hipc::Simple()).AssertOk();
+
+    delete mdl;
+
+    delete cedit;
+
+    char ncode[] = "var mipc = require('mipc');mipc.testName";
+    char nout[256];
+
+    jsu->ProcessRequest<3>(bio::hipc::InBuffer(ncode, sizeof(ncode), 0), bio::hipc::OutBuffer(nout, sizeof(nout), 0)).AssertOk();
+    
+    eapp = new bio::app::ErrorApplet(bio::app::ErrorAppletMode::SystemError, bio::Result(202, 299));
+    eapp->SetErrorText(std::string(nout));
+    eapp->Show();
+
+    jsu->ProcessRequest<5>(bio::hipc::Simple()).AssertOk();
+
+    delete jsu;
+
+    bio::app::Finalize();
+    return 0;
+}
+
+int main()
+{
+    bio::os::OverrideHeap(0x10000000L);
+    bio::app::Initialize(bio::app::RunMode::LibraryApplet);
+    bio::err::SetDefaultThrowMode(bio::err::ThrowMode::AppletDialog);
+
+    bio::hipc::Object *testu = bio::sm::GetService("test:u").AssertOk();
+
+    testu->ProcessRequest<0>(bio::hipc::Simple()).AssertOk();
+
+    struct QueueInput
     {
-        u32  m;
-        u8   unk1;
-        u8   pad[3];
-        u128 userID;
-        u8   unk2[0x70];
+        char Path[256];
     } BIO_PACKED;
-    UserData udata = { 0 };
-    udata.m = 0xc79497ca;
-    udata.unk1 = 1;
-    udata.userID = (((u128)(0x37e67802c2321) << 64) | (u128)(0x083be39af5365e18));
-    bio::applet::Storage *ist = ilac->CreateStorage(sizeof(UserData)).AssertOk();
-    bio::applet::StorageAccessor *ista = ist->Open().AssertOk();
-    ista->Write(0, &udata, sizeof(UserData)).AssertOk();
-    delete ista;
-    iaa->ProcessRequest<121>(bio::hipc::InRaw<u32>(2), bio::hipc::InObjectId(ist->GetObjectId())).AssertOk();
-    */
-    u32 evh = 0;
-    iaa->ProcessRequest<0>(bio::hipc::OutHandle<0>(evh)).AssertOk();
-    bio::os::Event *ev = new bio::os::Event(evh, false);
-    // IApplicationAccessor::RequestForApplicationToGetForeground()
-    iaa->ProcessRequest<101>(bio::hipc::Simple()).AssertOk();
-    // IApplicationAccessor::Start()
-    iaa->ProcessRequest<10>(bio::hipc::Simple()).AssertOk();
-    ev->Wait(UINT64_MAX).AssertOk();
-    delete ev;
+
+    QueueInput ipt;
+    strcpy(ipt.Path, "sdmc:/audio.mp3");
+
+    testu->ProcessRequest<2>(bio::hipc::InBuffer(&ipt, sizeof(QueueInput), 0)).AssertOk();
+
+    testu->ProcessRequest<1>(bio::hipc::Simple()).AssertOk();
+
     while(true);
-    bio::sm::Finalize();
+
+    delete testu;
+
+    bio::app::Finalize();
     return 0;
 }

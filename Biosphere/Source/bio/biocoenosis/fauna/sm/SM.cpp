@@ -2,7 +2,7 @@
 #include <vector>
 #include <cstdlib>
 
-std::vector<std::pair<u64, u32>> overrides;
+std::vector<bio::sm::OverrideService> overrides;
 
 namespace bio::sm
 {
@@ -32,7 +32,7 @@ namespace bio::sm
     ResultWrap<hipc::Object*> GetService(const char *Name)
     {
         u64 encname = os::EncodeString(Name);
-        if(!overrides.empty()) for(u32 i = 0; i < overrides.size(); i++) if(overrides[i].first == encname) return ResultWrap<hipc::Object*>(0, new hipc::Object(overrides[i].second));
+        if(!overrides.empty()) for(u32 i = 0; i < overrides.size(); i++) if(overrides[i].EncodedName == encname) return ResultWrap<hipc::Object*>(0, new hipc::Object(overrides[i].Handle, true));
         u32 outh = 0;
         Result rc = smport->ProcessRequest<1>(hipc::InRaw<u64>(encname), hipc::InRaw<u64>(0), hipc::InRaw<u64>(0), hipc::OutHandle<0>(outh));
         return ResultWrap<hipc::Object*>(rc, new hipc::Object(outh));

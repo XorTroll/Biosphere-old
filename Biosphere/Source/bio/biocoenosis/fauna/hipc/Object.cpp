@@ -9,11 +9,12 @@ namespace bio::hipc
         this->type = ObjectType::Uninitialized;
     }
 
-    Object::Object(u32 Handle)
+    Object::Object(u32 Handle, bool Override)
     {
         this->handle = Handle;
         this->objid = UINT32_MAX;
-        this->type = ObjectType::Normal;
+        if(Override) this->type = ObjectType::HomebrewOverride;
+        else this->type = ObjectType::Normal;
     }
 
     Object::Object(u32 Handle, u32 ObjectId, ObjectType Type)
@@ -325,19 +326,13 @@ namespace bio::hipc
         this->objid = UINT32_MAX;
     }
 
-    ServiceObject::ServiceObject(const char *Name, u32 ErrorModule)
+    ServiceObject::ServiceObject(const char *Name)
     {
         this->name = Name;
-        this->mod = ErrorModule;
     }
 
     const char *ServiceObject::GetName()
     {
         return this->name;
-    }
-
-    u32 ServiceObject::GetErrorModule()
-    {
-        return this->mod;
     }
 }

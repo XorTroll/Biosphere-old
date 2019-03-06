@@ -22,6 +22,7 @@
         <Include>Include\bio\biocoenosis\flora\applet</Include>
         <Include>Include\bio\biocoenosis\flora\err</Include>
         <Include>Include\bio\biocoenosis\flora\fatal</Include>
+        <Include>Include\bio\biocoenosis\flora\fs</Include>
         <Include>Include\bio\biocoenosis\flora\fsp</Include>
         <Include>Include\bio\biocoenosis\flora\gpio</Include>
         <Include>Include\bio\biocoenosis\flora\hid</Include>
@@ -49,6 +50,7 @@
         <Source>Source\bio\biocoenosis\flora\applet</Source>
         <Source>Source\bio\biocoenosis\flora\err</Source>
         <Source>Source\bio\biocoenosis\flora\fatal</Source>
+        <Source>Source\bio\biocoenosis\flora\fs</Source>
         <Source>Source\bio\biocoenosis\flora\fsp</Source>
         <Source>Source\bio\biocoenosis\flora\gpio</Source>
         <Source>Source\bio\biocoenosis\flora\hid</Source>

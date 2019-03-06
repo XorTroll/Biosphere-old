@@ -7,6 +7,8 @@ extern bool lnso;
 extern char *fake_heap_end;
 extern u64 heapsize;
 
+std::vector<bio::os::FinalizeCheckInfo> fchecks;
+
 namespace bio::os
 {
     static bool hpov = false;
@@ -91,5 +93,10 @@ namespace bio::os
             svc::SetHeapSize(&cheapaddr, ((u8*)heapaddr + heapsize) - (u8*)cheapaddr);
             hpov = false;
         }
+    }
+
+    void AddFinalizeCheckingFor(std::function<bool()> CheckCallback, std::function<void()> FinalizeCallback)
+    {
+        fchecks.push_back({ CheckCallback, FinalizeCallback });
     }
 }

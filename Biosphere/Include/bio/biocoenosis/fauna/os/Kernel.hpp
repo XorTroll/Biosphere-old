@@ -2,6 +2,7 @@
 #pragma once
 #include <bio/root.hpp>
 #include <bio/biotope/svc.hpp>
+#include <functional>
 
 namespace bio::os
 {
@@ -30,6 +31,12 @@ namespace bio::os
             u32 handle;
     };
 
+    struct FinalizeCheckInfo
+    {
+        std::function<bool()> CheckCallback;
+        std::function<void()> FinalizeCallback;
+    };
+
     int GetHostArgc();
     char **GetHostArgv();
     FirmwareMajor GetFirmwareMajorVersion();
@@ -39,6 +46,7 @@ namespace bio::os
     Result OverrideHeap(u64 CustomSize);
     bool IsHeapOverrided();
     void RestoreOverridedHeap();
+    void AddFinalizeCheckingFor(std::function<bool()> CheckCallback, std::function<void()> FinalizeCallback);
 
     static const u32 Module = 1;
     static const Result ResultNotImplemented(Module, 33);

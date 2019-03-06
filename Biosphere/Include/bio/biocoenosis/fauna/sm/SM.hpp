@@ -1,7 +1,6 @@
 
 #pragma once
-#include <bio/biocoenosis/fauna/hipc.hpp>
-#include <bio/biocoenosis/fauna/os.hpp>
+#include <bio/biocoenosis/fauna/sm/Types.hpp>
 
 namespace bio::sm
 {

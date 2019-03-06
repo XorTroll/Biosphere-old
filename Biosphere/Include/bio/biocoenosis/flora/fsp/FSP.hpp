@@ -52,4 +52,11 @@ namespace bio::fsp
     };
 
     ResultWrap<FspService*> Initialize();
+
+    static const u32 Module = 2;
+    static const Result ResultPathDoesntExist(Module, 1);
+    static const Result ResultPathAlreadyExists(Module, 2);
+    static const Result ResultResourceBusy(Module, 7);
+    static const Result ResultInvalidInput(Module, 6001);
+    static const Result ResultPathTooLong(Module, 6003);
 }

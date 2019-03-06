@@ -18,7 +18,7 @@ namespace bio::hipc
     {
         public:
             Object();
-            Object(u32 Handle);
+            Object(u32 Handle, bool Override = false);
             Object(u32 Handle, u32 ObjectId, ObjectType Type);
             Object(Object *Parent, u32 ObjectId);
             ~Object();
@@ -49,12 +49,10 @@ namespace bio::hipc
     class ServiceObject
     {
         public:
-            ServiceObject(const char *Name, u32 ErrorModule);
+            ServiceObject(const char *Name);
             const char *GetName();
-            u32 GetErrorModule();
         private:
             const char *name;
-            u32 mod;
     };
 }
 

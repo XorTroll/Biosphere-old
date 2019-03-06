@@ -298,6 +298,7 @@ namespace bio.eco
                         outcmd = Utils.ExecuteCommand(dkp + "\\devkitA64\\bin\\aarch64-none-elf-gcc", cmd, true);
                     }
                     if(!string.IsNullOrEmpty(outcmd)) throw new CompileException("Compile errors ocurred: " + outcmd);
+                    else Console.WriteLine("Compiled: " + src);
                 }
             }
             string ofs = "";
@@ -308,7 +309,8 @@ namespace bio.eco
             string outtgt = Path.Combine(outdir, ProjectName);
             if(System.IO.Directory.Exists(outdir)) System.IO.Directory.Delete(outdir, true);
             System.IO.Directory.CreateDirectory(outdir);
-            string linkcmd = "-specs=\"" + dkp + "\\Biosphere\\Ecosphere\\Linker.specs\" -g " + dc.Architecture + " -Wl,-Map," + Path.GetFileName(Directory) + ".map";
+            string fmappath = Path.Combine(builddir, ProjectName + ".map");
+            string linkcmd = "-specs=\"" + dkp + "\\Biosphere\\Ecosphere\\Linker.specs\" -g " + dc.Architecture + " -Wl,-Map,\"" + fmappath + "\"";
             linkcmd += " " + ofs;
             string outnss = outtgt + ".nss";
             if(File.Exists(outnss)) File.Delete(outnss);

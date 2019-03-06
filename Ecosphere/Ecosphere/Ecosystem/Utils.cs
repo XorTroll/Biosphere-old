@@ -21,9 +21,9 @@ namespace bio.eco
         public static string GetdevKitProDirectory()
         {
             string cwd = GetCwd();
-            if(Path.GetFileNameWithoutExtension(cwd) != "bin") throw new BiosphereException("Ecosystem compiler is not correctly located. Should be in \"[DEVKITPRO]/Biosphere/Ecosphere/bin\".");
-            if(Path.GetFileName(Path.GetDirectoryName(cwd)) != "Ecosphere") throw new BiosphereException("Ecosystem compiler is not correctly located. Should be in \"[DEVKITPRO]/Biosphere/Ecosphere/bin\".");
-            if(Path.GetFileName(Path.GetDirectoryName(Path.GetDirectoryName(cwd))) != "Biosphere") throw new BiosphereException("Ecosystem compiler is not correctly located. Should be in \"[DEVKITPRO]/Biosphere/Ecosphere/bin\".");
+            if(Path.GetFileNameWithoutExtension(cwd) != "bin") throw new BiosphereException("Ecosystem compiler is not correctly located. Should be in \"<devkitpro>/Biosphere/Ecosphere/bin\".");
+            if(Path.GetFileName(Path.GetDirectoryName(cwd)) != "Ecosphere") throw new BiosphereException("Ecosystem compiler is not correctly located. Should be in \"<devkitpro>/Biosphere/Ecosphere/bin\".");
+            if(Path.GetFileName(Path.GetDirectoryName(Path.GetDirectoryName(cwd))) != "Biosphere") throw new BiosphereException("Ecosystem compiler is not correctly located. Should be in \"<devkitpro>/Biosphere/Ecosphere/bin\".");
             return Path.GetFullPath(Path.Combine(cwd, "..", "..", ".."));
         }
 

@@ -23,7 +23,8 @@ extern const u8 __tdata_lma[];
 extern const u8 __tdata_lma_end[];
 extern u8 __tls_start[];
 extern u32 argdata;
-extern std::vector<std::pair<u64, u32>> overrides;
+extern std::vector<bio::sm::OverrideService> overrides;
+extern std::vector<bio::os::FinalizeCheckInfo> fchecks;
 
 BIO_WEAK alignas(16) u8 excstack[0x400];
 BIO_WEAK u64 excstsize = sizeof(excstack);
@@ -95,7 +96,7 @@ namespace bio::init
                         heapsize = hctx->Value[1];
                         break;
                     case 4:
-                        overrides.push_back(std::pair<u64, u32>(hctx->Value[0], (u32)hctx->Value[1]));
+                        overrides.push_back({ hctx->Value[0], (u32)hctx->Value[1] });
                         break;
                     case 5:
                         oargv = (void*)hctx->Value[0];
@@ -105,7 +106,7 @@ namespace bio::init
                         hintsvc[1] = hctx->Value[1];
                         break;
                     case 7:
-                        apptype = (bio::Application)hctx->Value[0];
+                        apptype = static_cast<bio::Application>(hctx->Value[0]);
                         if((hctx->Value[1] & BIO_BITMASK(0)) && apptype == bio::Application::SystemApplication) apptype = bio::Application::Application;
                         break;
                     case 10:
@@ -120,12 +121,7 @@ namespace bio::init
                         rseed[1] = hctx->Value[1];
                         break;
                     default:
-                        if(hctx->Flags & BIO_BITMASK(0))
-                        {
-                            bio::Result rc(346, 100 + hctx->Key);
-                            u32 rcode = rc;
-                            bioQuickPostExit(rcode, retaddr);
-                        }
+                        if(hctx->Flags & BIO_BITMASK(0)) bioQuickPostExit(bio::Result(346, 100 + hctx->Key), retaddr);
                         break;
                 }
                 hctx++;
@@ -539,7 +535,11 @@ extern "C"
 
     void BIO_WEAK BIO_NORETURN bioQuickExit(int Code)
     {
-        if(bio::os::IsHeapOverrided()) bio::os::RestoreOverridedHeap();
+        for(u32 i = 0; i < fchecks.size(); i++)
+        {
+            bool hasinit = (fchecks[i].CheckCallback)();
+            if(hasinit) (fchecks[i].FinalizeCallback)();
+        }
         __libc_fini_array();
         bioQuickPostExit(Code, retaddr);
     }
