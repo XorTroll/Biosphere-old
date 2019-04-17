@@ -253,6 +253,7 @@ namespace bio.eco
 
         public void Compile()
         {
+            Console.WriteLine();
             string dkp = Utils.GetdevKitProDirectory();
             if(!System.IO.Directory.Exists(dkp)) throw new CompileException("devkitPro folder does not exist.");
             if(!System.IO.Directory.Exists(dkp + "\\devkita64")) throw new CompileException("devkitA64 folder does not exist.");
@@ -273,6 +274,7 @@ namespace bio.eco
                 System.IO.Directory.CreateDirectory(Path.Combine(builddir, source));
                 foreach(string src in srcs)
                 {
+                    Console.Write("Compiling source [" + src + "]...");
                     string ext = Path.GetExtension(src).Replace(".", "").ToLower();
                     string fsrcpath = Path.Combine(builddir, source, Path.GetFileName(src));
                     string srcorig = src;
@@ -298,7 +300,7 @@ namespace bio.eco
                         outcmd = Utils.ExecuteCommand(dkp + "\\devkitA64\\bin\\aarch64-none-elf-gcc", cmd, true);
                     }
                     if(!string.IsNullOrEmpty(outcmd)) throw new CompileException("Compile errors ocurred: " + outcmd);
-                    else Console.WriteLine("Compiled: " + src);
+                    else Console.WriteLine("  compiled successfully.");
                 }
             }
             string ofs = "";

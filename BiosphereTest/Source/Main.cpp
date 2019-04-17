@@ -88,32 +88,22 @@ int jsmain()
     return 0;
 }
 
+bool fcheck_Check()
+{
+    return true;
+}
+
 int main()
 {
-    bio::os::OverrideHeap(0x10000000L);
-    bio::app::Initialize(bio::app::RunMode::LibraryApplet);
-    bio::err::SetDefaultThrowMode(bio::err::ThrowMode::AppletDialog);
-
-    bio::hipc::Object *testu = bio::sm::GetService("test:u").AssertOk();
-
-    testu->ProcessRequest<0>(bio::hipc::Simple()).AssertOk();
-
-    struct QueueInput
+    bio::sm::Initialize();
+    bio::fsp::FspService *fsp = bio::fsp::Initialize().AssertOk();
+    /*
+    bio::os::AddFinalizeCheckingFor(fcheck_Check, [&]()
     {
-        char Path[256];
-    } BIO_PACKED;
-
-    QueueInput ipt;
-    strcpy(ipt.Path, "sdmc:/audio.mp3");
-
-    testu->ProcessRequest<2>(bio::hipc::InBuffer(&ipt, sizeof(QueueInput), 0)).AssertOk();
-
-    testu->ProcessRequest<1>(bio::hipc::Simple()).AssertOk();
-
-    while(true);
-
-    delete testu;
-
-    bio::app::Finalize();
+        bio::fsp::FileSystem *sdfs = fsp->OpenSdCardFileSystem().AssertOk();
+        sdfs->CreateDirectory("dispose");
+    });
+    */
+    bio::sm::Finalize();
     return 0;
 }
