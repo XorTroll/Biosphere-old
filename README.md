@@ -1,5 +1,7 @@
 # Biosphere
 
+## **Biosphere is no longer being worked on. For an active C++ library for homebrew development, check libnx, libtransistor or libnx++.**
+
 ## About Biosphere
 
 - Biosphere is a project whose aim is to provide an easy and effective way of developing homebrew.
